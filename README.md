@@ -26,17 +26,17 @@ research/
 
 ### For Autonomous Agents
 
+**Quick Start**: See [AGENTS.md](AGENTS.md) for detailed instructions.
+
 Each research task should:
 
 1. **Create a dedicated directory** named descriptively (e.g., `memory-optimization-study`, `async-pattern-analysis`)
-2. **Initialize with a README.md** containing:
-   - Research question/objective
-   - Methodology
-   - Dependencies and requirements
-   - Expected outcomes
-3. **Work self-contained** - all code, data, and documentation within the task directory
-4. **Document findings** in `research-notes.md` or similar
-5. **Preserve artifacts** - keep all intermediate results for reproducibility
+2. **Create a notes.md file** to track your work as you go
+3. **Build a README.md report** at the end of your investigation
+4. **Work self-contained** - all code, data, and documentation within the task directory
+5. **Commit selectively**:
+   - Include: notes.md, README.md, code you wrote, git diffs
+   - Exclude: full repos, build artifacts, large binaries (>2MB), _summary.md files
 
 ### Directory Naming Convention
 
@@ -52,18 +52,19 @@ When starting a new research task, create:
 
 ```
 [task-name]/
-├── README.md              # Overview, goals, and methodology
-├── research-notes.md      # Observations and findings
+├── notes.md               # Working notes (create at start, update as you work)
+├── README.md              # Final report (create at end)
 ├── requirements.txt       # Dependencies (Python)
 ├── package.json          # Dependencies (Node.js)
-├── code/                 # Source code
+├── code/                 # Source code you wrote
 │   └── experiments/      # Experimental code
 ├── data/                 # Input data
 │   ├── raw/             # Original data
 │   └── processed/       # Processed data
-└── results/             # Output
-    ├── figures/         # Visualizations
-    └── reports/         # Analysis reports
+├── results/             # Output
+│   ├── figures/         # Visualizations
+│   └── reports/         # Analysis reports
+└── diffs/               # Git diffs from modified repos (not full repos)
 ```
 
 ## Guidelines for Autonomous Operation
@@ -101,35 +102,54 @@ When starting a new research task, create:
    cd [research-task-name]
    ```
 
-2. Initialize with README:
+2. Create a notes.md file to track your work:
+   ```bash
+   cat > notes.md << 'EOF'
+   # Research Notes
+   
+   ## [Date/Time] - Starting Investigation
+   
+   Objective: [What you're investigating]
+   
+   ## [Date/Time] - Initial Setup
+   
+   [Track your progress here as you work]
+   EOF
+   ```
+
+3. Work on your research:
+   - Add code, data, and experiments
+   - Update notes.md as you go
+   - Track what you tried and what you learned
+
+4. Create README.md at the end:
    ```bash
    cat > README.md << 'EOF'
    # [Research Task Name]
    
    ## Objective
-   [Clear statement of what you're investigating]
+   [Clear statement of what you investigated]
    
    ## Methodology
-   [How you'll approach the research]
-   
-   ## Setup
-   [Dependencies and installation steps]
-   
-   ## Running
-   [How to execute the research]
+   [How you approached the research]
    
    ## Results
-   [Where to find results]
+   [Key findings]
+   
+   ## Conclusions
+   [Takeaways and recommendations]
    EOF
    ```
 
-3. Add your code, data, and documentation
-
-4. Document findings and conclusions
+5. Commit only relevant files:
+   - notes.md and README.md
+   - Code you wrote
+   - Git diffs (not full repos)
+   - Small binaries (<2MB)
 
 ### For Autonomous Agents
 
-See `.github/agents/agent-config.md` for specific agent configuration and operational guidelines.
+See [AGENTS.md](AGENTS.md) for quick start instructions and `.github/agents/agent-config.md` for detailed configuration.
 
 ## Examples
 

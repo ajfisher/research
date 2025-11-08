@@ -58,28 +58,36 @@ When starting a new research task:
    ```bash
    mkdir -p [task-name]/{code,data/raw,data/processed,results}
    ```
-3. **Initialize README.md** with research objectives
+3. **Create a notes.md file** to track your work as you go
 4. **Document dependencies** in appropriate files (package.json, requirements.txt, etc.)
+5. **Build a README.md report** at the end of your investigation
 
 ### Working Within a Task
 
 1. **Stay self-contained** - All work within the task directory
-2. **Document as you go** - Update research notes regularly
+2. **Document as you go** - Append to notes.md as you work, tracking what you tried and anything you learned
 3. **Version control** - Commit meaningful progress incrementally
 4. **Test your code** - Ensure reproducibility
 5. **Clean up** - Remove temporary files, organize outputs
+6. **Commit guidelines**:
+   - Include only files you created or modified
+   - Include git diffs (not full repos) if you modified external code
+   - Don't commit build artifacts, dependencies, or full checked-out repositories
+   - Don't create _summary.md files (these are added automatically)
 
 ### Completing a Task
 
 Before considering a task complete:
 
-1. ✅ README.md clearly explains the research
-2. ✅ All code is documented and tested
-3. ✅ Dependencies are listed
-4. ✅ Results are saved and documented
-5. ✅ Findings are summarized
-6. ✅ Reproduction steps are clear
-7. ✅ Temporary files are cleaned up
+1. ✅ notes.md contains chronological log of your work
+2. ✅ README.md clearly explains the research (created at the end)
+3. ✅ All code you wrote is documented and tested
+4. ✅ Dependencies are listed
+5. ✅ Results are saved and documented
+6. ✅ Findings are summarized in README.md
+7. ✅ Reproduction steps are clear
+8. ✅ Temporary files are cleaned up
+9. ✅ Only relevant files committed (no full repos, large binaries >2MB, or build artifacts)
 
 ### Code Quality Standards
 
@@ -109,7 +117,34 @@ Key principles:
 
 ### Documentation Standards
 
-Each task's README.md should include:
+Each task should have two key documentation files:
+
+#### notes.md - Working Notes
+
+Track your progress chronologically as you work:
+
+```markdown
+## [Date/Time] - [What You're Trying]
+
+Description of what you're attempting...
+
+[Results, errors, observations]
+
+## [Date/Time] - [Next Step]
+
+What you learned and what you're trying next...
+```
+
+Example entries:
+- What approaches you tried
+- Errors encountered and solutions
+- Interesting discoveries
+- Links to resources consulted
+- Code snippets tested
+
+#### README.md - Final Report
+
+Create at the end of your investigation with:
 
 ```markdown
 # [Research Task Title]
@@ -235,7 +270,11 @@ def test_data_loading():
 ### 4. Version Control
 - Commit messages: `[task-name] Brief description of changes`
 - Commit frequently with logical units of work
-- Don't commit large binary files (use .gitignore)
+- Don't commit large binary files (>2MB) - use .gitignore
+- Don't commit full copies of external repositories
+- Include git diffs instead of modified repos
+- Don't commit build artifacts or dependencies (node_modules, venv, etc.)
+- Don't create _summary.md files (auto-generated)
 
 ### 5. Resource Management
 - Clean up temporary files
@@ -247,9 +286,9 @@ def test_data_loading():
 
 When encountering errors:
 
-1. **Document the error** in research notes
+1. **Document the error** in notes.md with timestamp
 2. **Try to resolve** using standard debugging
-3. **Document the resolution** for future reference
+3. **Document the resolution** in notes.md for future reference
 4. **Update code** to prevent recurrence
 
 ## Collaboration Between Agents
@@ -266,8 +305,8 @@ If multiple agents work on related tasks:
 ### Example Task Structure
 ```
 performance-benchmarking-2024/
-├── README.md
-├── research-notes.md
+├── README.md              # Final report (created at end)
+├── notes.md              # Working notes (created at start, updated throughout)
 ├── requirements.txt
 ├── .gitignore
 ├── code/
@@ -279,12 +318,14 @@ performance-benchmarking-2024/
 │   │   └── benchmark_results.csv
 │   └── processed/
 │       └── cleaned_results.csv
-└── results/
-    ├── figures/
-    │   ├── performance_comparison.png
-    │   └── trend_analysis.png
-    └── reports/
-        └── final_report.md
+├── results/
+│   ├── figures/
+│   │   ├── performance_comparison.png
+│   │   └── trend_analysis.png
+│   └── reports/
+│       └── final_report.md
+└── diffs/                # Git diffs from modified repos (if applicable)
+    └── external-repo.diff
 ```
 
 ### Example .gitignore
@@ -308,15 +349,38 @@ data/raw/*.zip
 # Temporary files
 *.tmp
 .DS_Store
+
+# Don't commit full repos
+external-repos/
+cloned-repos/
+
+# Auto-generated files
+_summary.md
+
+# Large binaries
+*.bin
+*.model
+results/*.mp4
 ```
 
 ## Agent Self-Assessment
 
 Before finalizing work, agents should verify:
 
-- [ ] Research objective is clearly stated
-- [ ] Methodology is documented
+- [ ] notes.md exists and tracks work chronologically
+- [ ] README.md is created at the end as final report
+- [ ] Research objective is clearly stated in README.md
+- [ ] Methodology is documented in README.md
 - [ ] Code is clean and documented
+- [ ] Dependencies are listed
+- [ ] Results are reproducible
+- [ ] Findings are summarized in README.md
+- [ ] No sensitive data is exposed
+- [ ] No security vulnerabilities introduced
+- [ ] Task directory is well-organized
+- [ ] Git history is clean and meaningful
+- [ ] Only relevant files committed (no full repos, >2MB binaries, build artifacts)
+- [ ] No _summary.md file created (auto-generated)
 - [ ] Dependencies are listed
 - [ ] Results are reproducible
 - [ ] Findings are summarized
