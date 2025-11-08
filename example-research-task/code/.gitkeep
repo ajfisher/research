@@ -1,0 +1,9 @@
+# .gitkeep
+
+This directory is for storing code and scripts.
+
+Examples:
+- main.py or main.js - Entry point
+- analysis.py - Analysis scripts
+- visualization.py - Plotting and visualization
+- utils.py - Utility functions

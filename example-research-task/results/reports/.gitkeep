@@ -1,0 +1,8 @@
+# .gitkeep
+
+This directory is for storing analysis reports and summaries.
+
+Recommended formats:
+- Markdown (.md) for text reports
+- Jupyter notebooks (.ipynb) for interactive analyses
+- PDF for final reports
