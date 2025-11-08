@@ -83,6 +83,10 @@ $RECYCLE.BIN/
 *.bak
 *.orig
 
+# Auto-generated summary files
+_summary.md
+*/_summary.md
+
 # Data files (can be large)
 # Uncomment if you don't want to track large datasets
 # *.csv

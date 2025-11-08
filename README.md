@@ -11,12 +11,13 @@ This repository is designed for autonomous code agents (remote and web-based) to
 ```
 research/
 ├── README.md                    # This file
+├── AGENTS.md                    # Quick start guide for AI agents
 ├── .github/
 │   └── agents/
 │       └── agent-config.md      # Configuration and guidelines for autonomous agents
 └── [research-task-name]/        # Individual research task directories
-    ├── README.md                # Task-specific documentation
-    ├── research-notes.md        # Findings and observations
+    ├── notes.md                 # Working notes tracking progress
+    ├── README.md                # Final report (created at end)
     ├── code/                    # Code artifacts
     ├── data/                    # Data files
     └── results/                 # Output and results
