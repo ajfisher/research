@@ -1,0 +1,8 @@
+# .gitkeep
+
+This directory is for storing processed/transformed data files.
+
+Processed data should:
+- Have clear provenance (document the transformation in code)
+- Be reproducible from raw data
+- Be documented in the parent data/README.md

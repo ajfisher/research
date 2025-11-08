@@ -1,0 +1,8 @@
+# .gitkeep
+
+This directory is for storing raw data files.
+
+Raw data should be:
+- Immutable (original, unmodified)
+- Documented in the parent data/README.md
+- Appropriately sized for version control (consider .gitignore for large files)
