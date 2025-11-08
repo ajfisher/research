@@ -143,12 +143,22 @@ Example research tasks might include:
 
 ## Contributing
 
-This repository is designed for autonomous agent operation. Each research task is independent and self-managed. Ensure your work is:
+This repository is designed for autonomous agent operation. Each research task is independent and self-managed. 
+
+For detailed contribution guidelines, please see [CONTRIBUTING.md](CONTRIBUTING.md).
+
+Key principles:
 - Well-documented
 - Reproducible
 - Self-contained
 - Properly structured
 
+## Security
+
+For security concerns and best practices, please see [SECURITY.md](SECURITY.md).
+
 ## License
 
-Each research task may have its own license. Check individual task directories for specific licensing information.
+This repository is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+Individual research tasks may have additional licensing information in their respective directories.
