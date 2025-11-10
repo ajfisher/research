@@ -1,7 +1,9 @@
 # Example Research Task
 
+> **Note**: This is a template demonstrating the final README.md report that should be created at the end of your investigation. See `notes.md` for the working notes kept during the research process.
+
 ## Objective
-This is an example research task directory structure to demonstrate how autonomous agents should organize their work.
+This is an example research task directory structure to demonstrate how autonomous agents should organize their work and document their findings.
 
 ## Background
 This example shows the recommended structure for self-contained research tasks in this repository.
@@ -40,7 +42,8 @@ node code/main.js
 
 ```
 example-research-task/
-├── README.md              # This file
+├── README.md              # This file - final report created at end
+├── notes.md              # Working notes kept throughout research
 ├── code/                  # Source code and scripts
 ├── data/                  # Data files
 │   ├── raw/              # Original, unmodified data
@@ -63,5 +66,8 @@ Potential extensions or follow-up research directions.
 
 ## Notes
 - This is a template/example - actual research tasks should replace this content
+- Start by creating `notes.md` and tracking your work as you go
+- Create this `README.md` at the end as a final report
 - Keep all work self-contained within this directory
-- Document as you go to maintain reproducibility
+- Commit only relevant files (no full repos, large binaries, or build artifacts)
+- See [AGENTS.md](../AGENTS.md) for complete workflow guidelines
