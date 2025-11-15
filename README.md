@@ -118,6 +118,18 @@ if subdirs_with_dates:
         print()  # Add blank line between entries
 
 ]]]-->
+## 1 research project
+
+### [tag-prediction-ajfisher-me](https://github.com/ajfisher/research/tree/main/tag-prediction-ajfisher-me) (2025-11-15)
+
+This project explores machine learning techniques, specifically classical multi-label classification using scikit-learn, to recommend tags for markdown posts on the `ajfisher.me` blog. By training models like a one-vs-rest linear SVM and Complement Naïve Bayes with TF–IDF features, predictions are evaluated to ensure taxonomy consistency and flag potential additions or removals. While the linear SVM slightly outperforms other approaches, its micro-F1 score (~0.08) suggests the need for richer features or larger datasets. Key steps are documented in the [source code](code/tag_prediction_analysis.py).
+
+Key findings:
+- The linear SVM gives the strongest baseline but generalizes poorly due to data sparsity.
+- Common missing tags include `web`, `development`, and `internet`, found in many high-probability predictions.
+- No misapplied or low-confidence tags were detected, but overfitting in CV highlights the limitations of current approaches.
+- Future work should explore embeddings, semi-supervised data, and interactive tag adjustment tools.
+
 <!--[[[end]]]-->
 
 ---
