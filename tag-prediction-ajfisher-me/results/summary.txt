@@ -1,0 +1,16 @@
+Selected model: linear_svc
+
+Evaluation metrics:
+- linear_svc: F1_micro=0.077 ± 0.035, F1_macro=0.015, SubsetAcc=0.000
+- complement_nb: F1_micro=0.034 ± 0.018, F1_macro=0.007, SubsetAcc=0.000
+- logreg_ovr: F1_micro=0.000 ± 0.000, F1_macro=0.000, SubsetAcc=0.000
+- logreg_chain: F1_micro=0.000 ± 0.000, F1_macro=0.000, SubsetAcc=0.000
+
+Total posts: 92, Tagged: 92, Untagged: 0
+Labels evaluated: 60 of 61 (>=2 positives).
+Labels excluded from CV due to rarity: podcast
+Posts with suggested missing tags: 0
+Posts with potential misapplied tags: 0
+Posts with high-probability candidate tags (top5): 42
+Posts with low-confidence existing tags (<0.20 prob): 0
+Untagged posts with suggestions: 0
