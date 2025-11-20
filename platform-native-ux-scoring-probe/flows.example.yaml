@@ -1,0 +1,41 @@
+baseUrl: "https://ajfisher.me/"
+flows:
+  - name: "ajfisher-strategy-article"
+    description: "Homepage to strategy tag to AI strategy article"
+    runNoJs: true
+    steps:
+      - action: goto
+        url: "/"
+      - action: goto
+        url: "/tagged/strategy/"
+      - action: goto
+        url: "/2025/11/05/strategy-ai/"
+  - name: "amazon-search-results"
+    description: "Home to a wireless mouse search results page"
+    baseUrl: "https://www.amazon.com/"
+    runNoJs: true
+    steps:
+      - action: goto
+        url: "/"
+      - action: goto
+        url: "/s?k=wireless+mouse"
+  - name: "wikipedia-browser-topic"
+    description: "Main page to browser-related article and accessibility topic"
+    baseUrl: "https://en.wikipedia.org/"
+    runNoJs: true
+    steps:
+      - action: goto
+        url: "/wiki/Main_Page"
+      - action: goto
+        url: "/wiki/Web_browser"
+      - action: goto
+        url: "/wiki/Web_accessibility"
+  - name: "mozilla-firefox-download"
+    description: "Mozilla landing page to Firefox download"
+    baseUrl: "https://www.mozilla.org/"
+    runNoJs: true
+    steps:
+      - action: goto
+        url: "/en-US/"
+      - action: goto
+        url: "/en-US/firefox/new/"

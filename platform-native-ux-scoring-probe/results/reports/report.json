@@ -1,0 +1,2327 @@
+{
+  "baseUrl": "https://ajfisher.me/",
+  "generatedAt": "2025-11-20T01:36:36.814Z",
+  "flows": [
+    {
+      "name": "ajfisher-strategy-article",
+      "description": "Homepage to strategy tag to AI strategy article",
+      "baseUrl": "https://ajfisher.me/",
+      "jsEnabled": true,
+      "runNoJs": true,
+      "scores": {
+        "routing": 100,
+        "forms": null,
+        "dataFetch": 100,
+        "progressiveEnhancement": 100,
+        "semanticsA11y": 30,
+        "overall": 91
+      },
+      "rawMetrics": {
+        "stepMetrics": [
+          {
+            "stepIndex": 0,
+            "step": {
+              "action": "goto",
+              "url": "/"
+            },
+            "domMetrics": {
+              "anchorCount": 56,
+              "nonSemanticClickableCount": 0,
+              "url": "https://ajfisher.me/",
+              "formCount": 0,
+              "controlCount": 1,
+              "constrainedControlCount": 0,
+              "fauxControlCount": 0,
+              "semanticContainerCount": 10,
+              "labelledControlCount": 0,
+              "roleButtonOrLinkNonNativeCount": 0,
+              "hasClientRouterSignatures": false
+            },
+            "networkEvents": [
+              {
+                "url": "https://ajfisher.me/",
+                "method": "GET",
+                "resourceType": "document",
+                "status": 200,
+                "cacheControl": "public, max-age=0, must-revalidate",
+                "etag": "W/\"e2012bfdd76acf4ddd176fa73cbd5442\""
+              },
+              {
+                "url": "https://www.google-analytics.com/analytics.js",
+                "method": "GET",
+                "resourceType": "script",
+                "status": 200,
+                "cacheControl": "public, max-age=7200"
+              },
+              {
+                "url": "https://ajfisher.me/webpack-runtime-e45feeb8734c0ec1932d.js",
+                "method": "GET",
+                "resourceType": "script",
+                "status": 200,
+                "cacheControl": "public, max-age=31536000, immutable",
+                "etag": "W/\"4ca96620046e65f9719827389012aac1\""
+              },
+              {
+                "url": "https://ajfisher.me/static/raleway-v34-latin_latin-ext-900-03e4aeae4f49630ff3854750c2f8e209.woff2",
+                "method": "GET",
+                "resourceType": "font",
+                "status": 200,
+                "cacheControl": "public, max-age=31536000, immutable",
+                "etag": "\"3a884683d644d3b7fb105921807a49bf\""
+              },
+              {
+                "url": "https://ajfisher.me/static/rokkitt-v36-latin_latin-ext-regular-4dcd7ad3cfe9319fa7c5635052c1db79.woff2",
+                "method": "GET",
+                "resourceType": "font",
+                "status": 200,
+                "cacheControl": "public, max-age=31536000, immutable",
+                "etag": "\"134bdd73b269253d72e40c9e630fbce4\""
+              },
+              {
+                "url": "https://ajfisher.me/framework-b010d2c4ae63c5fd42cc.js",
+                "method": "GET",
+                "resourceType": "script",
+                "status": 200,
+                "cacheControl": "public, max-age=0, must-revalidate",
+                "etag": "W/\"075cfca5bebcc0044b81fa78ce9d16ed\""
+              },
+              {
+                "url": "https://ajfisher.me/app-74083efc89f2470f4725.js",
+                "method": "GET",
+                "resourceType": "script",
+                "status": 200,
+                "cacheControl": "public, max-age=31536000, immutable",
+                "etag": "W/\"2b03cc2ff9169576a69b68afd0b44bfc\""
+              },
+              {
+                "url": "https://ajfisher.me/static/09633d0dcefe2e3792f86d0c47b8c371/1e4ad/toxic_river.webp",
+                "method": "GET",
+                "resourceType": "image",
+                "status": 200,
+                "cacheControl": "public, max-age=31536000, immutable",
+                "etag": "\"dddc5cf947ca5115cd5bb2f1959e82f9\""
+              },
+              {
+                "url": "https://ajfisher.me/static/8b3224efb29a8dcc6b2a3122ac6f702d/02b9f/native-ai-working.webp",
+                "method": "GET",
+                "resourceType": "image",
+                "status": 200,
+                "cacheControl": "public, max-age=31536000, immutable",
+                "etag": "\"8c6f4461053424f0cf6e87c70254eacc\""
+              },
+              {
+                "url": "https://ajfisher.me/static/2eb9988e1628691b1df285d447c79db8/9066b/retail-opportunity-dalle-2024-04-16212738.webp",
+                "method": "GET",
+                "resourceType": "image",
+                "status": 200,
+                "cacheControl": "public, max-age=31536000, immutable",
+                "etag": "\"806d7840e4f4dcb6733c921238afcaa3\""
+              },
+              {
+                "url": "https://ajfisher.me/static/dc989647ef5a84b374bb7e03399422bc/10ae1/gemini-cli-list.webp",
+                "method": "GET",
+                "resourceType": "image",
+                "status": 200,
+                "cacheControl": "public, max-age=31536000, immutable",
+                "etag": "\"3caef6561e43ed62dd6015f12df6a74a\""
+              },
+              {
+                "url": "https://ajfisher.me/static/1d5ea379d1389dda9090d9f6020354f7/5e515/team_collaboration.webp",
+                "method": "GET",
+                "resourceType": "image",
+                "status": 200,
+                "cacheControl": "public, max-age=31536000, immutable",
+                "etag": "\"2432cd15a6f307638656b5d203cefca7\""
+              },
+              {
+                "url": "https://ajfisher.me/static/622649536f3ce952e04cb767bb81844b/9066b/travel_list.webp",
+                "method": "GET",
+                "resourceType": "image",
+                "status": 200,
+                "cacheControl": "public, max-age=31536000, immutable",
+                "etag": "\"2a5af0859088cf2503309c3dad765bf0\""
+              }
+            ]
+          },
+          {
+            "stepIndex": 1,
+            "step": {
+              "action": "goto",
+              "url": "/tagged/strategy/"
+            },
+            "domMetrics": {
+              "anchorCount": 50,
+              "nonSemanticClickableCount": 0,
+              "url": "https://ajfisher.me/tagged/strategy/",
+              "formCount": 0,
+              "controlCount": 1,
+              "constrainedControlCount": 0,
+              "fauxControlCount": 0,
+              "semanticContainerCount": 10,
+              "labelledControlCount": 0,
+              "roleButtonOrLinkNonNativeCount": 0,
+              "hasClientRouterSignatures": false
+            },
+            "networkEvents": [
+              {
+                "url": "https://ajfisher.me/page-data/app-data.json",
+                "method": "GET",
+                "resourceType": "xhr",
+                "status": 200,
+                "cacheControl": "public, max-age=0, must-revalidate",
+                "etag": "\"e6089b68586af2edc512d30472b35090\""
+              },
+              {
+                "url": "https://ajfisher.me/page-data/index/page-data.json",
+                "method": "GET",
+                "resourceType": "xhr",
+                "status": 200,
+                "cacheControl": "public, max-age=0, must-revalidate",
+                "etag": "W/\"eb481dcfbfce1de33cd4339fa9c55b81\""
+              },
+              {
+                "url": "https://ajfisher.me/static/raleway-v34-latin_latin-ext-900-03e4aeae4f49630ff3854750c2f8e209.woff2",
+                "method": "GET",
+                "resourceType": "font",
+                "status": 200,
+                "cacheControl": "public, max-age=31536000, immutable",
+                "etag": "\"3a884683d644d3b7fb105921807a49bf\""
+              },
+              {
+                "url": "https://ajfisher.me/static/rokkitt-v36-latin_latin-ext-regular-4dcd7ad3cfe9319fa7c5635052c1db79.woff2",
+                "method": "GET",
+                "resourceType": "font",
+                "status": 200,
+                "cacheControl": "public, max-age=31536000, immutable",
+                "etag": "\"134bdd73b269253d72e40c9e630fbce4\""
+              },
+              {
+                "url": "https://www.google-analytics.com/analytics.js",
+                "method": "GET",
+                "resourceType": "script",
+                "status": 200,
+                "cacheControl": "public, max-age=7200"
+              },
+              {
+                "url": "https://ajfisher.me/webpack-runtime-e45feeb8734c0ec1932d.js",
+                "method": "GET",
+                "resourceType": "script",
+                "status": 200,
+                "cacheControl": "public, max-age=31536000, immutable",
+                "etag": "W/\"4ca96620046e65f9719827389012aac1\""
+              },
+              {
+                "url": "https://ajfisher.me/app-74083efc89f2470f4725.js",
+                "method": "GET",
+                "resourceType": "script",
+                "status": 200,
+                "cacheControl": "public, max-age=31536000, immutable",
+                "etag": "W/\"2b03cc2ff9169576a69b68afd0b44bfc\""
+              },
+              {
+                "url": "https://ajfisher.me/tagged/strategy/",
+                "method": "GET",
+                "resourceType": "document",
+                "status": 200,
+                "cacheControl": "public, max-age=0, must-revalidate",
+                "etag": "W/\"d94d8eb6e8ffd643efdccd2f357326d3\""
+              },
+              {
+                "url": "https://ajfisher.me/static/1d5ea379d1389dda9090d9f6020354f7/5e515/team_collaboration.webp",
+                "method": "GET",
+                "resourceType": "image",
+                "status": 200,
+                "cacheControl": "public, max-age=31536000, immutable",
+                "etag": "\"2432cd15a6f307638656b5d203cefca7\""
+              },
+              {
+                "url": "https://ajfisher.me/static/622649536f3ce952e04cb767bb81844b/9066b/travel_list.webp",
+                "method": "GET",
+                "resourceType": "image",
+                "status": 200,
+                "cacheControl": "public, max-age=31536000, immutable",
+                "etag": "\"2a5af0859088cf2503309c3dad765bf0\""
+              },
+              {
+                "url": "https://ajfisher.me/static/2eb9988e1628691b1df285d447c79db8/9066b/retail-opportunity-dalle-2024-04-16212738.webp",
+                "method": "GET",
+                "resourceType": "image",
+                "status": 200,
+                "cacheControl": "public, max-age=31536000, immutable",
+                "etag": "\"806d7840e4f4dcb6733c921238afcaa3\""
+              },
+              {
+                "url": "https://ajfisher.me/framework-b010d2c4ae63c5fd42cc.js",
+                "method": "GET",
+                "resourceType": "script",
+                "status": 304,
+                "cacheControl": "public, max-age=0, must-revalidate",
+                "etag": "\"075cfca5bebcc0044b81fa78ce9d16ed\""
+              }
+            ]
+          },
+          {
+            "stepIndex": 2,
+            "step": {
+              "action": "goto",
+              "url": "/2025/11/05/strategy-ai/"
+            },
+            "domMetrics": {
+              "anchorCount": 47,
+              "nonSemanticClickableCount": 0,
+              "url": "https://ajfisher.me/2025/11/05/strategy-ai/",
+              "formCount": 0,
+              "controlCount": 1,
+              "constrainedControlCount": 0,
+              "fauxControlCount": 0,
+              "semanticContainerCount": 11,
+              "labelledControlCount": 0,
+              "roleButtonOrLinkNonNativeCount": 0,
+              "hasClientRouterSignatures": false
+            },
+            "networkEvents": [
+              {
+                "url": "https://ajfisher.me/static/79f493505b35d312acf2a59848b8f2d9/c2596/keyboard.webp",
+                "method": "GET",
+                "resourceType": "image",
+                "status": 200,
+                "cacheControl": "public, max-age=31536000, immutable",
+                "etag": "\"6af42eb76a2e35fc61248cf0a108d126\""
+              },
+              {
+                "url": "https://ajfisher.me/static/463471e6e571faf9789cdeec86cb4c90/9066b/team-meeting.webp",
+                "method": "GET",
+                "resourceType": "image",
+                "status": 200,
+                "cacheControl": "public, max-age=31536000, immutable",
+                "etag": "\"251cd93730305f827ade98f4ed4de7a6\""
+              },
+              {
+                "url": "https://ajfisher.me/static/97ea90792810cf17713e66cf3970f497/02b9f/tag_strategy.webp",
+                "method": "GET",
+                "resourceType": "image",
+                "status": 200,
+                "cacheControl": "public, max-age=31536000, immutable",
+                "etag": "\"d76584adb590bf86a28779379f67c7c4\""
+              },
+              {
+                "url": "https://ajfisher.me/static/42b536ce70b1a2736363f0ada8e40f15/81544/nokia_cheque.webp",
+                "method": "GET",
+                "resourceType": "image",
+                "status": 200,
+                "cacheControl": "public, max-age=31536000, immutable",
+                "etag": "\"c58ab3870c95ecb629374d82d62bfe99\""
+              },
+              {
+                "url": "https://ajfisher.me/static/1d30c0a8880dee28453229b97adcc6cc/35c27/line_chart.webp",
+                "method": "GET",
+                "resourceType": "image",
+                "status": 200,
+                "cacheControl": "public, max-age=31536000, immutable",
+                "etag": "\"f07a926df6e8222a87b2ddf83d0f5305\""
+              },
+              {
+                "url": "https://ajfisher.me/static/18c9f28b44673f242d8c046202656b44/c6127/fortune_cookie.webp",
+                "method": "GET",
+                "resourceType": "image",
+                "status": 200,
+                "cacheControl": "public, max-age=31536000, immutable",
+                "etag": "\"c9723c90471fb4ee22b35b7d23cb82f0\""
+              },
+              {
+                "url": "https://ajfisher.me/static/raleway-v34-latin_latin-ext-900-03e4aeae4f49630ff3854750c2f8e209.woff2",
+                "method": "GET",
+                "resourceType": "font",
+                "status": 200,
+                "cacheControl": "public, max-age=31536000, immutable",
+                "etag": "\"3a884683d644d3b7fb105921807a49bf\""
+              },
+              {
+                "url": "https://ajfisher.me/static/rokkitt-v36-latin_latin-ext-regular-4dcd7ad3cfe9319fa7c5635052c1db79.woff2",
+                "method": "GET",
+                "resourceType": "font",
+                "status": 200,
+                "cacheControl": "public, max-age=31536000, immutable",
+                "etag": "\"134bdd73b269253d72e40c9e630fbce4\""
+              },
+              {
+                "url": "https://www.google-analytics.com/analytics.js",
+                "method": "GET",
+                "resourceType": "script",
+                "status": 200,
+                "cacheControl": "public, max-age=7200"
+              },
+              {
+                "url": "https://ajfisher.me/webpack-runtime-e45feeb8734c0ec1932d.js",
+                "method": "GET",
+                "resourceType": "script",
+                "status": 200,
+                "cacheControl": "public, max-age=31536000, immutable",
+                "etag": "W/\"4ca96620046e65f9719827389012aac1\""
+              },
+              {
+                "url": "https://ajfisher.me/app-74083efc89f2470f4725.js",
+                "method": "GET",
+                "resourceType": "script",
+                "status": 200,
+                "cacheControl": "public, max-age=31536000, immutable",
+                "etag": "W/\"2b03cc2ff9169576a69b68afd0b44bfc\""
+              },
+              {
+                "url": "https://ajfisher.me/2025/11/05/strategy-ai/",
+                "method": "GET",
+                "resourceType": "document",
+                "status": 200,
+                "cacheControl": "public, max-age=0, must-revalidate",
+                "etag": "W/\"81f7089496b48369018a4f930abd740a\""
+              },
+              {
+                "url": "https://ajfisher.me/static/2eb9988e1628691b1df285d447c79db8/9066b/retail-opportunity-dalle-2024-04-16212738.webp",
+                "method": "GET",
+                "resourceType": "image",
+                "status": 200,
+                "cacheControl": "public, max-age=31536000, immutable",
+                "etag": "\"806d7840e4f4dcb6733c921238afcaa3\""
+              },
+              {
+                "url": "https://ajfisher.me/static/622649536f3ce952e04cb767bb81844b/9066b/travel_list.webp",
+                "method": "GET",
+                "resourceType": "image",
+                "status": 200,
+                "cacheControl": "public, max-age=31536000, immutable",
+                "etag": "\"2a5af0859088cf2503309c3dad765bf0\""
+              },
+              {
+                "url": "https://ajfisher.me/framework-b010d2c4ae63c5fd42cc.js",
+                "method": "GET",
+                "resourceType": "script",
+                "status": 304,
+                "cacheControl": "public, max-age=0, must-revalidate",
+                "etag": "\"075cfca5bebcc0044b81fa78ce9d16ed\""
+              }
+            ]
+          }
+        ],
+        "domAggregates": {
+          "anchorCount": 153,
+          "nonSemanticClickableCount": 0,
+          "url": "https://ajfisher.me/2025/11/05/strategy-ai/",
+          "formCount": 0,
+          "controlCount": 3,
+          "constrainedControlCount": 0,
+          "fauxControlCount": 0,
+          "semanticContainerCount": 31,
+          "labelledControlCount": 0,
+          "roleButtonOrLinkNonNativeCount": 0,
+          "hasClientRouterSignatures": false,
+          "pagesSeen": 3
+        },
+        "networkSummary": {
+          "xhrCount": 2,
+          "uncachedXhrCount": 0,
+          "duplicateRequestCount": 0
+        },
+        "clickStepCount": 0,
+        "documentNavigationCount": 3,
+        "noJsStepResults": [
+          {
+            "stepIndex": 0,
+            "outcome": "success"
+          },
+          {
+            "stepIndex": 1,
+            "outcome": "success"
+          },
+          {
+            "stepIndex": 2,
+            "outcome": "success"
+          }
+        ]
+      }
+    },
+    {
+      "name": "amazon-search-results",
+      "description": "Home to a wireless mouse search results page",
+      "baseUrl": "https://www.amazon.com/",
+      "jsEnabled": true,
+      "runNoJs": true,
+      "scores": {
+        "routing": 100,
+        "forms": 40,
+        "dataFetch": 80,
+        "progressiveEnhancement": 50,
+        "semanticsA11y": 0,
+        "overall": 61
+      },
+      "rawMetrics": {
+        "stepMetrics": [
+          {
+            "stepIndex": 0,
+            "step": {
+              "action": "goto",
+              "url": "/"
+            },
+            "domMetrics": {
+              "anchorCount": 2,
+              "nonSemanticClickableCount": 0,
+              "url": "https://www.amazon.com/",
+              "formCount": 1,
+              "controlCount": 4,
+              "constrainedControlCount": 0,
+              "fauxControlCount": 0,
+              "semanticContainerCount": 0,
+              "labelledControlCount": 0,
+              "roleButtonOrLinkNonNativeCount": 0,
+              "hasClientRouterSignatures": false
+            },
+            "networkEvents": [
+              {
+                "url": "https://www.amazon.com/",
+                "method": "GET",
+                "resourceType": "document",
+                "status": 200
+              },
+              {
+                "url": "https://images-na.ssl-images-amazon.com/images/G/01/AUIClients/AmazonUI-3c913031596ca78a3768f4e934b1cc02ce238101.secure.min._V1_.css",
+                "method": "GET",
+                "resourceType": "stylesheet",
+                "status": 200,
+                "cacheControl": "max-age=630720000,public"
+              },
+              {
+                "url": "https://images-na.ssl-images-amazon.com/images/G/01/csminstrumentation/csm-captcha-instrumentation.min.js",
+                "method": "GET",
+                "resourceType": "script",
+                "status": 200,
+                "cacheControl": "max-age=86400,public"
+              },
+              {
+                "url": "https://images-na.ssl-images-amazon.com/images/G/01/csminstrumentation/rd-script-6d68177fa6061598e9509dc4b5bdd08d.js",
+                "method": "GET",
+                "resourceType": "script",
+                "status": 200,
+                "cacheControl": "max-age=86400,public"
+              },
+              {
+                "url": "https://images-na.ssl-images-amazon.com/images/G/01/amazonui/sprites/aui_sprite_0007-1x._V383827579_.png",
+                "method": "GET",
+                "resourceType": "image",
+                "status": 200,
+                "cacheControl": "max-age=630720000,public"
+              },
+              {
+                "url": "https://images-na.ssl-images-amazon.com/images/G/01/csminstrumentation/ue-base-1c399ad9886cab69575e1e5ee15c61a1._V313498596_.js",
+                "method": "GET",
+                "resourceType": "script",
+                "status": 200,
+                "cacheControl": "max-age=630720000,public"
+              },
+              {
+                "url": "https://images-na.ssl-images-amazon.com/images/G/01/AUIClients/ClientSideMetricsAUIJavascript-51171fbdd28e1a7a61e922e8f0272af8bc74d37b.secure.variant-desktop-session-snapshot-keypress.min._V2_.js",
+                "method": "GET",
+                "resourceType": "script",
+                "status": 200,
+                "cacheControl": "max-age=630720000,public"
+              },
+              {
+                "url": "https://fls-na.amazon.com/1/oc-csi/1/OP/requestId=ABXZDRVT41NBG2649MVC&js=1",
+                "method": "GET",
+                "resourceType": "image",
+                "status": 200
+              }
+            ]
+          },
+          {
+            "stepIndex": 1,
+            "step": {
+              "action": "goto",
+              "url": "/s?k=wireless+mouse"
+            },
+            "domMetrics": {
+              "anchorCount": 3,
+              "nonSemanticClickableCount": 0,
+              "url": "https://www.amazon.com/s?k=wireless+mouse",
+              "formCount": 1,
+              "controlCount": 3,
+              "constrainedControlCount": 0,
+              "fauxControlCount": 0,
+              "semanticContainerCount": 0,
+              "labelledControlCount": 0,
+              "roleButtonOrLinkNonNativeCount": 0,
+              "hasClientRouterSignatures": false
+            },
+            "networkEvents": [
+              {
+                "url": "https://www.amazon.com/s?k=wireless+mouse",
+                "method": "GET",
+                "resourceType": "document",
+                "status": 503,
+                "etag": "\"a6f-642b31cbd2140-gzip\""
+              },
+              {
+                "url": "https://images-na.ssl-images-amazon.com/images/G/01/error/logo._TTD_.png",
+                "method": "GET",
+                "resourceType": "image",
+                "status": 200,
+                "cacheControl": "max-age=86400,public"
+              },
+              {
+                "url": "https://images-na.ssl-images-amazon.com/images/G/01/error/37._TTD_.jpg",
+                "method": "GET",
+                "resourceType": "image",
+                "status": 200,
+                "cacheControl": "max-age=86400,public"
+              },
+              {
+                "url": "https://images-na.ssl-images-amazon.com/images/G/01/error/500_503.png",
+                "method": "GET",
+                "resourceType": "image",
+                "status": 200,
+                "cacheControl": "max-age=86400,public"
+              }
+            ]
+          }
+        ],
+        "domAggregates": {
+          "anchorCount": 5,
+          "nonSemanticClickableCount": 0,
+          "url": "https://www.amazon.com/s?k=wireless+mouse",
+          "formCount": 2,
+          "controlCount": 7,
+          "constrainedControlCount": 0,
+          "fauxControlCount": 0,
+          "semanticContainerCount": 0,
+          "labelledControlCount": 0,
+          "roleButtonOrLinkNonNativeCount": 0,
+          "hasClientRouterSignatures": false,
+          "pagesSeen": 2
+        },
+        "networkSummary": {
+          "xhrCount": 0,
+          "uncachedXhrCount": 0,
+          "duplicateRequestCount": 0
+        },
+        "clickStepCount": 0,
+        "documentNavigationCount": 2,
+        "noJsStepResults": [
+          {
+            "stepIndex": 0,
+            "outcome": "success"
+          },
+          {
+            "stepIndex": 1,
+            "outcome": "failed-navigation"
+          }
+        ]
+      }
+    },
+    {
+      "name": "wikipedia-browser-topic",
+      "description": "Main page to browser-related article and accessibility topic",
+      "baseUrl": "https://en.wikipedia.org/",
+      "jsEnabled": true,
+      "runNoJs": true,
+      "scores": {
+        "routing": 100,
+        "forms": 40,
+        "dataFetch": 80,
+        "progressiveEnhancement": 100,
+        "semanticsA11y": 54,
+        "overall": 76
+      },
+      "rawMetrics": {
+        "stepMetrics": [
+          {
+            "stepIndex": 0,
+            "step": {
+              "action": "goto",
+              "url": "/wiki/Main_Page"
+            },
+            "domMetrics": {
+              "anchorCount": 639,
+              "nonSemanticClickableCount": 0,
+              "url": "https://en.wikipedia.org/wiki/Main_Page",
+              "formCount": 2,
+              "controlCount": 20,
+              "constrainedControlCount": 0,
+              "fauxControlCount": 0,
+              "semanticContainerCount": 13,
+              "labelledControlCount": 7,
+              "roleButtonOrLinkNonNativeCount": 0,
+              "hasClientRouterSignatures": false
+            },
+            "networkEvents": [
+              {
+                "url": "https://en.wikipedia.org/wiki/Main_Page",
+                "method": "GET",
+                "resourceType": "document",
+                "status": 200,
+                "cacheControl": "private, s-maxage=0, max-age=0, must-revalidate, no-transform"
+              },
+              {
+                "url": "https://en.wikipedia.org/w/load.php?lang=en&modules=ext.tmh.player.styles%7Cext.uls.interlanguage%7Cext.visualEditor.desktopArticleTarget.noscript%7Cext.wikimediamessages.styles%7Cskins.vector.icons%2Cstyles%7Cskins.vector.search.codex.styles%7Cwikibase.client.init&only=styles&skin=vector-2022",
+                "method": "GET",
+                "resourceType": "stylesheet",
+                "status": 200,
+                "cacheControl": "public, max-age=300, s-maxage=300, stale-while-revalidate=60",
+                "etag": "W/\"308z8\""
+              },
+              {
+                "url": "https://en.wikipedia.org/w/load.php?lang=en&modules=site.styles&only=styles&skin=vector-2022",
+                "method": "GET",
+                "resourceType": "stylesheet",
+                "status": 200,
+                "cacheControl": "public, max-age=300, s-maxage=300, stale-while-revalidate=60",
+                "etag": "W/\"1ws5y\""
+              },
+              {
+                "url": "https://en.wikipedia.org/static/images/mobile/copyright/wikipedia-wordmark-en.svg",
+                "method": "GET",
+                "resourceType": "image",
+                "status": 200,
+                "cacheControl": "max-age=31536000",
+                "etag": "W/\"181a-6426794eeb300\""
+              },
+              {
+                "url": "https://en.wikipedia.org/static/images/mobile/copyright/wikipedia-tagline-en.svg",
+                "method": "GET",
+                "resourceType": "image",
+                "status": 200,
+                "cacheControl": "max-age=31536000",
+                "etag": "W/\"24e4-6426794eeb300\""
+              },
+              {
+                "url": "https://en.wikipedia.org/w/load.php?modules=skins.vector.icons&image=menu&format=original&lang=en&skin=vector-2022&version=14wfh",
+                "method": "GET",
+                "resourceType": "image",
+                "status": 200,
+                "cacheControl": "public, max-age=2592000, s-maxage=2592000, stale-while-revalidate=60",
+                "etag": "W/\"14wfh\""
+              },
+              {
+                "url": "https://en.wikipedia.org/static/images/icons/wikipedia.png",
+                "method": "GET",
+                "resourceType": "image",
+                "status": 200,
+                "cacheControl": "max-age=31536000",
+                "etag": "\"3484-6426794eeb300\""
+              },
+              {
+                "url": "https://en.wikipedia.org/w/load.php?modules=skins.vector.icons&image=language&variant=progressive&format=original&lang=en&skin=vector-2022&version=14wfh",
+                "method": "GET",
+                "resourceType": "image",
+                "status": 200,
+                "cacheControl": "public, max-age=2592000, s-maxage=2592000, stale-while-revalidate=60",
+                "etag": "W/\"14wfh\""
+              },
+              {
+                "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Herman_Melville_by_Joseph_O_Eaton.jpg/250px-Herman_Melville_by_Joseph_O_Eaton.jpg",
+                "method": "GET",
+                "resourceType": "image",
+                "status": 200,
+                "etag": "c811f177df7b2edb505521e04c9a17bb"
+              },
+              {
+                "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/MediaWiki-2020-icon.svg/40px-MediaWiki-2020-icon.svg.png",
+                "method": "GET",
+                "resourceType": "image",
+                "status": 200,
+                "etag": "022961d8c30ff7fce383e8b2b721d2ac"
+              },
+              {
+                "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Wikimedia_Community_Logo.svg/40px-Wikimedia_Community_Logo.svg.png",
+                "method": "GET",
+                "resourceType": "image",
+                "status": 200,
+                "etag": "6f4410dff4192c8a4defcff224c161d5"
+              },
+              {
+                "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Wikibooks-logo.svg/40px-Wikibooks-logo.svg.png",
+                "method": "GET",
+                "resourceType": "image",
+                "status": 200,
+                "etag": "4b936519945b50541307f5bcab99d229"
+              },
+              {
+                "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Oliver_Mark_-_Otto_Habsburg-Lothringen%2C_P%C3%B6cking_2006.jpg/500px-Oliver_Mark_-_Otto_Habsburg-Lothringen%2C_P%C3%B6cking_2006.jpg",
+                "method": "GET",
+                "resourceType": "image",
+                "status": 200,
+                "etag": "7bfd89d8b489383798f280b52f7934aa"
+              },
+              {
+                "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Sheikh_Hasina_Addresses_Awami_League_Leaders_Ganabhaban_2024-05-17_%28cropped%29.jpg/250px-Sheikh_Hasina_Addresses_Awami_League_Leaders_Ganabhaban_2024-05-17_%28cropped%29.jpg",
+                "method": "GET",
+                "resourceType": "image",
+                "status": 200,
+                "etag": "6abd5b15ccb177271d92fda5762ee27a"
+              },
+              {
+                "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Wikinews-logo.svg/60px-Wikinews-logo.svg.png",
+                "method": "GET",
+                "resourceType": "image",
+                "status": 200,
+                "etag": "f7b5e0f59a8913fd64e7b617db7febba"
+              },
+              {
+                "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Wikidata-logo.svg/60px-Wikidata-logo.svg.png",
+                "method": "GET",
+                "resourceType": "image",
+                "status": 200,
+                "etag": "5d6e4deb942c3df355de88d07e9f9b44"
+              },
+              {
+                "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Wikisource-logo.svg/40px-Wikisource-logo.svg.png",
+                "method": "GET",
+                "resourceType": "image",
+                "status": 200,
+                "etag": "dea43f1fbf745c8ea6f655f3bf51d28f"
+              },
+              {
+                "url": "https://en.wikipedia.org/w/load.php?lang=en&modules=startup&only=scripts&raw=1&skin=vector-2022",
+                "method": "GET",
+                "resourceType": "script",
+                "status": 200,
+                "cacheControl": "public, max-age=300, s-maxage=300, stale-while-revalidate=60",
+                "etag": "W/\"1avp4\""
+              },
+              {
+                "url": "https://upload.wikimedia.org/wikipedia/en/thumb/4/4a/Commons-logo.svg/40px-Commons-logo.svg.png",
+                "method": "GET",
+                "resourceType": "image",
+                "status": 200,
+                "etag": "a0e69d572320c24f79d644857b8b8cee"
+              },
+              {
+                "url": "https://en.wikipedia.org/static/images/footer/wikimedia-button.svg",
+                "method": "GET",
+                "resourceType": "image",
+                "status": 200,
+                "cacheControl": "max-age=31536000",
+                "etag": "W/\"cb8-6426794eeb300\""
+              },
+              {
+                "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Wikiquote-logo.svg/40px-Wikiquote-logo.svg.png",
+                "method": "GET",
+                "resourceType": "image",
+                "status": 200,
+                "etag": "5b4c204c63688e491d3721c72fc535fc"
+              },
+              {
+                "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Color_photograph_of_judges%27_bench_at_IMT.jpg/250px-Color_photograph_of_judges%27_bench_at_IMT.jpg",
+                "method": "GET",
+                "resourceType": "image",
+                "status": 200,
+                "etag": "0a1904f168b2f2946b3c3e404a7ea70d"
+              },
+              {
+                "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Wikiversity_logo_2017.svg/60px-Wikiversity_logo_2017.svg.png",
+                "method": "GET",
+                "resourceType": "image",
+                "status": 200,
+                "etag": "1ec31b643604533cd0c5609d0d72e806"
+              },
+              {
+                "url": "https://en.wikipedia.org/w/resources/assets/poweredby_mediawiki.svg",
+                "method": "GET",
+                "resourceType": "image",
+                "status": 200,
+                "cacheControl": "public, s-maxage=31536000, max-age=31536000, must-revalidate"
+              },
+              {
+                "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/Wikispecies-logo.svg/40px-Wikispecies-logo.svg.png",
+                "method": "GET",
+                "resourceType": "image",
+                "status": 200,
+                "etag": "8ad27ad63a2a86ba0587ba3a59c8b3c7"
+              },
+              {
+                "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Wiktionary-logo.svg/60px-Wiktionary-logo.svg.png",
+                "method": "GET",
+                "resourceType": "image",
+                "status": 200,
+                "etag": "8db5c6b6fe63659a75b755c3c6cb13ca"
+              },
+              {
+                "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Wikivoyage-Logo-v3-icon.svg/40px-Wikivoyage-Logo-v3-icon.svg.png",
+                "method": "GET",
+                "resourceType": "image",
+                "status": 200,
+                "etag": "6cb0dc8e14557609a7f8675123f54e21"
+              },
+              {
+                "url": "https://upload.wikimedia.org/wikipedia/en/thumb/0/06/Wiktionary-logo-v2.svg/40px-Wiktionary-logo-v2.svg.png",
+                "method": "GET",
+                "resourceType": "image",
+                "status": 200,
+                "etag": "3d10a72de07c2968218fd41131de9bc1"
+              },
+              {
+                "url": "https://en.wikipedia.org/w/load.php?lang=en&modules=ext.gadget.ReferenceTooltips%2Cswitcher&skin=vector-2022&version=188j7",
+                "method": "GET",
+                "resourceType": "script",
+                "status": 200,
+                "cacheControl": "public, max-age=2592000, s-maxage=2592000, stale-while-revalidate=60",
+                "etag": "W/\"188j7\""
+              },
+              {
+                "url": "https://en.wikipedia.org/w/load.php?lang=en&modules=ext.visualEditor.core.utils.parsing%7Cext.visualEditor.desktopArticleTarget.init%7Cext.visualEditor.progressBarWidget%2CsupportCheck%2CtargetLoader%2CtempWikitextEditorWidget%2Ctrack%2Cve&skin=vector-2022&version=1d0w3",
+                "method": "GET",
+                "resourceType": "script",
+                "status": 200,
+                "cacheControl": "public, max-age=2592000, s-maxage=2592000, stale-while-revalidate=60",
+                "etag": "W/\"1d0w3\""
+              },
+              {
+                "url": "https://en.wikipedia.org/w/load.php?lang=en&modules=ext.centralNotice.bannerHistoryLogger%2CchoiceData%2Cdisplay%2CgeoIP%2CimpressionDiet%2CkvStore%2ClargeBannerLimit%2ClegacySupport%2CstartUp%7Cext.centralauth.centralautologin%7Cext.checkUser.clientHints%7Cext.cx.eventlogging.campaigns%7Cext.echo.centralauth%7Cext.eventLogging%2CnavigationTiming%2Cpopups%2CwikimediaEvents%2CxLab%7Cext.eventLogging.metricsPlatform%7Cext.growthExperiments.SuggestedEditSession%7Cext.tmh.OgvJsSupport%2Cplayer%7Cext.uls.interface%2Cpreferences%2Cwebfonts%7Cext.urlShortener.toolbar%7Cext.wikimediaEvents.xLab%7Cjquery%2Coojs%2Csite%7Cjquery.client%2CtextSelection%7Cmediawiki.String%2CTitle%2Capi%2Cbase%2Ccldr%2Ccookie%2Cexperiments%2CjqueryMsg%2Clanguage%2Crouter%2Cstorage%2Cuser%2Cutil%2CvisibleTimeout%7Cmediawiki.editfont.styles%7Cmediawiki.libs.pluralruleparser%7Cmediawiki.page.ready%7Cmediawiki.page.watch.ajax%7Cmmv.bootstrap%2Ccodex%7Cskins.vector.clientPreferences%2Cjs%7Cskins.vector.icons.js%7Cwikibase.client.vector-2022&skin=vector-2022&version=1rnb1",
+                "method": "GET",
+                "resourceType": "script",
+                "status": 200,
+                "cacheControl": "public, max-age=2592000, s-maxage=2592000, stale-while-revalidate=60",
+                "etag": "W/\"1rnb1\""
+              },
+              {
+                "url": "https://en.wikipedia.org/w/load.php?lang=en&modules=ext.centralauth.ForeignApi%7Cext.cite.referencePreviews%7Cext.math.popup%7Cext.popups.main%7Cmediawiki.ForeignApi%7Cmediawiki.ForeignApi.core&skin=vector-2022&version=1s9wu",
+                "method": "GET",
+                "resourceType": "script",
+                "status": 200,
+                "cacheControl": "public, max-age=2592000, s-maxage=2592000, stale-while-revalidate=60",
+                "etag": "W/\"1s9wu\""
+              },
+              {
+                "url": "https://en.wikipedia.org/w/load.php?lang=en&modules=mw.config.values.wbCurrentSiteDetails%2CwbRepo%7Coojs-ui.styles.icons-editing-core&skin=vector-2022&version=14pha",
+                "method": "GET",
+                "resourceType": "script",
+                "status": 200,
+                "cacheControl": "public, max-age=2592000, s-maxage=2592000, stale-while-revalidate=60",
+                "etag": "W/\"14pha\""
+              }
+            ]
+          },
+          {
+            "stepIndex": 1,
+            "step": {
+              "action": "goto",
+              "url": "/wiki/Web_browser"
+            },
+            "domMetrics": {
+              "anchorCount": 1145,
+              "nonSemanticClickableCount": 0,
+              "url": "https://en.wikipedia.org/wiki/Web_browser",
+              "formCount": 5,
+              "controlCount": 47,
+              "constrainedControlCount": 0,
+              "fauxControlCount": 0,
+              "semanticContainerCount": 16,
+              "labelledControlCount": 17,
+              "roleButtonOrLinkNonNativeCount": 0,
+              "hasClientRouterSignatures": false
+            },
+            "networkEvents": [
+              {
+                "url": "https://en.wikipedia.org/wiki/Special:CentralAutoLogin/start?useformat=desktop&type=script&usesul3=1",
+                "method": "GET",
+                "resourceType": "script",
+                "status": 302,
+                "cacheControl": "private, s-maxage=0, max-age=0, must-revalidate, no-transform"
+              },
+              {
+                "url": "https://en.wikipedia.org/w/load.php?lang=en&modules=startup&only=scripts&raw=1&skin=vector-2022",
+                "method": "GET",
+                "resourceType": "script",
+                "status": 200,
+                "cacheControl": "public, max-age=300, s-maxage=300, stale-while-revalidate=60",
+                "etag": "W/\"1avp4\""
+              },
+              {
+                "url": "https://en.wikipedia.org/w/load.php?lang=en&modules=site.styles&only=styles&skin=vector-2022",
+                "method": "GET",
+                "resourceType": "stylesheet",
+                "status": 200,
+                "cacheControl": "public, max-age=300, s-maxage=300, stale-while-revalidate=60",
+                "etag": "W/\"1ws5y\""
+              },
+              {
+                "url": "https://en.wikipedia.org/static/images/icons/wikipedia.png",
+                "method": "GET",
+                "resourceType": "image",
+                "status": 200,
+                "cacheControl": "max-age=31536000",
+                "etag": "\"3484-6426794eeb300\""
+              },
+              {
+                "url": "https://en.wikipedia.org/static/images/mobile/copyright/wikipedia-wordmark-en.svg",
+                "method": "GET",
+                "resourceType": "image",
+                "status": 200,
+                "cacheControl": "max-age=31536000",
+                "etag": "W/\"181a-6426794eeb300\""
+              },
+              {
+                "url": "https://en.wikipedia.org/static/images/mobile/copyright/wikipedia-tagline-en.svg",
+                "method": "GET",
+                "resourceType": "image",
+                "status": 200,
+                "cacheControl": "max-age=31536000",
+                "etag": "W/\"24e4-6426794eeb300\""
+              },
+              {
+                "url": "https://en.wikipedia.org/wiki/Web_browser",
+                "method": "GET",
+                "resourceType": "document",
+                "status": 200,
+                "cacheControl": "private, s-maxage=0, max-age=0, must-revalidate, no-transform"
+              },
+              {
+                "url": "https://en.wikipedia.org/w/load.php?lang=en&modules=ext.gadget.ReferenceTooltips%2Cswitcher&skin=vector-2022&version=188j7",
+                "method": "GET",
+                "resourceType": "script",
+                "status": 200,
+                "cacheControl": "public, max-age=2592000, s-maxage=2592000, stale-while-revalidate=60",
+                "etag": "W/\"188j7\""
+              },
+              {
+                "url": "https://en.wikipedia.org/w/load.php?lang=en&modules=ext.visualEditor.core.utils.parsing%7Cext.visualEditor.desktopArticleTarget.init%7Cext.visualEditor.progressBarWidget%2CsupportCheck%2CtargetLoader%2CtempWikitextEditorWidget%2Ctrack%2Cve&skin=vector-2022&version=1d0w3",
+                "method": "GET",
+                "resourceType": "script",
+                "status": 200,
+                "cacheControl": "public, max-age=2592000, s-maxage=2592000, stale-while-revalidate=60",
+                "etag": "W/\"1d0w3\""
+              },
+              {
+                "url": "https://en.wikipedia.org/w/load.php?lang=en&modules=ext.cite.styles%7Cext.tmh.player.styles%7Cext.uls.interlanguage%7Cext.visualEditor.desktopArticleTarget.noscript%7Cext.wikimediamessages.styles%7Cjquery.makeCollapsible.styles%7Cjquery.tablesorter.styles%7Cskins.vector.icons%2Cstyles%7Cskins.vector.search.codex.styles%7Cwikibase.client.init&only=styles&skin=vector-2022",
+                "method": "GET",
+                "resourceType": "stylesheet",
+                "status": 200,
+                "cacheControl": "public, max-age=300, s-maxage=300, stale-while-revalidate=60",
+                "etag": "W/\"16x2j\""
+              },
+              {
+                "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Crystal_Clear_app_linneighborhood.svg/40px-Crystal_Clear_app_linneighborhood.svg.png",
+                "method": "GET",
+                "resourceType": "image",
+                "status": 200,
+                "etag": "8b9b0fe1f0efc39f9ad14a5b19f1f393"
+              },
+              {
+                "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Wikiversity_logo_2017.svg/40px-Wikiversity_logo_2017.svg.png",
+                "method": "GET",
+                "resourceType": "image",
+                "status": 200,
+                "etag": "9008e4e4a1f4b72341db78d3e1144fa3"
+              },
+              {
+                "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Web_browser_demo.webm/250px--Web_browser_demo.webm.jpg",
+                "method": "GET",
+                "resourceType": "image",
+                "status": 200,
+                "etag": "3930e42e30d9e66fef0e2f880fa273d5"
+              },
+              {
+                "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Safari_15.png/250px-Safari_15.png",
+                "method": "GET",
+                "resourceType": "image",
+                "status": 200,
+                "etag": "d02be03dc91824fff69dd5bc9a28031b"
+              },
+              {
+                "url": "https://upload.wikimedia.org/wikipedia/en/thumb/1/1b/Semi-protection-shackle.svg/20px-Semi-protection-shackle.svg.png",
+                "method": "GET",
+                "resourceType": "image",
+                "status": 200,
+                "etag": "909300838d8bfdefcc20f451be2cb930"
+              },
+              {
+                "url": "https://en.wikipedia.org/w/load.php?modules=skins.vector.icons&image=menu&format=original&lang=en&skin=vector-2022&version=14wfh",
+                "method": "GET",
+                "resourceType": "image",
+                "status": 200,
+                "cacheControl": "public, max-age=2592000, s-maxage=2592000, stale-while-revalidate=60",
+                "etag": "W/\"14wfh\""
+              },
+              {
+                "url": "https://en.wikipedia.org/w/load.php?modules=skins.vector.icons&image=language&variant=progressive&format=original&lang=en&skin=vector-2022&version=14wfh",
+                "method": "GET",
+                "resourceType": "image",
+                "status": 200,
+                "cacheControl": "public, max-age=2592000, s-maxage=2592000, stale-while-revalidate=60",
+                "etag": "W/\"14wfh\""
+              },
+              {
+                "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Chromium_%28web_browser%29.png/250px-Chromium_%28web_browser%29.png",
+                "method": "GET",
+                "resourceType": "image",
+                "status": 200,
+                "etag": "bb9dff4e375f93d65198a3a4f2f8bfdc"
+              },
+              {
+                "url": "https://upload.wikimedia.org/wikipedia/en/thumb/8/8a/OOjs_UI_icon_edit-ltr-progressive.svg/20px-OOjs_UI_icon_edit-ltr-progressive.svg.png",
+                "method": "GET",
+                "resourceType": "image",
+                "status": 200,
+                "etag": "cf81eb1aacce9e005fa2fc4e814cefc7"
+              },
+              {
+                "url": "https://upload.wikimedia.org/wikipedia/en/thumb/4/4a/Commons-logo.svg/20px-Commons-logo.svg.png",
+                "method": "GET",
+                "resourceType": "image",
+                "status": 200,
+                "etag": "8d647e49cc8abde5179893109546b0ac"
+              },
+              {
+                "url": "https://en.wikipedia.org/w/skins/Vector/resources/skins.vector.styles/images/arrow-down-progressive.svg?5cd6d",
+                "method": "GET",
+                "resourceType": "image",
+                "status": 200,
+                "cacheControl": "public, s-maxage=31536000, max-age=31536000, immutable"
+              },
+              {
+                "url": "https://en.wikipedia.org/w/load.php?lang=en&modules=ext.centralNotice.bannerHistoryLogger%2CchoiceData%2Cdisplay%2CgeoIP%2CimpressionDiet%2CkvStore%2ClargeBannerLimit%2ClegacySupport%2CstartUp%7Cext.centralauth.ForeignApi%2Ccentralautologin%7Cext.checkUser.clientHints%7Cext.cite.ux-enhancements%7Cext.cx.eventlogging.campaigns%7Cext.cx.model%7Cext.cx.uls.quick.actions%7Cext.echo.centralauth%7Cext.eventLogging%2CnavigationTiming%2Cpopups%2CwikimediaEvents%2CxLab%7Cext.eventLogging.metricsPlatform%7Cext.growthExperiments.SuggestedEditSession%7Cext.tmh.OgvJsSupport%2Cplayer%7Cext.uls.common%2Cinterface%2Cpreferences%2Cwebfonts%7Cext.urlShortener.toolbar%7Cext.wikimediaEvents.xLab%7Cjquery%2Coojs%2Csite%7Cjquery.client%2CmakeCollapsible%2Ctablesorter%2CtextSelection%7Cjquery.uls.data%7Cmediawiki.ForeignApi%2CString%2CTitle%2Capi%2Cbase%2Ccldr%2Ccookie%2Cexperiments%2CjqueryMsg%2Clanguage%2Crouter%2Cstorage%2Ctoc%2Cuser%2Cutil%2CvisibleTimeout%7Cmediawiki.ForeignApi.core%7Cmediawiki.editfont.styles%7Cmediawiki.language.months%7Cmediawiki.libs.pluralruleparser%7Cmediawiki.page.media%2Cready%7Cmediawiki.page.watch.ajax%7Cmmv.bootstrap%2Ccodex%7Cmw.cx.SiteMapper%7Cskins.vector.clientPreferences%2Cjs%7Cskins.vector.icons.js%7Cwikibase.client.vector-2022&skin=vector-2022&version=1nx57",
+                "method": "GET",
+                "resourceType": "script",
+                "status": 200,
+                "cacheControl": "public, max-age=2592000, s-maxage=2592000, stale-while-revalidate=60",
+                "etag": "W/\"1nx57\""
+              },
+              {
+                "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Wikiversity_logo_2017.svg/60px-Wikiversity_logo_2017.svg.png",
+                "method": "GET",
+                "resourceType": "image",
+                "status": 200,
+                "etag": "1ec31b643604533cd0c5609d0d72e806"
+              },
+              {
+                "url": "https://upload.wikimedia.org/wikipedia/en/thumb/4/4a/Commons-logo.svg/40px-Commons-logo.svg.png",
+                "method": "GET",
+                "resourceType": "image",
+                "status": 200,
+                "etag": "a0e69d572320c24f79d644857b8b8cee"
+              },
+              {
+                "url": "https://en.wikipedia.org/w/resources/src/mediawiki.skinning/images/magnify-clip-ltr.svg?8330e",
+                "method": "GET",
+                "resourceType": "image",
+                "status": 200,
+                "cacheControl": "public, s-maxage=31536000, max-age=31536000, immutable"
+              },
+              {
+                "url": "https://en.wikipedia.org/w/resources/src/jquery.tablesorter.styles/images/sort_both.svg?0e440",
+                "method": "GET",
+                "resourceType": "image",
+                "status": 200,
+                "cacheControl": "public, s-maxage=31536000, max-age=31536000, immutable"
+              },
+              {
+                "url": "https://upload.wikimedia.org/wikipedia/commons/d/d6/Lock-gray-alt-2.svg",
+                "method": "GET",
+                "resourceType": "image",
+                "status": 200,
+                "etag": "W/423bb01c87eb6c81999073a8ecd2b383"
+              },
+              {
+                "url": "https://en.wikipedia.org/w/skins/Vector/resources/skins.vector.styles/images/link-external-small-ltr-progressive.svg?fb64d",
+                "method": "GET",
+                "resourceType": "image",
+                "status": 200,
+                "cacheControl": "public, s-maxage=31536000, max-age=31536000, immutable"
+              },
+              {
+                "url": "https://upload.wikimedia.org/wikipedia/commons/6/65/Lock-green.svg",
+                "method": "GET",
+                "resourceType": "image",
+                "status": 200,
+                "etag": "W/f99d5d66e6ef5fb312ed07842356ca2c"
+              },
+              {
+                "url": "https://en.wikipedia.org/static/images/footer/wikimedia-button.svg",
+                "method": "GET",
+                "resourceType": "image",
+                "status": 200,
+                "cacheControl": "max-age=31536000",
+                "etag": "W/\"cb8-6426794eeb300\""
+              },
+              {
+                "url": "https://en.wikipedia.org/w/resources/assets/poweredby_mediawiki.svg",
+                "method": "GET",
+                "resourceType": "image",
+                "status": 200,
+                "cacheControl": "public, s-maxage=31536000, max-age=31536000, must-revalidate"
+              },
+              {
+                "url": "https://en.wikipedia.org/w/load.php?lang=en&modules=mw.config.values.wbCurrentSiteDetails%2CwbRepo%7Coojs-ui.styles.icons-editing-core&skin=vector-2022&version=14pha",
+                "method": "GET",
+                "resourceType": "script",
+                "status": 200,
+                "cacheControl": "public, max-age=2592000, s-maxage=2592000, stale-while-revalidate=60",
+                "etag": "W/\"14pha\""
+              },
+              {
+                "url": "https://en.wikipedia.org/w/load.php?lang=en&modules=ext.cite.referencePreviews%7Cext.math.popup%7Cext.popups.main&skin=vector-2022&version=n7cp1",
+                "method": "GET",
+                "resourceType": "script",
+                "status": 200,
+                "cacheControl": "public, max-age=2592000, s-maxage=2592000, stale-while-revalidate=60",
+                "etag": "W/\"n7cp1\""
+              },
+              {
+                "url": "https://en.wikipedia.org/wiki/Special:CentralAutoLogin/start?useformat=desktop&type=script&usesul3=1",
+                "method": "GET",
+                "resourceType": "script",
+                "status": 302,
+                "cacheControl": "private, s-maxage=0, max-age=0, must-revalidate, no-transform"
+              },
+              {
+                "url": "https://en.wikipedia.org/w/load.php?modules=skins.vector.icons.js&image=article&format=original&lang=en&skin=vector-2022&version=14snr",
+                "method": "GET",
+                "resourceType": "image",
+                "status": 200,
+                "cacheControl": "public, max-age=2592000, s-maxage=2592000, stale-while-revalidate=60",
+                "etag": "W/\"14snr\""
+              },
+              {
+                "url": "https://en.wikipedia.org/w/load.php?modules=skins.vector.icons.js&image=history&format=original&lang=en&skin=vector-2022&version=14snr",
+                "method": "GET",
+                "resourceType": "image",
+                "status": 200,
+                "cacheControl": "public, max-age=2592000, s-maxage=2592000, stale-while-revalidate=60",
+                "etag": "W/\"14snr\""
+              },
+              {
+                "url": "https://en.wikipedia.org/w/load.php?modules=skins.vector.icons&image=search&format=original&lang=en&skin=vector-2022&version=14wfh",
+                "method": "GET",
+                "resourceType": "image",
+                "status": 200,
+                "cacheControl": "public, max-age=2592000, s-maxage=2592000, stale-while-revalidate=60",
+                "etag": "W/\"14wfh\""
+              },
+              {
+                "url": "https://en.wikipedia.org/w/load.php?modules=skins.vector.icons.js&image=speechBubbles&format=original&lang=en&skin=vector-2022&version=14snr",
+                "method": "GET",
+                "resourceType": "image",
+                "status": 200,
+                "cacheControl": "public, max-age=2592000, s-maxage=2592000, stale-while-revalidate=60",
+                "etag": "W/\"14snr\""
+              },
+              {
+                "url": "https://meta.wikimedia.org/w/index.php?title=Special:BannerLoader&campaign=Wikipedia+Asian+Month+2025+Global&banner=wikipedia_asian_month_2025&uselang=en&debug=false",
+                "method": "GET",
+                "resourceType": "script",
+                "status": 200,
+                "cacheControl": "private, s-maxage=0, max-age=0, must-revalidate, no-transform"
+              },
+              {
+                "url": "https://en.wikipedia.org/w/load.php?modules=skins.vector.icons.js&image=wikiText&format=original&lang=en&skin=vector-2022&version=14snr",
+                "method": "GET",
+                "resourceType": "image",
+                "status": 200,
+                "cacheControl": "public, max-age=2592000, s-maxage=2592000, stale-while-revalidate=60",
+                "etag": "W/\"14snr\""
+              },
+              {
+                "url": "https://en.wikipedia.org/w/load.php?modules=skins.vector.icons.js&image=editLock&format=original&lang=en&skin=vector-2022&version=14snr",
+                "method": "GET",
+                "resourceType": "image",
+                "status": 200,
+                "cacheControl": "public, max-age=2592000, s-maxage=2592000, stale-while-revalidate=60",
+                "etag": "W/\"14snr\""
+              },
+              {
+                "url": "https://en.wikipedia.org/w/load.php?modules=skins.vector.icons.js&image=edit&format=original&lang=en&skin=vector-2022&version=14snr",
+                "method": "GET",
+                "resourceType": "image",
+                "status": 200,
+                "cacheControl": "public, max-age=2592000, s-maxage=2592000, stale-while-revalidate=60",
+                "etag": "W/\"14snr\""
+              },
+              {
+                "url": "https://en.wikipedia.org/w/load.php?modules=skins.vector.icons&image=language&format=original&lang=en&skin=vector-2022&version=14wfh",
+                "method": "GET",
+                "resourceType": "image",
+                "status": 200,
+                "cacheControl": "public, max-age=2592000, s-maxage=2592000, stale-while-revalidate=60",
+                "etag": "W/\"14wfh\""
+              },
+              {
+                "url": "https://en.wikipedia.org/w/load.php?modules=skins.vector.icons&image=star&format=original&lang=en&skin=vector-2022&version=14wfh",
+                "method": "GET",
+                "resourceType": "image",
+                "status": 200,
+                "cacheControl": "public, max-age=2592000, s-maxage=2592000, stale-while-revalidate=60",
+                "etag": "W/\"14wfh\""
+              },
+              {
+                "url": "https://en.wikipedia.org/w/load.php?modules=skins.vector.icons.js&image=speechBubbleAdd&variant=progressive&format=original&lang=en&skin=vector-2022&version=14snr",
+                "method": "GET",
+                "resourceType": "image",
+                "status": 200,
+                "cacheControl": "public, max-age=2592000, s-maxage=2592000, stale-while-revalidate=60",
+                "etag": "W/\"14snr\""
+              },
+              {
+                "url": "https://auth.wikimedia.org/metawiki/wiki/Special:CentralAutoLogin/checkLoggedIn?useformat=desktop&wikiid=enwiki&usesul3=1&type=script",
+                "method": "GET",
+                "resourceType": "script",
+                "status": 200,
+                "cacheControl": "s-maxage=1200, must-revalidate, max-age=0"
+              },
+              {
+                "url": "https://upload.wikimedia.org/wikipedia/donate/a/ac/Close_oojs.png",
+                "method": "GET",
+                "resourceType": "image",
+                "status": 200,
+                "etag": "5a9629294e048927618e00a02abe8bab"
+              },
+              {
+                "url": "https://upload.wikimedia.org/wikipedia/commons/7/71/Wikipedia_Asian_Month_Logo.svg",
+                "method": "GET",
+                "resourceType": "image",
+                "status": 200,
+                "etag": "W/daa65ae858728ef91eb73deed1166a5c"
+              }
+            ]
+          },
+          {
+            "stepIndex": 2,
+            "step": {
+              "action": "goto",
+              "url": "/wiki/Web_accessibility"
+            },
+            "domMetrics": {
+              "anchorCount": 867,
+              "nonSemanticClickableCount": 0,
+              "url": "https://en.wikipedia.org/wiki/Web_accessibility",
+              "formCount": 2,
+              "controlCount": 28,
+              "constrainedControlCount": 0,
+              "fauxControlCount": 0,
+              "semanticContainerCount": 16,
+              "labelledControlCount": 9,
+              "roleButtonOrLinkNonNativeCount": 0,
+              "hasClientRouterSignatures": false
+            },
+            "networkEvents": [
+              {
+                "url": "https://en.wikipedia.org/w/load.php?lang=en&modules=startup&only=scripts&raw=1&skin=vector-2022",
+                "method": "GET",
+                "resourceType": "script",
+                "status": 200,
+                "cacheControl": "public, max-age=300, s-maxage=300, stale-while-revalidate=60",
+                "etag": "W/\"1avp4\""
+              },
+              {
+                "url": "https://en.wikipedia.org/w/load.php?lang=en&modules=site.styles&only=styles&skin=vector-2022",
+                "method": "GET",
+                "resourceType": "stylesheet",
+                "status": 200,
+                "cacheControl": "public, max-age=300, s-maxage=300, stale-while-revalidate=60",
+                "etag": "W/\"1ws5y\""
+              },
+              {
+                "url": "https://en.wikipedia.org/static/images/icons/wikipedia.png",
+                "method": "GET",
+                "resourceType": "image",
+                "status": 200,
+                "cacheControl": "max-age=31536000",
+                "etag": "\"3484-6426794eeb300\""
+              },
+              {
+                "url": "https://en.wikipedia.org/static/images/mobile/copyright/wikipedia-wordmark-en.svg",
+                "method": "GET",
+                "resourceType": "image",
+                "status": 200,
+                "cacheControl": "max-age=31536000",
+                "etag": "W/\"181a-6426794eeb300\""
+              },
+              {
+                "url": "https://en.wikipedia.org/static/images/mobile/copyright/wikipedia-tagline-en.svg",
+                "method": "GET",
+                "resourceType": "image",
+                "status": 200,
+                "cacheControl": "max-age=31536000",
+                "etag": "W/\"24e4-6426794eeb300\""
+              },
+              {
+                "url": "https://en.wikipedia.org/wiki/Web_accessibility",
+                "method": "GET",
+                "resourceType": "document",
+                "status": 200,
+                "cacheControl": "private, s-maxage=0, max-age=0, must-revalidate, no-transform"
+              },
+              {
+                "url": "https://en.wikipedia.org/w/load.php?lang=en&modules=ext.gadget.ReferenceTooltips%2Cswitcher&skin=vector-2022&version=188j7",
+                "method": "GET",
+                "resourceType": "script",
+                "status": 200,
+                "cacheControl": "public, max-age=2592000, s-maxage=2592000, stale-while-revalidate=60",
+                "etag": "W/\"188j7\""
+              },
+              {
+                "url": "https://en.wikipedia.org/w/load.php?lang=en&modules=ext.visualEditor.core.utils.parsing%7Cext.visualEditor.desktopArticleTarget.init%7Cext.visualEditor.progressBarWidget%2CsupportCheck%2CtargetLoader%2CtempWikitextEditorWidget%2Ctrack%2Cve&skin=vector-2022&version=1d0w3",
+                "method": "GET",
+                "resourceType": "script",
+                "status": 200,
+                "cacheControl": "public, max-age=2592000, s-maxage=2592000, stale-while-revalidate=60",
+                "etag": "W/\"1d0w3\""
+              },
+              {
+                "url": "https://upload.wikimedia.org/wikipedia/en/thumb/9/96/Symbol_category_class.svg/20px-Symbol_category_class.svg.png",
+                "method": "GET",
+                "resourceType": "image",
+                "status": 200,
+                "etag": "c5fd4238aba79dea2ac2b3fc96d18aa1"
+              },
+              {
+                "url": "https://en.wikipedia.org/w/load.php?lang=en&modules=ext.cite.styles%7Cext.uls.interlanguage%7Cext.visualEditor.desktopArticleTarget.noscript%7Cext.wikimediamessages.styles%7Cjquery.makeCollapsible.styles%7Cskins.vector.icons%2Cstyles%7Cskins.vector.search.codex.styles%7Cwikibase.client.init&only=styles&skin=vector-2022",
+                "method": "GET",
+                "resourceType": "stylesheet",
+                "status": 200,
+                "cacheControl": "public, max-age=300, s-maxage=300, stale-while-revalidate=60",
+                "etag": "W/\"1pno1\""
+              },
+              {
+                "url": "https://upload.wikimedia.org/wikipedia/en/thumb/d/db/Symbol_list_class.svg/20px-Symbol_list_class.svg.png",
+                "method": "GET",
+                "resourceType": "image",
+                "status": 200,
+                "etag": "cbd7569977110c6b996fc5f1cb9d17dd"
+              },
+              {
+                "url": "https://en.wikipedia.org/w/load.php?modules=skins.vector.icons&image=menu&format=original&lang=en&skin=vector-2022&version=14wfh",
+                "method": "GET",
+                "resourceType": "image",
+                "status": 200,
+                "cacheControl": "public, max-age=2592000, s-maxage=2592000, stale-while-revalidate=60",
+                "etag": "W/\"14wfh\""
+              },
+              {
+                "url": "https://en.wikipedia.org/w/load.php?modules=skins.vector.icons&image=language&variant=progressive&format=original&lang=en&skin=vector-2022&version=14wfh",
+                "method": "GET",
+                "resourceType": "image",
+                "status": 200,
+                "cacheControl": "public, max-age=2592000, s-maxage=2592000, stale-while-revalidate=60",
+                "etag": "W/\"14wfh\""
+              },
+              {
+                "url": "https://en.wikipedia.org/w/skins/Vector/resources/skins.vector.styles/images/arrow-down-progressive.svg?5cd6d",
+                "method": "GET",
+                "resourceType": "image",
+                "status": 200,
+                "cacheControl": "public, s-maxage=31536000, max-age=31536000, immutable"
+              },
+              {
+                "url": "https://en.wikipedia.org/w/skins/Vector/resources/skins.vector.styles/images/link-external-small-ltr-progressive.svg?fb64d",
+                "method": "GET",
+                "resourceType": "image",
+                "status": 200,
+                "cacheControl": "public, s-maxage=31536000, max-age=31536000, immutable"
+              },
+              {
+                "url": "https://upload.wikimedia.org/wikipedia/commons/6/65/Lock-green.svg",
+                "method": "GET",
+                "resourceType": "image",
+                "status": 200,
+                "etag": "W/f99d5d66e6ef5fb312ed07842356ca2c"
+              },
+              {
+                "url": "https://upload.wikimedia.org/wikipedia/commons/d/d6/Lock-gray-alt-2.svg",
+                "method": "GET",
+                "resourceType": "image",
+                "status": 200,
+                "etag": "W/423bb01c87eb6c81999073a8ecd2b383"
+              },
+              {
+                "url": "https://upload.wikimedia.org/wikipedia/en/thumb/f/f2/Edit-clear.svg/40px-Edit-clear.svg.png",
+                "method": "GET",
+                "resourceType": "image",
+                "status": 200,
+                "etag": "2352058c450b9a56d3524d71713de3f8"
+              },
+              {
+                "url": "https://upload.wikimedia.org/wikipedia/commons/4/4d/Icon_pdf_file.png",
+                "method": "GET",
+                "resourceType": "image",
+                "status": 200,
+                "etag": "7a0e6ebb7cb8e20c41e31f22a06b9a06"
+              },
+              {
+                "url": "https://en.wikipedia.org/static/images/footer/wikimedia-button.svg",
+                "method": "GET",
+                "resourceType": "image",
+                "status": 200,
+                "cacheControl": "max-age=31536000",
+                "etag": "W/\"cb8-6426794eeb300\""
+              },
+              {
+                "url": "https://en.wikipedia.org/w/resources/assets/poweredby_mediawiki.svg",
+                "method": "GET",
+                "resourceType": "image",
+                "status": 200,
+                "cacheControl": "public, s-maxage=31536000, max-age=31536000, must-revalidate"
+              },
+              {
+                "url": "https://en.wikipedia.org/w/load.php?lang=en&modules=ext.centralNotice.bannerHistoryLogger%2CchoiceData%2Cdisplay%2CgeoIP%2CimpressionDiet%2CkvStore%2ClargeBannerLimit%2ClegacySupport%2CstartUp%7Cext.centralauth.ForeignApi%2Ccentralautologin%7Cext.checkUser.clientHints%7Cext.cite.ux-enhancements%7Cext.cx.eventlogging.campaigns%7Cext.cx.model%7Cext.cx.uls.quick.actions%7Cext.echo.centralauth%7Cext.eventLogging%2CnavigationTiming%2Cpopups%2CwikimediaEvents%2CxLab%7Cext.eventLogging.metricsPlatform%7Cext.growthExperiments.SuggestedEditSession%7Cext.uls.common%2Cinterface%2Cpreferences%2Cwebfonts%7Cext.urlShortener.toolbar%7Cext.wikimediaEvents.xLab%7Cjquery%2Coojs%2Csite%7Cjquery.client%2CmakeCollapsible%2CtextSelection%7Cjquery.uls.data%7Cmediawiki.ForeignApi%2CString%2CTitle%2Capi%2Cbase%2Ccldr%2Ccookie%2Cexperiments%2CjqueryMsg%2Clanguage%2Crouter%2Cstorage%2Ctoc%2Cuser%2Cutil%2CvisibleTimeout%7Cmediawiki.ForeignApi.core%7Cmediawiki.editfont.styles%7Cmediawiki.libs.pluralruleparser%7Cmediawiki.page.ready%7Cmediawiki.page.watch.ajax%7Cmmv.bootstrap%2Ccodex%7Cmw.cx.SiteMapper%7Cskins.vector.clientPreferences%2Cjs%7Cskins.vector.icons.js%7Cwikibase.client.vector-2022&skin=vector-2022&version=k0x76",
+                "method": "GET",
+                "resourceType": "script",
+                "status": 200,
+                "cacheControl": "public, max-age=2592000, s-maxage=2592000, stale-while-revalidate=60",
+                "etag": "W/\"k0x76\""
+              },
+              {
+                "url": "https://en.wikipedia.org/w/load.php?lang=en&modules=ext.cite.referencePreviews%7Cext.math.popup%7Cext.popups.main&skin=vector-2022&version=n7cp1",
+                "method": "GET",
+                "resourceType": "script",
+                "status": 200,
+                "cacheControl": "public, max-age=2592000, s-maxage=2592000, stale-while-revalidate=60",
+                "etag": "W/\"n7cp1\""
+              },
+              {
+                "url": "https://en.wikipedia.org/w/load.php?lang=en&modules=mw.config.values.wbCurrentSiteDetails%2CwbRepo%7Coojs-ui.styles.icons-editing-core&skin=vector-2022&version=14pha",
+                "method": "GET",
+                "resourceType": "script",
+                "status": 200,
+                "cacheControl": "public, max-age=2592000, s-maxage=2592000, stale-while-revalidate=60",
+                "etag": "W/\"14pha\""
+              }
+            ]
+          }
+        ],
+        "domAggregates": {
+          "anchorCount": 2651,
+          "nonSemanticClickableCount": 0,
+          "url": "https://en.wikipedia.org/wiki/Web_accessibility",
+          "formCount": 9,
+          "controlCount": 95,
+          "constrainedControlCount": 0,
+          "fauxControlCount": 0,
+          "semanticContainerCount": 45,
+          "labelledControlCount": 33,
+          "roleButtonOrLinkNonNativeCount": 0,
+          "hasClientRouterSignatures": false,
+          "pagesSeen": 3
+        },
+        "networkSummary": {
+          "xhrCount": 0,
+          "uncachedXhrCount": 0,
+          "duplicateRequestCount": 0
+        },
+        "clickStepCount": 0,
+        "documentNavigationCount": 3,
+        "noJsStepResults": [
+          {
+            "stepIndex": 0,
+            "outcome": "success"
+          },
+          {
+            "stepIndex": 1,
+            "outcome": "success"
+          },
+          {
+            "stepIndex": 2,
+            "outcome": "success"
+          }
+        ]
+      }
+    },
+    {
+      "name": "mozilla-firefox-download",
+      "description": "Mozilla landing page to Firefox download",
+      "baseUrl": "https://www.mozilla.org/",
+      "jsEnabled": true,
+      "runNoJs": true,
+      "scores": {
+        "routing": 100,
+        "forms": 50,
+        "dataFetch": 80,
+        "progressiveEnhancement": 100,
+        "semanticsA11y": 56,
+        "overall": 79
+      },
+      "rawMetrics": {
+        "stepMetrics": [
+          {
+            "stepIndex": 0,
+            "step": {
+              "action": "goto",
+              "url": "/en-US/"
+            },
+            "domMetrics": {
+              "anchorCount": 79,
+              "nonSemanticClickableCount": 0,
+              "url": "https://www.mozilla.org/en-US/",
+              "formCount": 2,
+              "controlCount": 14,
+              "constrainedControlCount": 4,
+              "fauxControlCount": 0,
+              "semanticContainerCount": 32,
+              "labelledControlCount": 6,
+              "roleButtonOrLinkNonNativeCount": 0,
+              "hasClientRouterSignatures": false
+            },
+            "networkEvents": [
+              {
+                "url": "https://www.mozilla.org/en-US/",
+                "method": "GET",
+                "resourceType": "document",
+                "status": 200,
+                "cacheControl": "max-age=600",
+                "etag": "\"cda720db589566b45c6f5cdd49e1f813\""
+              },
+              {
+                "url": "https://www.mozilla.org/media/js/site.a066757d134f.js",
+                "method": "GET",
+                "resourceType": "script",
+                "status": 200,
+                "cacheControl": "max-age=315360000, public, immutable",
+                "etag": "\"a066757d134f92547cfe5b086cedcaf9\""
+              },
+              {
+                "url": "https://www.mozilla.org/media/css/protocol-mozilla.3891f00f9520.css",
+                "method": "GET",
+                "resourceType": "stylesheet",
+                "status": 200,
+                "cacheControl": "max-age=315360000, public, immutable",
+                "etag": "\"3891f00f9520ddb4ecc99c145f32a44c\""
+              },
+              {
+                "url": "https://www.mozilla.org/media/css/m24-base.0bde24208ce4.css",
+                "method": "GET",
+                "resourceType": "stylesheet",
+                "status": 200,
+                "cacheControl": "max-age=315360000, public, immutable",
+                "etag": "\"0bde24208ce4eeb8e08a88e17c9fe722\""
+              },
+              {
+                "url": "https://www.mozilla.org/media/css/m24-home.9e455aa936d4.css",
+                "method": "GET",
+                "resourceType": "stylesheet",
+                "status": 200,
+                "cacheControl": "max-age=315360000, public, immutable",
+                "etag": "\"9e455aa936d499cae3c9ce046bee5e34\""
+              },
+              {
+                "url": "https://www.mozilla.org/media/css/m24-root.061c9fc9ed39.css",
+                "method": "GET",
+                "resourceType": "stylesheet",
+                "status": 200,
+                "cacheControl": "max-age=315360000, public, immutable",
+                "etag": "\"061c9fc9ed3979a6f3f2276ad859138d\""
+              },
+              {
+                "url": "https://www.mozilla.org/media/js/gtm-snippet.b5b7c885f8fa.js",
+                "method": "GET",
+                "resourceType": "script",
+                "status": 200,
+                "cacheControl": "max-age=315360000, public, immutable",
+                "etag": "\"b5b7c885f8fafa8b858e310952079003\""
+              },
+              {
+                "url": "https://www.mozilla.org/media/css/m24-navigation-and-footer.038277dadfff.css",
+                "method": "GET",
+                "resourceType": "stylesheet",
+                "status": 200,
+                "cacheControl": "max-age=315360000, public, immutable",
+                "etag": "\"038277dadfff84bbc2a796b9b4aff4a5\""
+              },
+              {
+                "url": "https://www.mozilla.org/media/js/newsletter.988c40f6c26c.js",
+                "method": "GET",
+                "resourceType": "script",
+                "status": 200,
+                "cacheControl": "max-age=315360000, public, immutable",
+                "etag": "\"988c40f6c26c4adda22a73ea6ffd3d8d\""
+              },
+              {
+                "url": "https://www.mozilla.org/media/img/home/2024/donate-720.0311101afe23.jpg",
+                "method": "GET",
+                "resourceType": "image",
+                "status": 200,
+                "cacheControl": "max-age=315360000, public, immutable",
+                "etag": "\"0311101afe231f554c91912dc39e1842\""
+              },
+              {
+                "url": "https://www.mozilla.org/media/img/logos/m24/lockup-black.f2ddba3f0724.svg",
+                "method": "GET",
+                "resourceType": "image",
+                "status": 200,
+                "cacheControl": "max-age=315360000, public, immutable",
+                "etag": "\"f2ddba3f07249ff0f501bb26c1c19318\""
+              },
+              {
+                "url": "https://www.mozilla.org/media/protocol/img/logos/firefox/browser/logo.eb1324e44442.svg",
+                "method": "GET",
+                "resourceType": "image",
+                "status": 200,
+                "cacheControl": "max-age=315360000, public, immutable",
+                "etag": "\"eb1324e44442d41cc447bf257456d257\""
+              },
+              {
+                "url": "https://www.mozilla.org/media/img/logos/mozilla/ads/Mozilla_Ads_Logo.6ed26d0eac2b.svg",
+                "method": "GET",
+                "resourceType": "image",
+                "status": 200,
+                "cacheControl": "max-age=315360000, public, immutable",
+                "etag": "\"6ed26d0eac2b7a933652e8013c80443f\""
+              },
+              {
+                "url": "https://www.mozilla.org/media/protocol/img/icons/arrow-right.a1e6e0252c06.svg",
+                "method": "GET",
+                "resourceType": "image",
+                "status": 200,
+                "cacheControl": "max-age=315360000, public, immutable",
+                "etag": "\"a1e6e0252c0611c17f2aecb425116a13\""
+              },
+              {
+                "url": "https://www.mozilla.org/media/img/logos/thunderbird/logo-thunderbird.121e9c0fed45.svg",
+                "method": "GET",
+                "resourceType": "image",
+                "status": 200,
+                "cacheControl": "max-age=315360000, public, immutable",
+                "etag": "\"121e9c0fed45d0469251bb9b2101fe50\""
+              },
+              {
+                "url": "https://www.mozilla.org/media/protocol/img/logos/firefox/relay/logo.d42a8b52e44c.svg",
+                "method": "GET",
+                "resourceType": "image",
+                "status": 200,
+                "cacheControl": "max-age=315360000, public, immutable",
+                "etag": "\"d42a8b52e44c0feae33931f12687cf1b\""
+              },
+              {
+                "url": "https://www.mozilla.org/media/protocol/img/logos/mozilla/vpn/logo.c648f487bfb8.svg",
+                "method": "GET",
+                "resourceType": "image",
+                "status": 200,
+                "cacheControl": "max-age=315360000, public, immutable",
+                "etag": "\"c648f487bfb86d8b5b6ffa78b81dd8b7\""
+              },
+              {
+                "url": "https://www.mozilla.org/media/protocol/img/logos/firefox/monitor/logo.d97e5516f9e6.svg",
+                "method": "GET",
+                "resourceType": "image",
+                "status": 200,
+                "cacheControl": "max-age=315360000, public, immutable",
+                "etag": "\"d97e5516f9e6641712ee6c8ecae835d7\""
+              },
+              {
+                "url": "https://www.mozilla.org/media/img/home/2024/ai-gallery/trustworthy-mobile-720.4e1cd1d6b0a2.jpg",
+                "method": "GET",
+                "resourceType": "image",
+                "status": 200,
+                "cacheControl": "max-age=315360000, public, immutable",
+                "etag": "\"4e1cd1d6b0a238dc0f658fb2e3275795\""
+              },
+              {
+                "url": "https://www.mozilla.org/media/img/home/2024/ai-gallery/voice-mobile-720.9eb39c7d18a1.jpg",
+                "method": "GET",
+                "resourceType": "image",
+                "status": 200,
+                "cacheControl": "max-age=315360000, public, immutable",
+                "etag": "\"9eb39c7d18a1a84466173fd61d9d72ee\""
+              },
+              {
+                "url": "https://www.mozilla.org/media/img/home/2024/ai-gallery/lumigator-mobile-720.5f2df6827690.jpg",
+                "method": "GET",
+                "resourceType": "image",
+                "status": 200,
+                "cacheControl": "max-age=315360000, public, immutable",
+                "etag": "\"5f2df68276907f6160c81963194b34e0\""
+              },
+              {
+                "url": "https://www.mozilla.org/media/protocol/fonts/mozilla-headline/MozillaHeadline-SemiBold.bccc6c46c123.woff2",
+                "method": "GET",
+                "resourceType": "font",
+                "status": 200,
+                "cacheControl": "max-age=315360000, public, immutable",
+                "etag": "\"bccc6c46c12340b339dac46277d1b611\""
+              },
+              {
+                "url": "https://www.mozilla.org/media/js/lib.7cb1e204ce21.js",
+                "method": "GET",
+                "resourceType": "script",
+                "status": 200,
+                "cacheControl": "max-age=315360000, public, immutable",
+                "etag": "\"7cb1e204ce21a8fbeb1147a0a748c48a\""
+              },
+              {
+                "url": "https://www.mozilla.org/media/js/data.024ac2959f4a.js",
+                "method": "GET",
+                "resourceType": "script",
+                "status": 200,
+                "cacheControl": "max-age=315360000, public, immutable",
+                "etag": "\"024ac2959f4aba8572afd573124595fa\""
+              },
+              {
+                "url": "https://www.mozilla.org/media/js/fxa.f30434397531.js",
+                "method": "GET",
+                "resourceType": "script",
+                "status": 200,
+                "cacheControl": "max-age=315360000, public, immutable",
+                "etag": "\"f30434397531ad9fd074b34dfce0a84b\""
+              },
+              {
+                "url": "https://www.mozilla.org/media/js/m24-ui.512060aa22cd.js",
+                "method": "GET",
+                "resourceType": "script",
+                "status": 200,
+                "cacheControl": "max-age=315360000, public, immutable",
+                "etag": "\"512060aa22cd39e05d09de25915515ef\""
+              },
+              {
+                "url": "https://www.mozilla.org/media/js/consent-banner.497ea1aa3e76.js",
+                "method": "GET",
+                "resourceType": "script",
+                "status": 200,
+                "cacheControl": "max-age=315360000, public, immutable",
+                "etag": "\"497ea1aa3e769a30b9191c39c5f08178\""
+              },
+              {
+                "url": "https://www.mozilla.org/media/protocol/fonts/mozilla-text/MozillaText-Regular.71c103450d6d.woff2",
+                "method": "GET",
+                "resourceType": "font",
+                "status": 200,
+                "cacheControl": "max-age=315360000, public, immutable",
+                "etag": "\"71c103450d6d3aeffa396bf5c907b106\""
+              },
+              {
+                "url": "https://www.mozilla.org/media/protocol/fonts/mozilla-text/MozillaText-SemiBold.b126cc23eddf.woff2",
+                "method": "GET",
+                "resourceType": "font",
+                "status": 200,
+                "cacheControl": "max-age=315360000, public, immutable",
+                "etag": "\"b126cc23eddf70f80a0149d1fa83b662\""
+              },
+              {
+                "url": "https://www.mozilla.org/media/js/sentry.addb150b9b6a.js",
+                "method": "GET",
+                "resourceType": "script",
+                "status": 200,
+                "cacheControl": "max-age=315360000, public, immutable",
+                "etag": "\"addb150b9b6a52c6452fcb4beaf5c491\""
+              },
+              {
+                "url": "https://www.mozilla.org/media/js/m24-animation.6371da6532a7.js",
+                "method": "GET",
+                "resourceType": "script",
+                "status": 200,
+                "cacheControl": "max-age=315360000, public, immutable",
+                "etag": "\"6371da6532a7986951cbb7353ec72dd5\""
+              },
+              {
+                "url": "https://www.mozilla.org/media/js/stub-attribution.819aeb6b157b.js",
+                "method": "GET",
+                "resourceType": "script",
+                "status": 200,
+                "cacheControl": "max-age=315360000, public, immutable",
+                "etag": "\"819aeb6b157b1a6e70c31c3dfc51dda7\""
+              },
+              {
+                "url": "https://www.mozilla.org/media/protocol/fonts/mozilla-text/MozillaText-Bold.4af7ce689fd6.woff2",
+                "method": "GET",
+                "resourceType": "font",
+                "status": 200,
+                "cacheControl": "max-age=315360000, public, immutable",
+                "etag": "\"4af7ce689fd6f170f4cb3189451b4f04\""
+              },
+              {
+                "url": "https://www.mozilla.org/media/protocol/img/icons/headphone.e0fdf8e20e88.svg",
+                "method": "GET",
+                "resourceType": "image",
+                "status": 200,
+                "cacheControl": "max-age=315360000, public, immutable",
+                "etag": "\"e0fdf8e20e8816ff7bf26a2755b74209\""
+              },
+              {
+                "url": "https://www.mozilla.org/media/img/icons/m24-small/glasses.72402b543bb5.svg",
+                "method": "GET",
+                "resourceType": "image",
+                "status": 200,
+                "cacheControl": "max-age=315360000, public, immutable",
+                "etag": "\"72402b543bb519b293a091a64e1e2097\""
+              },
+              {
+                "url": "https://www.mozilla.org/media/img/icons/social/bluesky/white.8fd522097881.svg",
+                "method": "GET",
+                "resourceType": "image",
+                "status": 200,
+                "cacheControl": "max-age=315360000, public, immutable",
+                "etag": "\"8fd522097881c592441fa34fd2db03d7\""
+              },
+              {
+                "url": "https://www.mozilla.org/media/protocol/img/icons/social/instagram/white.a7014a6150b3.svg",
+                "method": "GET",
+                "resourceType": "image",
+                "status": 200,
+                "cacheControl": "max-age=315360000, public, immutable",
+                "etag": "\"a7014a6150b3f157b225650a1a94f885\""
+              },
+              {
+                "url": "https://www.mozilla.org/media/protocol/img/icons/social/spotify/white.aa5334e85bae.svg",
+                "method": "GET",
+                "resourceType": "image",
+                "status": 200,
+                "cacheControl": "max-age=315360000, public, immutable",
+                "etag": "\"aa5334e85baea7187c2e1d89f8dc90cc\""
+              },
+              {
+                "url": "https://www.mozilla.org/media/protocol/img/icons/social/tiktok/white.599403de7ac0.svg",
+                "method": "GET",
+                "resourceType": "image",
+                "status": 200,
+                "cacheControl": "max-age=315360000, public, immutable",
+                "etag": "\"599403de7ac0fce82a3575735076f102\""
+              },
+              {
+                "url": "https://www.mozilla.org/media/protocol/img/icons/globe-white.4887e287b713.svg",
+                "method": "GET",
+                "resourceType": "image",
+                "status": 200,
+                "cacheControl": "max-age=315360000, public, immutable",
+                "etag": "\"4887e287b71316860d15f230aa771c1c\""
+              },
+              {
+                "url": "https://www.mozilla.org/media/protocol/img/icons/social/youtube/white.4f314c43c69d.svg",
+                "method": "GET",
+                "resourceType": "image",
+                "status": 200,
+                "cacheControl": "max-age=315360000, public, immutable",
+                "etag": "\"4f314c43c69d827d253bad3dbb22985c\""
+              },
+              {
+                "url": "https://www.mozilla.org/media/protocol/img/icons/social/linkedin/white.cdc0e910cc1e.svg",
+                "method": "GET",
+                "resourceType": "image",
+                "status": 200,
+                "cacheControl": "max-age=315360000, public, immutable",
+                "etag": "\"cdc0e910cc1e8f7529c50c8cbb448da0\""
+              },
+              {
+                "url": "https://www.mozilla.org/media/protocol/img/icons/caret-down-white.19fd9f88ce53.svg",
+                "method": "GET",
+                "resourceType": "image",
+                "status": 200,
+                "cacheControl": "max-age=315360000, public, immutable",
+                "etag": "\"19fd9f88ce53b54cc7eb9fe6b6737c22\""
+              },
+              {
+                "url": "https://www.googletagmanager.com/gtm.js?id=GTM-MW3R8V&l=dataLayer",
+                "method": "GET",
+                "resourceType": "script",
+                "status": 200,
+                "cacheControl": "private, max-age=900"
+              },
+              {
+                "url": "https://www.mozilla.org/media/img/home/2024/ai-gallery/ventures-mobile-720.0e636a424d6e.jpg",
+                "method": "GET",
+                "resourceType": "image",
+                "status": 200,
+                "cacheControl": "max-age=315360000, public, immutable",
+                "etag": "\"0e636a424d6edf7e6fb375bc5574de1f\""
+              },
+              {
+                "url": "https://www.mozilla.org/media/img/home/2024/ai-gallery/solo-ai-mobile-720.26051d21ba46.jpg",
+                "method": "GET",
+                "resourceType": "image",
+                "status": 200,
+                "cacheControl": "max-age=315360000, public, immutable",
+                "etag": "\"26051d21ba465b40fcc0193742a4909a\""
+              },
+              {
+                "url": "https://www.mozilla.org/media/img/home/2024/ai-gallery/mozfest-mobile-720.693fe4f8bdb0.png",
+                "method": "GET",
+                "resourceType": "image",
+                "status": 200,
+                "cacheControl": "max-age=315360000, public, immutable",
+                "etag": "\"693fe4f8bdb0124411d1b7efeb4a6006\""
+              },
+              {
+                "url": "https://www.googletagmanager.com/gtag/js?id=G-MQ7767QQQW&cx=c&gtm=4e5bi1",
+                "method": "GET",
+                "resourceType": "script",
+                "status": 200,
+                "cacheControl": "private, max-age=900"
+              }
+            ]
+          },
+          {
+            "stepIndex": 1,
+            "step": {
+              "action": "goto",
+              "url": "/en-US/firefox/new/"
+            },
+            "domMetrics": {
+              "anchorCount": 96,
+              "nonSemanticClickableCount": 0,
+              "url": "https://www.firefox.com/en-US/?redirect_source=mozilla-org",
+              "formCount": 1,
+              "controlCount": 10,
+              "constrainedControlCount": 0,
+              "fauxControlCount": 0,
+              "semanticContainerCount": 14,
+              "labelledControlCount": 3,
+              "roleButtonOrLinkNonNativeCount": 0,
+              "hasClientRouterSignatures": false
+            },
+            "networkEvents": [
+              {
+                "url": "https://www.mozilla.org/en-US/firefox/new/",
+                "method": "GET",
+                "resourceType": "document",
+                "status": 301,
+                "cacheControl": "max-age=43200"
+              },
+              {
+                "url": "https://www.firefox.com/en-US/?redirect_source=mozilla-org",
+                "method": "GET",
+                "resourceType": "document",
+                "status": 200,
+                "cacheControl": "max-age=600",
+                "etag": "\"530457915b71e58444d93baf70eee20f\""
+              },
+              {
+                "url": "https://www.firefox.com/media/js/site.e11ca69997f6.js",
+                "method": "GET",
+                "resourceType": "script",
+                "status": 200,
+                "cacheControl": "max-age=315360000, public, immutable",
+                "etag": "\"e11ca69997f6b75c5df6e251e84919fc\""
+              },
+              {
+                "url": "https://www.firefox.com/media/css/protocol.22b3f48dced4.css",
+                "method": "GET",
+                "resourceType": "stylesheet",
+                "status": 200,
+                "cacheControl": "max-age=315360000, public, immutable",
+                "etag": "\"22b3f48dced4ef8cbb0ff9533ad4e17e\""
+              },
+              {
+                "url": "https://www.firefox.com/media/css/firefox-home.2adbb01e237d.css",
+                "method": "GET",
+                "resourceType": "stylesheet",
+                "status": 200,
+                "cacheControl": "max-age=315360000, public, immutable",
+                "etag": "\"2adbb01e237d7684e5b9e351977eed52\""
+              },
+              {
+                "url": "https://www.firefox.com/media/img/icons/m24-small/download-white.81646af3f50d.svg",
+                "method": "GET",
+                "resourceType": "image",
+                "status": 200,
+                "cacheControl": "max-age=315360000, public, immutable",
+                "etag": "\"81646af3f50d533d2746d48e5059e689\""
+              },
+              {
+                "url": "https://www.firefox.com/media/js/gtm-snippet.d6a7289381ba.js",
+                "method": "GET",
+                "resourceType": "script",
+                "status": 200,
+                "cacheControl": "max-age=315360000, public, immutable",
+                "etag": "\"d6a7289381ba7e4fdcb5fc5a80010d58\""
+              },
+              {
+                "url": "https://www.firefox.com/media/img/firefox/home/hero.6172ddfeb189.png",
+                "method": "GET",
+                "resourceType": "image",
+                "status": 200,
+                "cacheControl": "max-age=315360000, public, immutable",
+                "etag": "\"6172ddfeb18930ea0430ac023d131992\""
+              },
+              {
+                "url": "https://www.firefox.com/media/img/firefox/home/block.9ac6c591a0b5.svg",
+                "method": "GET",
+                "resourceType": "image",
+                "status": 200,
+                "cacheControl": "max-age=315360000, public, immutable",
+                "etag": "\"9ac6c591a0b54318b51de7e46c78d276\""
+              },
+              {
+                "url": "https://www.firefox.com/media/img/firefox/home/tabs.e4ccf0f08351.svg",
+                "method": "GET",
+                "resourceType": "image",
+                "status": 200,
+                "cacheControl": "max-age=315360000, public, immutable",
+                "etag": "\"e4ccf0f083510d6ca8ad1bbcf93e3de8\""
+              },
+              {
+                "url": "https://www.firefox.com/media/img/l10n/en-US/firefox/android/btn-google-play.77bdbc935c58.png",
+                "method": "GET",
+                "resourceType": "image",
+                "status": 200,
+                "cacheControl": "max-age=315360000, public, immutable",
+                "etag": "\"77bdbc935c583f6353bf55a29ee51fa6\""
+              },
+              {
+                "url": "https://www.firefox.com/media/img/firefox/home/multi.74ac0b1fab96.svg",
+                "method": "GET",
+                "resourceType": "image",
+                "status": 200,
+                "cacheControl": "max-age=315360000, public, immutable",
+                "etag": "\"74ac0b1fab962c4c38cd28a10e5e2593\""
+              },
+              {
+                "url": "https://www.firefox.com/media/img/firefox/home/think.7bc19c3d4f0c.svg",
+                "method": "GET",
+                "resourceType": "image",
+                "status": 200,
+                "cacheControl": "max-age=315360000, public, immutable",
+                "etag": "\"7bc19c3d4f0cc007055b36dfcc17025e\""
+              },
+              {
+                "url": "https://www.firefox.com/media/img/logos/firefox/logo-word-hor.f3b18871b657.svg",
+                "method": "GET",
+                "resourceType": "image",
+                "status": 200,
+                "cacheControl": "max-age=315360000, public, immutable",
+                "etag": "\"f3b18871b657ebfb1b0ebbf263fcd529\""
+              },
+              {
+                "url": "https://www.firefox.com/media/img/firefox/home/screens.5d82c119a60a.svg",
+                "method": "GET",
+                "resourceType": "image",
+                "status": 200,
+                "cacheControl": "max-age=315360000, public, immutable",
+                "etag": "\"5d82c119a60a3ae138bf1cc4a9befe41\""
+              },
+              {
+                "url": "https://www.firefox.com/media/img/l10n/en-US/firefox/ios/btn-app-store.1cfd5dba4a92.svg",
+                "method": "GET",
+                "resourceType": "image",
+                "status": 200,
+                "cacheControl": "max-age=315360000, public, immutable",
+                "etag": "\"1cfd5dba4a9210bcf77f5dbe48ec2e66\""
+              },
+              {
+                "url": "https://www.firefox.com/media/img/firefox/home/privacy.8f38f7fbceb0.svg",
+                "method": "GET",
+                "resourceType": "image",
+                "status": 200,
+                "cacheControl": "max-age=315360000, public, immutable",
+                "etag": "\"8f38f7fbceb06d2e24cc915c89ebb074\""
+              },
+              {
+                "url": "https://www.firefox.com/media/img/firefox/home/toggle.d4d76beabfdf.svg",
+                "method": "GET",
+                "resourceType": "image",
+                "status": 200,
+                "cacheControl": "max-age=315360000, public, immutable",
+                "etag": "\"d4d76beabfdfd1412ec727592146f73b\""
+              },
+              {
+                "url": "https://www.firefox.com/media/img/icons/external-white.4b3126796abe.svg",
+                "method": "GET",
+                "resourceType": "image",
+                "status": 200,
+                "cacheControl": "max-age=315360000, public, immutable",
+                "etag": "\"4b3126796abe5efdbac14b384a19bfc1\""
+              },
+              {
+                "url": "https://www.firefox.com/media/img/logos/firefox/logo-word-hor-white.c4873b25894a.svg",
+                "method": "GET",
+                "resourceType": "image",
+                "status": 200,
+                "cacheControl": "max-age=315360000, public, immutable",
+                "etag": "\"c4873b25894a2aae4a70a9137c9a81ea\""
+              },
+              {
+                "url": "https://www.firefox.com/media/img/firefox/home/free.7e71f14521d6.svg",
+                "method": "GET",
+                "resourceType": "image",
+                "status": 200,
+                "cacheControl": "max-age=315360000, public, immutable",
+                "etag": "\"7e71f14521d62a026ba660f67c9a62f2\""
+              },
+              {
+                "url": "https://www.firefox.com/media/img/firefox/home/dark.7de2d719ac00.svg",
+                "method": "GET",
+                "resourceType": "image",
+                "status": 200,
+                "cacheControl": "max-age=315360000, public, immutable",
+                "etag": "\"7de2d719ac005190b03d163a9b691167\""
+              },
+              {
+                "url": "https://www.firefox.com/media/img/icons/m24-small/globe-white.a76258f6a4cc.svg",
+                "method": "GET",
+                "resourceType": "image",
+                "status": 200,
+                "cacheControl": "max-age=315360000, public, immutable",
+                "etag": "\"a76258f6a4cc46b2eed6225b15e90f96\""
+              },
+              {
+                "url": "https://www.firefox.com/media/protocol/img/icons/arrow-down.f75cc06fe50b.svg",
+                "method": "GET",
+                "resourceType": "image",
+                "status": 200,
+                "cacheControl": "max-age=315360000, public, immutable",
+                "etag": "\"f75cc06fe50b45b7d99f3172cc5f5577\""
+              },
+              {
+                "url": "https://www.firefox.com/media/img/icons/m24-small/down-caret-white.3aab868855c7.svg",
+                "method": "GET",
+                "resourceType": "image",
+                "status": 200,
+                "cacheControl": "max-age=315360000, public, immutable",
+                "etag": "\"3aab868855c7c2facfd1131b0b31015f\""
+              },
+              {
+                "url": "https://www.firefox.com/media/protocol/fonts/mozilla-text/MozillaText-Bold.4af7ce689fd6.woff2",
+                "method": "GET",
+                "resourceType": "font",
+                "status": 200,
+                "cacheControl": "max-age=315360000, public, immutable",
+                "etag": "\"4af7ce689fd6f170f4cb3189451b4f04\""
+              },
+              {
+                "url": "https://www.firefox.com/media/protocol/fonts/mozilla-text/MozillaText-Regular.71c103450d6d.woff2",
+                "method": "GET",
+                "resourceType": "font",
+                "status": 200,
+                "cacheControl": "max-age=315360000, public, immutable",
+                "etag": "\"71c103450d6d3aeffa396bf5c907b106\""
+              },
+              {
+                "url": "https://www.firefox.com/media/protocol/fonts/mozilla-text/MozillaText-SemiBold.b126cc23eddf.woff2",
+                "method": "GET",
+                "resourceType": "font",
+                "status": 200,
+                "cacheControl": "max-age=315360000, public, immutable",
+                "etag": "\"b126cc23eddf70f80a0149d1fa83b662\""
+              },
+              {
+                "url": "https://www.firefox.com/media/protocol/fonts/mozilla-headline/MozillaHeadline-Regular.f0e5390a8c6a.woff2",
+                "method": "GET",
+                "resourceType": "font",
+                "status": 200,
+                "cacheControl": "max-age=315360000, public, immutable",
+                "etag": "\"f0e5390a8c6a04a204115e77d22c4de6\""
+              },
+              {
+                "url": "https://www.firefox.com/media/protocol/fonts/mozilla-headline/MozillaHeadline-SemiBold.bccc6c46c123.woff2",
+                "method": "GET",
+                "resourceType": "font",
+                "status": 200,
+                "cacheControl": "max-age=315360000, public, immutable",
+                "etag": "\"bccc6c46c12340b339dac46277d1b611\""
+              },
+              {
+                "url": "https://www.firefox.com/media/js/lib.d51b3d342192.js",
+                "method": "GET",
+                "resourceType": "script",
+                "status": 200,
+                "cacheControl": "max-age=315360000, public, immutable",
+                "etag": "\"d51b3d3421923dde0eb7e007e7ae580c\""
+              },
+              {
+                "url": "https://www.firefox.com/media/js/ui.02022295d79b.js",
+                "method": "GET",
+                "resourceType": "script",
+                "status": 200,
+                "cacheControl": "max-age=315360000, public, immutable",
+                "etag": "\"02022295d79bc99b7eb04161af260f94\""
+              },
+              {
+                "url": "https://www.firefox.com/media/js/stub-attribution.d5ef049bcc8c.js",
+                "method": "GET",
+                "resourceType": "script",
+                "status": 200,
+                "cacheControl": "max-age=315360000, public, immutable",
+                "etag": "\"d5ef049bcc8c419bbd0ba85f615d06c4\""
+              },
+              {
+                "url": "https://www.firefox.com/media/js/sentry.addb150b9b6a.js",
+                "method": "GET",
+                "resourceType": "script",
+                "status": 200,
+                "cacheControl": "max-age=315360000, public, immutable",
+                "etag": "\"addb150b9b6a52c6452fcb4beaf5c491\""
+              },
+              {
+                "url": "https://www.firefox.com/media/js/data.7f99961660d0.js",
+                "method": "GET",
+                "resourceType": "script",
+                "status": 200,
+                "cacheControl": "max-age=315360000, public, immutable",
+                "etag": "\"7f99961660d03c5eec1553445e56903b\""
+              },
+              {
+                "url": "https://www.firefox.com/media/js/fxa.b55e6ed773aa.js",
+                "method": "GET",
+                "resourceType": "script",
+                "status": 200,
+                "cacheControl": "max-age=315360000, public, immutable",
+                "etag": "\"b55e6ed773aa505b5886a615c8aa5ded\""
+              },
+              {
+                "url": "https://www.firefox.com/media/js/consent-banner.30f5ed2ccd09.js",
+                "method": "GET",
+                "resourceType": "script",
+                "status": 200,
+                "cacheControl": "max-age=315360000, public, immutable",
+                "etag": "\"30f5ed2ccd09aa74d83d06739eb59325\""
+              },
+              {
+                "url": "https://www.firefox.com/media/js/download_as_default.3a4387454ce8.js",
+                "method": "GET",
+                "resourceType": "script",
+                "status": 200,
+                "cacheControl": "max-age=315360000, public, immutable",
+                "etag": "\"3a4387454ce8dd73850957f88ad03c13\""
+              },
+              {
+                "url": "https://www.firefox.com/media/js/firefox-home.c9a3505d4e9a.js",
+                "method": "GET",
+                "resourceType": "script",
+                "status": 200,
+                "cacheControl": "max-age=315360000, public, immutable",
+                "etag": "\"c9a3505d4e9ae9cb30382603d6989e44\""
+              },
+              {
+                "url": "https://www.googletagmanager.com/gtm.js?id=GTM-527L9RBL&l=dataLayer",
+                "method": "GET",
+                "resourceType": "script",
+                "status": 200,
+                "cacheControl": "private, max-age=900"
+              },
+              {
+                "url": "https://www.googletagmanager.com/gtag/js?id=G-E4D4R98JS9&cx=c&gtm=4e5bi1",
+                "method": "GET",
+                "resourceType": "script",
+                "status": 200,
+                "cacheControl": "private, max-age=900"
+              }
+            ]
+          }
+        ],
+        "domAggregates": {
+          "anchorCount": 175,
+          "nonSemanticClickableCount": 0,
+          "url": "https://www.firefox.com/en-US/?redirect_source=mozilla-org",
+          "formCount": 3,
+          "controlCount": 24,
+          "constrainedControlCount": 4,
+          "fauxControlCount": 0,
+          "semanticContainerCount": 46,
+          "labelledControlCount": 9,
+          "roleButtonOrLinkNonNativeCount": 0,
+          "hasClientRouterSignatures": false,
+          "pagesSeen": 2
+        },
+        "networkSummary": {
+          "xhrCount": 0,
+          "uncachedXhrCount": 0,
+          "duplicateRequestCount": 0
+        },
+        "clickStepCount": 0,
+        "documentNavigationCount": 2,
+        "noJsStepResults": [
+          {
+            "stepIndex": 0,
+            "outcome": "success"
+          },
+          {
+            "stepIndex": 1,
+            "outcome": "success"
+          }
+        ]
+      }
+    }
+  ]
+}
