@@ -118,17 +118,25 @@ if subdirs_with_dates:
         print()  # Add blank line between entries
 
 ]]]-->
-## 1 research project
+## 2 research projects
+
+### [three-sided-football-strategy](https://github.com/ajfisher/research/tree/main/three-sided-football-strategy) (2025-11-20)
+
+This research applies computational game theory to analyze strategic decision-making in three-sided football, focusing on optimal strategies across game periods, collaboration dynamics, and set-piece scenarios. Using a Monte Carlo simulator and adaptive policies, it evaluates how teams adjust tactics based on scoreboard state, fatigue, and collaborative opportunities. Key findings reveal that conservative defense minimizes early concessions, while late-game collaboration is impactful but high-risk due to fatigue. Set-piece analysis highlights context-dependent tactics, such as direct free kicks for late-game scoring or structured kick-offs to retain possession. Tools like the [Monte Carlo simulator](https://github.com/path-to-simulation) and detailed strategy reports offer deep insights into this unique game.
+
+### Key Findings
+- Defensive strategies dominate early game periods; collaboration and aggression are advantageous primarily for trailing teams late in the game.
+- Adaptive strategies improve scoring for trailers but increase fatigue, favoring dynamic plays like late-game coalitions.
+- Optimal set-pieces depend on match context, with conservative coverage aiding leaders and aggressive tactics benefiting teams in need of goals.
 
 ### [tag-prediction-ajfisher-me](https://github.com/ajfisher/research/tree/main/tag-prediction-ajfisher-me) (2025-11-15)
 
-This project explores machine learning techniques, specifically classical multi-label classification using scikit-learn, to recommend tags for markdown posts on the `ajfisher.me` blog. By training models like a one-vs-rest linear SVM and Complement Naïve Bayes with TF–IDF features, predictions are evaluated to ensure taxonomy consistency and flag potential additions or removals. While the linear SVM slightly outperforms other approaches, its micro-F1 score (~0.08) suggests the need for richer features or larger datasets. Key steps are documented in the [source code](code/tag_prediction_analysis.py).
+This project explored auto-tagging for markdown posts on ajfisher.me using classical scikit-learn models to predict tags from post content and titles. Linear SVM emerged as the strongest model but struggled with low generalization due to sparse data and imbalanced tag distribution. The analysis identified inconsistent taxonomy, with key umbrella tags like `web`, `development`, and `internet` missing in many older posts. Outputs included candidate high-probability tag suggestions and flagging of low-confidence predictions, though misapplied tags were not detected under current thresholds. Code and results are available in [`tag_prediction_analysis.py`](code/tag_prediction_analysis.py).
 
 Key findings:
-- The linear SVM gives the strongest baseline but generalizes poorly due to data sparsity.
-- Common missing tags include `web`, `development`, and `internet`, found in many high-probability predictions.
-- No misapplied or low-confidence tags were detected, but overfitting in CV highlights the limitations of current approaches.
-- Future work should explore embeddings, semi-supervised data, and interactive tag adjustment tools.
+- Linear SVM outperformed other models but only achieved a micro F1 of ~0.08.
+- Suggested common tags for addition include `web`, `development`, and `mobile`.
+- No misapplied tags were flagged, though CV metrics highlight overfitting risks.
 
 <!--[[[end]]]-->
 
