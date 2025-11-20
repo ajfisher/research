@@ -1,0 +1,1851 @@
+[
+  {
+    "scenario": {
+      "name": "period1_all_tied",
+      "period": 1,
+      "statuses": {
+        "A": "DRAW_ALL",
+        "B": "DRAW_ALL",
+        "C": "DRAW_ALL"
+      },
+      "description": "All teams level on concessions and scores"
+    },
+    "strategy_counts": {
+      "A": {
+        "DEFENSIVE": 25
+      },
+      "B": {
+        "DEFENSIVE": 25
+      },
+      "C": {
+        "DEFENSIVE": 25
+      }
+    },
+    "strategy_stats": {
+      "A": {
+        "DEFENSIVE": {
+          "expected_conceded": 1.5307,
+          "expected_scored": 1.4817100000000003,
+          "expected_net": -0.04898999999999999
+        },
+        "BALANCED": {
+          "expected_conceded": 2.0518899999999998,
+          "expected_scored": 1.9708999999999997,
+          "expected_net": -0.08098999999999996
+        },
+        "AGGRESSIVE": {
+          "expected_conceded": 2.41965,
+          "expected_scored": 2.5656499999999998,
+          "expected_net": 0.14600000000000005
+        },
+        "COLLABORATE_WITH_NEXT": {
+          "expected_conceded": 2.0986,
+          "expected_scored": 2.09815,
+          "expected_net": -0.00044999999999997267
+        },
+        "COLLABORATE_WITH_PREV": {
+          "expected_conceded": 2.10226,
+          "expected_scored": 2.09027,
+          "expected_net": -0.011990000000000008
+        }
+      },
+      "B": {
+        "DEFENSIVE": {
+          "expected_conceded": 1.5269699999999997,
+          "expected_scored": 1.4822,
+          "expected_net": -0.044770000000000004
+        },
+        "BALANCED": {
+          "expected_conceded": 2.0575300000000003,
+          "expected_scored": 1.9736799999999999,
+          "expected_net": -0.08385
+        },
+        "AGGRESSIVE": {
+          "expected_conceded": 2.41357,
+          "expected_scored": 2.57183,
+          "expected_net": 0.15825999999999998
+        },
+        "COLLABORATE_WITH_NEXT": {
+          "expected_conceded": 2.10134,
+          "expected_scored": 2.0962899999999998,
+          "expected_net": -0.0050500000000000345
+        },
+        "COLLABORATE_WITH_PREV": {
+          "expected_conceded": 2.09987,
+          "expected_scored": 2.09594,
+          "expected_net": -0.003929999999999998
+        }
+      },
+      "C": {
+        "DEFENSIVE": {
+          "expected_conceded": 1.5262,
+          "expected_scored": 1.4840099999999998,
+          "expected_net": -0.042189999999999984
+        },
+        "BALANCED": {
+          "expected_conceded": 2.0557600000000003,
+          "expected_scored": 1.97079,
+          "expected_net": -0.08496999999999996
+        },
+        "AGGRESSIVE": {
+          "expected_conceded": 2.42611,
+          "expected_scored": 2.5574500000000002,
+          "expected_net": 0.13134
+        },
+        "COLLABORATE_WITH_NEXT": {
+          "expected_conceded": 2.10494,
+          "expected_scored": 2.09008,
+          "expected_net": -0.014859999999999953
+        },
+        "COLLABORATE_WITH_PREV": {
+          "expected_conceded": 2.1085700000000003,
+          "expected_scored": 2.0950100000000003,
+          "expected_net": -0.013559999999999963
+        }
+      }
+    },
+    "adaptive": {
+      "team_metrics": {
+        "A": {
+          "expected_scored": 2.214,
+          "expected_conceded": 2.0865,
+          "expected_net": 0.1275,
+          "avg_offensive_fatigue": 1.453696,
+          "avg_defensive_fatigue": 1.1956000000000002,
+          "strategy_usage": {
+            "DEFENSIVE": 0.15662,
+            "BALANCED": 0.41814,
+            "AGGRESSIVE": 0.42524
+          }
+        },
+        "B": {
+          "expected_scored": 2.1535,
+          "expected_conceded": 2.1805,
+          "expected_net": -0.027,
+          "avg_offensive_fatigue": 1.457572,
+          "avg_defensive_fatigue": 1.1927545000000002,
+          "strategy_usage": {
+            "DEFENSIVE": 0.15198,
+            "BALANCED": 0.42122,
+            "AGGRESSIVE": 0.4268
+          }
+        },
+        "C": {
+          "expected_scored": 2.086,
+          "expected_conceded": 2.1865,
+          "expected_net": -0.1005,
+          "avg_offensive_fatigue": 1.4583380000000001,
+          "avg_defensive_fatigue": 1.1935472500000002,
+          "strategy_usage": {
+            "DEFENSIVE": 0.15558,
+            "BALANCED": 0.41344,
+            "AGGRESSIVE": 0.43098
+          }
+        }
+      },
+      "metadata": {
+        "minutes": 25,
+        "samples": 2000,
+        "collaboration_frequency": 0.0
+      }
+    }
+  },
+  {
+    "scenario": {
+      "name": "period1_one_leads",
+      "period": 1,
+      "statuses": {
+        "A": "LEADING",
+        "B": "TRAILING",
+        "C": "TRAILING"
+      },
+      "description": "Team A leading, Teams B and C trailing"
+    },
+    "strategy_counts": {
+      "A": {
+        "DEFENSIVE": 25
+      },
+      "B": {
+        "DEFENSIVE": 25
+      },
+      "C": {
+        "DEFENSIVE": 25
+      }
+    },
+    "strategy_stats": {
+      "A": {
+        "DEFENSIVE": {
+          "expected_conceded": 1.5307,
+          "expected_scored": 1.4817100000000003,
+          "expected_net": -0.04898999999999999
+        },
+        "BALANCED": {
+          "expected_conceded": 2.0518899999999998,
+          "expected_scored": 1.9708999999999997,
+          "expected_net": -0.08098999999999996
+        },
+        "AGGRESSIVE": {
+          "expected_conceded": 2.41965,
+          "expected_scored": 2.5656499999999998,
+          "expected_net": 0.14600000000000005
+        },
+        "COLLABORATE_WITH_NEXT": {
+          "expected_conceded": 2.0986,
+          "expected_scored": 2.09815,
+          "expected_net": -0.00044999999999997267
+        },
+        "COLLABORATE_WITH_PREV": {
+          "expected_conceded": 2.10226,
+          "expected_scored": 2.09027,
+          "expected_net": -0.011990000000000008
+        }
+      },
+      "B": {
+        "DEFENSIVE": {
+          "expected_conceded": 1.5269699999999997,
+          "expected_scored": 1.4822,
+          "expected_net": -0.044770000000000004
+        },
+        "BALANCED": {
+          "expected_conceded": 2.0575300000000003,
+          "expected_scored": 1.9736799999999999,
+          "expected_net": -0.08385
+        },
+        "AGGRESSIVE": {
+          "expected_conceded": 2.41357,
+          "expected_scored": 2.57183,
+          "expected_net": 0.15825999999999998
+        },
+        "COLLABORATE_WITH_NEXT": {
+          "expected_conceded": 2.10134,
+          "expected_scored": 2.0962899999999998,
+          "expected_net": -0.0050500000000000345
+        },
+        "COLLABORATE_WITH_PREV": {
+          "expected_conceded": 2.09987,
+          "expected_scored": 2.09594,
+          "expected_net": -0.003929999999999998
+        }
+      },
+      "C": {
+        "DEFENSIVE": {
+          "expected_conceded": 1.5262,
+          "expected_scored": 1.4840099999999998,
+          "expected_net": -0.042189999999999984
+        },
+        "BALANCED": {
+          "expected_conceded": 2.0557600000000003,
+          "expected_scored": 1.97079,
+          "expected_net": -0.08496999999999996
+        },
+        "AGGRESSIVE": {
+          "expected_conceded": 2.42611,
+          "expected_scored": 2.5574500000000002,
+          "expected_net": 0.13134
+        },
+        "COLLABORATE_WITH_NEXT": {
+          "expected_conceded": 2.10494,
+          "expected_scored": 2.09008,
+          "expected_net": -0.014859999999999953
+        },
+        "COLLABORATE_WITH_PREV": {
+          "expected_conceded": 2.1085700000000003,
+          "expected_scored": 2.0950100000000003,
+          "expected_net": -0.013559999999999963
+        }
+      }
+    },
+    "adaptive": {
+      "team_metrics": {
+        "A": {
+          "expected_scored": 2.054,
+          "expected_conceded": 2.0385,
+          "expected_net": 0.0155,
+          "avg_offensive_fatigue": 1.44818,
+          "avg_defensive_fatigue": 1.1936365,
+          "strategy_usage": {
+            "DEFENSIVE": 0.14318,
+            "BALANCED": 0.45098,
+            "AGGRESSIVE": 0.40584
+          }
+        },
+        "B": {
+          "expected_scored": 1.996,
+          "expected_conceded": 1.9965,
+          "expected_net": -0.0005,
+          "avg_offensive_fatigue": 1.35752,
+          "avg_defensive_fatigue": 1.3257895000000004,
+          "strategy_usage": {
+            "DEFENSIVE": 0.14972,
+            "BALANCED": 0.4415,
+            "AGGRESSIVE": 0.1128,
+            "COLLABORATE_WITH_NEXT": 0.29598
+          }
+        },
+        "C": {
+          "expected_scored": 1.9605,
+          "expected_conceded": 1.9755,
+          "expected_net": -0.015,
+          "avg_offensive_fatigue": 1.352152,
+          "avg_defensive_fatigue": 1.3299160000000003,
+          "strategy_usage": {
+            "DEFENSIVE": 0.15592,
+            "BALANCED": 0.43732,
+            "AGGRESSIVE": 0.11,
+            "COLLABORATE_WITH_PREV": 0.29676
+          }
+        }
+      },
+      "metadata": {
+        "minutes": 25,
+        "samples": 2000,
+        "collaboration_frequency": 0.09848
+      }
+    }
+  },
+  {
+    "scenario": {
+      "name": "period1_two_tied",
+      "period": 1,
+      "statuses": {
+        "A": "DRAW_ONE",
+        "B": "DRAW_ONE",
+        "C": "TRAILING"
+      },
+      "description": "Teams A and B tied, Team C trailing"
+    },
+    "strategy_counts": {
+      "A": {
+        "DEFENSIVE": 25
+      },
+      "B": {
+        "DEFENSIVE": 25
+      },
+      "C": {
+        "DEFENSIVE": 25
+      }
+    },
+    "strategy_stats": {
+      "A": {
+        "DEFENSIVE": {
+          "expected_conceded": 1.5307,
+          "expected_scored": 1.4817100000000003,
+          "expected_net": -0.04898999999999999
+        },
+        "BALANCED": {
+          "expected_conceded": 2.0518899999999998,
+          "expected_scored": 1.9708999999999997,
+          "expected_net": -0.08098999999999996
+        },
+        "AGGRESSIVE": {
+          "expected_conceded": 2.41965,
+          "expected_scored": 2.5656499999999998,
+          "expected_net": 0.14600000000000005
+        },
+        "COLLABORATE_WITH_NEXT": {
+          "expected_conceded": 2.0986,
+          "expected_scored": 2.09815,
+          "expected_net": -0.00044999999999997267
+        },
+        "COLLABORATE_WITH_PREV": {
+          "expected_conceded": 2.10226,
+          "expected_scored": 2.09027,
+          "expected_net": -0.011990000000000008
+        }
+      },
+      "B": {
+        "DEFENSIVE": {
+          "expected_conceded": 1.5269699999999997,
+          "expected_scored": 1.4822,
+          "expected_net": -0.044770000000000004
+        },
+        "BALANCED": {
+          "expected_conceded": 2.0575300000000003,
+          "expected_scored": 1.9736799999999999,
+          "expected_net": -0.08385
+        },
+        "AGGRESSIVE": {
+          "expected_conceded": 2.41357,
+          "expected_scored": 2.57183,
+          "expected_net": 0.15825999999999998
+        },
+        "COLLABORATE_WITH_NEXT": {
+          "expected_conceded": 2.10134,
+          "expected_scored": 2.0962899999999998,
+          "expected_net": -0.0050500000000000345
+        },
+        "COLLABORATE_WITH_PREV": {
+          "expected_conceded": 2.09987,
+          "expected_scored": 2.09594,
+          "expected_net": -0.003929999999999998
+        }
+      },
+      "C": {
+        "DEFENSIVE": {
+          "expected_conceded": 1.5262,
+          "expected_scored": 1.4840099999999998,
+          "expected_net": -0.042189999999999984
+        },
+        "BALANCED": {
+          "expected_conceded": 2.0557600000000003,
+          "expected_scored": 1.97079,
+          "expected_net": -0.08496999999999996
+        },
+        "AGGRESSIVE": {
+          "expected_conceded": 2.42611,
+          "expected_scored": 2.5574500000000002,
+          "expected_net": 0.13134
+        },
+        "COLLABORATE_WITH_NEXT": {
+          "expected_conceded": 2.10494,
+          "expected_scored": 2.09008,
+          "expected_net": -0.014859999999999953
+        },
+        "COLLABORATE_WITH_PREV": {
+          "expected_conceded": 2.1085700000000003,
+          "expected_scored": 2.0950100000000003,
+          "expected_net": -0.013559999999999963
+        }
+      }
+    },
+    "adaptive": {
+      "team_metrics": {
+        "A": {
+          "expected_scored": 2.0305,
+          "expected_conceded": 1.9595,
+          "expected_net": 0.071,
+          "avg_offensive_fatigue": 1.381556,
+          "avg_defensive_fatigue": 1.2808915000000005,
+          "strategy_usage": {
+            "DEFENSIVE": 0.15744,
+            "BALANCED": 0.4432,
+            "AGGRESSIVE": 0.22092,
+            "COLLABORATE_WITH_PREV": 0.17844
+          }
+        },
+        "B": {
+          "expected_scored": 1.973,
+          "expected_conceded": 1.9875,
+          "expected_net": -0.0145,
+          "avg_offensive_fatigue": 1.3924320000000003,
+          "avg_defensive_fatigue": 1.2767405000000003,
+          "strategy_usage": {
+            "DEFENSIVE": 0.15254,
+            "BALANCED": 0.43492,
+            "AGGRESSIVE": 0.2298,
+            "COLLABORATE_WITH_NEXT": 0.18274
+          }
+        },
+        "C": {
+          "expected_scored": 1.944,
+          "expected_conceded": 2.0005,
+          "expected_net": -0.0565,
+          "avg_offensive_fatigue": 1.3624399999999999,
+          "avg_defensive_fatigue": 1.3242145000000005,
+          "strategy_usage": {
+            "DEFENSIVE": 0.14516,
+            "BALANCED": 0.44078,
+            "AGGRESSIVE": 0.11304,
+            "COLLABORATE_WITH_PREV": 0.30102
+          }
+        }
+      },
+      "metadata": {
+        "minutes": 25,
+        "samples": 2000,
+        "collaboration_frequency": 0.05936
+      }
+    }
+  },
+  {
+    "scenario": {
+      "name": "period1_one_trails",
+      "period": 1,
+      "statuses": {
+        "A": "TRAILING",
+        "B": "DRAW_ONE",
+        "C": "DRAW_ONE"
+      },
+      "description": "Team A trailing, Teams B and C level ahead"
+    },
+    "strategy_counts": {
+      "A": {
+        "DEFENSIVE": 25
+      },
+      "B": {
+        "DEFENSIVE": 25
+      },
+      "C": {
+        "DEFENSIVE": 25
+      }
+    },
+    "strategy_stats": {
+      "A": {
+        "DEFENSIVE": {
+          "expected_conceded": 1.5307,
+          "expected_scored": 1.4817100000000003,
+          "expected_net": -0.04898999999999999
+        },
+        "BALANCED": {
+          "expected_conceded": 2.0518899999999998,
+          "expected_scored": 1.9708999999999997,
+          "expected_net": -0.08098999999999996
+        },
+        "AGGRESSIVE": {
+          "expected_conceded": 2.41965,
+          "expected_scored": 2.5656499999999998,
+          "expected_net": 0.14600000000000005
+        },
+        "COLLABORATE_WITH_NEXT": {
+          "expected_conceded": 2.0986,
+          "expected_scored": 2.09815,
+          "expected_net": -0.00044999999999997267
+        },
+        "COLLABORATE_WITH_PREV": {
+          "expected_conceded": 2.10226,
+          "expected_scored": 2.09027,
+          "expected_net": -0.011990000000000008
+        }
+      },
+      "B": {
+        "DEFENSIVE": {
+          "expected_conceded": 1.5269699999999997,
+          "expected_scored": 1.4822,
+          "expected_net": -0.044770000000000004
+        },
+        "BALANCED": {
+          "expected_conceded": 2.0575300000000003,
+          "expected_scored": 1.9736799999999999,
+          "expected_net": -0.08385
+        },
+        "AGGRESSIVE": {
+          "expected_conceded": 2.41357,
+          "expected_scored": 2.57183,
+          "expected_net": 0.15825999999999998
+        },
+        "COLLABORATE_WITH_NEXT": {
+          "expected_conceded": 2.10134,
+          "expected_scored": 2.0962899999999998,
+          "expected_net": -0.0050500000000000345
+        },
+        "COLLABORATE_WITH_PREV": {
+          "expected_conceded": 2.09987,
+          "expected_scored": 2.09594,
+          "expected_net": -0.003929999999999998
+        }
+      },
+      "C": {
+        "DEFENSIVE": {
+          "expected_conceded": 1.5262,
+          "expected_scored": 1.4840099999999998,
+          "expected_net": -0.042189999999999984
+        },
+        "BALANCED": {
+          "expected_conceded": 2.0557600000000003,
+          "expected_scored": 1.97079,
+          "expected_net": -0.08496999999999996
+        },
+        "AGGRESSIVE": {
+          "expected_conceded": 2.42611,
+          "expected_scored": 2.5574500000000002,
+          "expected_net": 0.13134
+        },
+        "COLLABORATE_WITH_NEXT": {
+          "expected_conceded": 2.10494,
+          "expected_scored": 2.09008,
+          "expected_net": -0.014859999999999953
+        },
+        "COLLABORATE_WITH_PREV": {
+          "expected_conceded": 2.1085700000000003,
+          "expected_scored": 2.0950100000000003,
+          "expected_net": -0.013559999999999963
+        }
+      }
+    },
+    "adaptive": {
+      "team_metrics": {
+        "A": {
+          "expected_scored": 1.963,
+          "expected_conceded": 1.9265,
+          "expected_net": 0.0365,
+          "avg_offensive_fatigue": 1.345426,
+          "avg_defensive_fatigue": 1.3321122500000004,
+          "strategy_usage": {
+            "DEFENSIVE": 0.16116,
+            "BALANCED": 0.4397,
+            "AGGRESSIVE": 0.10822,
+            "COLLABORATE_WITH_PREV": 0.29092
+          }
+        },
+        "B": {
+          "expected_scored": 1.9265,
+          "expected_conceded": 2.0215,
+          "expected_net": -0.095,
+          "avg_offensive_fatigue": 1.395176,
+          "avg_defensive_fatigue": 1.2775560000000006,
+          "strategy_usage": {
+            "DEFENSIVE": 0.15156,
+            "BALANCED": 0.43,
+            "AGGRESSIVE": 0.22912,
+            "COLLABORATE_WITH_PREV": 0.18932
+          }
+        },
+        "C": {
+          "expected_scored": 2.036,
+          "expected_conceded": 1.9775,
+          "expected_net": 0.0585,
+          "avg_offensive_fatigue": 1.400056,
+          "avg_defensive_fatigue": 1.2715535000000002,
+          "strategy_usage": {
+            "DEFENSIVE": 0.14764,
+            "BALANCED": 0.43426,
+            "AGGRESSIVE": 0.238,
+            "COLLABORATE_WITH_NEXT": 0.1801
+          }
+        }
+      },
+      "metadata": {
+        "minutes": 25,
+        "samples": 2000,
+        "collaboration_frequency": 0.05984
+      }
+    }
+  },
+  {
+    "scenario": {
+      "name": "period2_all_tied",
+      "period": 2,
+      "statuses": {
+        "A": "DRAW_ALL",
+        "B": "DRAW_ALL",
+        "C": "DRAW_ALL"
+      },
+      "description": "All teams level on concessions and scores"
+    },
+    "strategy_counts": {
+      "A": {
+        "DEFENSIVE": 25
+      },
+      "B": {
+        "DEFENSIVE": 25
+      },
+      "C": {
+        "DEFENSIVE": 25
+      }
+    },
+    "strategy_stats": {
+      "A": {
+        "DEFENSIVE": {
+          "expected_conceded": 1.5307,
+          "expected_scored": 1.4817100000000003,
+          "expected_net": -0.04898999999999999
+        },
+        "BALANCED": {
+          "expected_conceded": 2.0518899999999998,
+          "expected_scored": 1.9708999999999997,
+          "expected_net": -0.08098999999999996
+        },
+        "AGGRESSIVE": {
+          "expected_conceded": 2.41965,
+          "expected_scored": 2.5656499999999998,
+          "expected_net": 0.14600000000000005
+        },
+        "COLLABORATE_WITH_NEXT": {
+          "expected_conceded": 2.0986,
+          "expected_scored": 2.09815,
+          "expected_net": -0.00044999999999997267
+        },
+        "COLLABORATE_WITH_PREV": {
+          "expected_conceded": 2.10226,
+          "expected_scored": 2.09027,
+          "expected_net": -0.011990000000000008
+        }
+      },
+      "B": {
+        "DEFENSIVE": {
+          "expected_conceded": 1.5269699999999997,
+          "expected_scored": 1.4822,
+          "expected_net": -0.044770000000000004
+        },
+        "BALANCED": {
+          "expected_conceded": 2.0575300000000003,
+          "expected_scored": 1.9736799999999999,
+          "expected_net": -0.08385
+        },
+        "AGGRESSIVE": {
+          "expected_conceded": 2.41357,
+          "expected_scored": 2.57183,
+          "expected_net": 0.15825999999999998
+        },
+        "COLLABORATE_WITH_NEXT": {
+          "expected_conceded": 2.10134,
+          "expected_scored": 2.0962899999999998,
+          "expected_net": -0.0050500000000000345
+        },
+        "COLLABORATE_WITH_PREV": {
+          "expected_conceded": 2.09987,
+          "expected_scored": 2.09594,
+          "expected_net": -0.003929999999999998
+        }
+      },
+      "C": {
+        "DEFENSIVE": {
+          "expected_conceded": 1.5262,
+          "expected_scored": 1.4840099999999998,
+          "expected_net": -0.042189999999999984
+        },
+        "BALANCED": {
+          "expected_conceded": 2.0557600000000003,
+          "expected_scored": 1.97079,
+          "expected_net": -0.08496999999999996
+        },
+        "AGGRESSIVE": {
+          "expected_conceded": 2.42611,
+          "expected_scored": 2.5574500000000002,
+          "expected_net": 0.13134
+        },
+        "COLLABORATE_WITH_NEXT": {
+          "expected_conceded": 2.10494,
+          "expected_scored": 2.09008,
+          "expected_net": -0.014859999999999953
+        },
+        "COLLABORATE_WITH_PREV": {
+          "expected_conceded": 2.1085700000000003,
+          "expected_scored": 2.0950100000000003,
+          "expected_net": -0.013559999999999963
+        }
+      }
+    },
+    "adaptive": {
+      "team_metrics": {
+        "A": {
+          "expected_scored": 2.18,
+          "expected_conceded": 2.106,
+          "expected_net": 0.074,
+          "avg_offensive_fatigue": 1.44952,
+          "avg_defensive_fatigue": 1.1966920000000003,
+          "strategy_usage": {
+            "DEFENSIVE": 0.15504,
+            "BALANCED": 0.42704,
+            "AGGRESSIVE": 0.41792
+          }
+        },
+        "B": {
+          "expected_scored": 2.168,
+          "expected_conceded": 2.1525,
+          "expected_net": 0.0155,
+          "avg_offensive_fatigue": 1.4475040000000001,
+          "avg_defensive_fatigue": 1.196986,
+          "strategy_usage": {
+            "DEFENSIVE": 0.1535,
+            "BALANCED": 0.43278,
+            "AGGRESSIVE": 0.41372
+          }
+        },
+        "C": {
+          "expected_scored": 2.104,
+          "expected_conceded": 2.1935,
+          "expected_net": -0.0895,
+          "avg_offensive_fatigue": 1.4574960000000001,
+          "avg_defensive_fatigue": 1.1925970000000001,
+          "strategy_usage": {
+            "DEFENSIVE": 0.15136,
+            "BALANCED": 0.42248,
+            "AGGRESSIVE": 0.42616
+          }
+        }
+      },
+      "metadata": {
+        "minutes": 25,
+        "samples": 2000,
+        "collaboration_frequency": 0.0
+      }
+    }
+  },
+  {
+    "scenario": {
+      "name": "period2_one_leads",
+      "period": 2,
+      "statuses": {
+        "A": "LEADING",
+        "B": "TRAILING",
+        "C": "TRAILING"
+      },
+      "description": "Team A leading, Teams B and C trailing"
+    },
+    "strategy_counts": {
+      "A": {
+        "DEFENSIVE": 25
+      },
+      "B": {
+        "DEFENSIVE": 25
+      },
+      "C": {
+        "DEFENSIVE": 25
+      }
+    },
+    "strategy_stats": {
+      "A": {
+        "DEFENSIVE": {
+          "expected_conceded": 1.5307,
+          "expected_scored": 1.4817100000000003,
+          "expected_net": -0.04898999999999999
+        },
+        "BALANCED": {
+          "expected_conceded": 2.0518899999999998,
+          "expected_scored": 1.9708999999999997,
+          "expected_net": -0.08098999999999996
+        },
+        "AGGRESSIVE": {
+          "expected_conceded": 2.41965,
+          "expected_scored": 2.5656499999999998,
+          "expected_net": 0.14600000000000005
+        },
+        "COLLABORATE_WITH_NEXT": {
+          "expected_conceded": 2.0986,
+          "expected_scored": 2.09815,
+          "expected_net": -0.00044999999999997267
+        },
+        "COLLABORATE_WITH_PREV": {
+          "expected_conceded": 2.10226,
+          "expected_scored": 2.09027,
+          "expected_net": -0.011990000000000008
+        }
+      },
+      "B": {
+        "DEFENSIVE": {
+          "expected_conceded": 1.5269699999999997,
+          "expected_scored": 1.4822,
+          "expected_net": -0.044770000000000004
+        },
+        "BALANCED": {
+          "expected_conceded": 2.0575300000000003,
+          "expected_scored": 1.9736799999999999,
+          "expected_net": -0.08385
+        },
+        "AGGRESSIVE": {
+          "expected_conceded": 2.41357,
+          "expected_scored": 2.57183,
+          "expected_net": 0.15825999999999998
+        },
+        "COLLABORATE_WITH_NEXT": {
+          "expected_conceded": 2.10134,
+          "expected_scored": 2.0962899999999998,
+          "expected_net": -0.0050500000000000345
+        },
+        "COLLABORATE_WITH_PREV": {
+          "expected_conceded": 2.09987,
+          "expected_scored": 2.09594,
+          "expected_net": -0.003929999999999998
+        }
+      },
+      "C": {
+        "DEFENSIVE": {
+          "expected_conceded": 1.5262,
+          "expected_scored": 1.4840099999999998,
+          "expected_net": -0.042189999999999984
+        },
+        "BALANCED": {
+          "expected_conceded": 2.0557600000000003,
+          "expected_scored": 1.97079,
+          "expected_net": -0.08496999999999996
+        },
+        "AGGRESSIVE": {
+          "expected_conceded": 2.42611,
+          "expected_scored": 2.5574500000000002,
+          "expected_net": 0.13134
+        },
+        "COLLABORATE_WITH_NEXT": {
+          "expected_conceded": 2.10494,
+          "expected_scored": 2.09008,
+          "expected_net": -0.014859999999999953
+        },
+        "COLLABORATE_WITH_PREV": {
+          "expected_conceded": 2.1085700000000003,
+          "expected_scored": 2.0950100000000003,
+          "expected_net": -0.013559999999999963
+        }
+      }
+    },
+    "adaptive": {
+      "team_metrics": {
+        "A": {
+          "expected_scored": 2.1525,
+          "expected_conceded": 2.226,
+          "expected_net": -0.0735,
+          "avg_offensive_fatigue": 1.4460640000000002,
+          "avg_defensive_fatigue": 1.205638,
+          "strategy_usage": {
+            "DEFENSIVE": 0.18054,
+            "BALANCED": 0.38462,
+            "AGGRESSIVE": 0.43484
+          }
+        },
+        "B": {
+          "expected_scored": 2.269,
+          "expected_conceded": 2.17,
+          "expected_net": 0.099,
+          "avg_offensive_fatigue": 1.6116680000000003,
+          "avg_defensive_fatigue": 1.2396125000000002,
+          "strategy_usage": {
+            "DEFENSIVE": 0.18368,
+            "BALANCED": 0.01676,
+            "AGGRESSIVE": 0.50684,
+            "COLLABORATE_WITH_NEXT": 0.29272
+          }
+        },
+        "C": {
+          "expected_scored": 2.227,
+          "expected_conceded": 2.2525,
+          "expected_net": -0.0255,
+          "avg_offensive_fatigue": 1.6305460000000003,
+          "avg_defensive_fatigue": 1.2304582500000003,
+          "strategy_usage": {
+            "DEFENSIVE": 0.1671,
+            "BALANCED": 0.01676,
+            "AGGRESSIVE": 0.5145,
+            "COLLABORATE_WITH_PREV": 0.30164
+          }
+        }
+      },
+      "metadata": {
+        "minutes": 25,
+        "samples": 2000,
+        "collaboration_frequency": 0.10234
+      }
+    }
+  },
+  {
+    "scenario": {
+      "name": "period2_two_tied",
+      "period": 2,
+      "statuses": {
+        "A": "DRAW_ONE",
+        "B": "DRAW_ONE",
+        "C": "TRAILING"
+      },
+      "description": "Teams A and B tied, Team C trailing"
+    },
+    "strategy_counts": {
+      "A": {
+        "DEFENSIVE": 25
+      },
+      "B": {
+        "DEFENSIVE": 25
+      },
+      "C": {
+        "DEFENSIVE": 25
+      }
+    },
+    "strategy_stats": {
+      "A": {
+        "DEFENSIVE": {
+          "expected_conceded": 1.5307,
+          "expected_scored": 1.4817100000000003,
+          "expected_net": -0.04898999999999999
+        },
+        "BALANCED": {
+          "expected_conceded": 2.0518899999999998,
+          "expected_scored": 1.9708999999999997,
+          "expected_net": -0.08098999999999996
+        },
+        "AGGRESSIVE": {
+          "expected_conceded": 2.41965,
+          "expected_scored": 2.5656499999999998,
+          "expected_net": 0.14600000000000005
+        },
+        "COLLABORATE_WITH_NEXT": {
+          "expected_conceded": 2.0986,
+          "expected_scored": 2.09815,
+          "expected_net": -0.00044999999999997267
+        },
+        "COLLABORATE_WITH_PREV": {
+          "expected_conceded": 2.10226,
+          "expected_scored": 2.09027,
+          "expected_net": -0.011990000000000008
+        }
+      },
+      "B": {
+        "DEFENSIVE": {
+          "expected_conceded": 1.5269699999999997,
+          "expected_scored": 1.4822,
+          "expected_net": -0.044770000000000004
+        },
+        "BALANCED": {
+          "expected_conceded": 2.0575300000000003,
+          "expected_scored": 1.9736799999999999,
+          "expected_net": -0.08385
+        },
+        "AGGRESSIVE": {
+          "expected_conceded": 2.41357,
+          "expected_scored": 2.57183,
+          "expected_net": 0.15825999999999998
+        },
+        "COLLABORATE_WITH_NEXT": {
+          "expected_conceded": 2.10134,
+          "expected_scored": 2.0962899999999998,
+          "expected_net": -0.0050500000000000345
+        },
+        "COLLABORATE_WITH_PREV": {
+          "expected_conceded": 2.09987,
+          "expected_scored": 2.09594,
+          "expected_net": -0.003929999999999998
+        }
+      },
+      "C": {
+        "DEFENSIVE": {
+          "expected_conceded": 1.5262,
+          "expected_scored": 1.4840099999999998,
+          "expected_net": -0.042189999999999984
+        },
+        "BALANCED": {
+          "expected_conceded": 2.0557600000000003,
+          "expected_scored": 1.97079,
+          "expected_net": -0.08496999999999996
+        },
+        "AGGRESSIVE": {
+          "expected_conceded": 2.42611,
+          "expected_scored": 2.5574500000000002,
+          "expected_net": 0.13134
+        },
+        "COLLABORATE_WITH_NEXT": {
+          "expected_conceded": 2.10494,
+          "expected_scored": 2.09008,
+          "expected_net": -0.014859999999999953
+        },
+        "COLLABORATE_WITH_PREV": {
+          "expected_conceded": 2.1085700000000003,
+          "expected_scored": 2.0950100000000003,
+          "expected_net": -0.013559999999999963
+        }
+      }
+    },
+    "adaptive": {
+      "team_metrics": {
+        "A": {
+          "expected_scored": 2.06,
+          "expected_conceded": 2.053,
+          "expected_net": 0.007,
+          "avg_offensive_fatigue": 1.382386,
+          "avg_defensive_fatigue": 1.2904832500000005,
+          "strategy_usage": {
+            "DEFENSIVE": 0.1703,
+            "BALANCED": 0.41016,
+            "AGGRESSIVE": 0.2225,
+            "COLLABORATE_WITH_PREV": 0.19704
+          }
+        },
+        "B": {
+          "expected_scored": 2.0395,
+          "expected_conceded": 2.0585,
+          "expected_net": -0.019,
+          "avg_offensive_fatigue": 1.386464,
+          "avg_defensive_fatigue": 1.2844860000000002,
+          "strategy_usage": {
+            "DEFENSIVE": 0.16546,
+            "BALANCED": 0.4173,
+            "AGGRESSIVE": 0.22948,
+            "COLLABORATE_WITH_NEXT": 0.18776
+          }
+        },
+        "C": {
+          "expected_scored": 2.1275,
+          "expected_conceded": 2.1155,
+          "expected_net": 0.012,
+          "avg_offensive_fatigue": 1.6515600000000004,
+          "avg_defensive_fatigue": 1.2151020000000006,
+          "strategy_usage": {
+            "DEFENSIVE": 0.15206,
+            "BALANCED": 0.01858,
+            "AGGRESSIVE": 0.53684,
+            "COLLABORATE_WITH_PREV": 0.29252
+          }
+        }
+      },
+      "metadata": {
+        "minutes": 25,
+        "samples": 2000,
+        "collaboration_frequency": 0.06152
+      }
+    }
+  },
+  {
+    "scenario": {
+      "name": "period2_one_trails",
+      "period": 2,
+      "statuses": {
+        "A": "TRAILING",
+        "B": "DRAW_ONE",
+        "C": "DRAW_ONE"
+      },
+      "description": "Team A trailing, Teams B and C level ahead"
+    },
+    "strategy_counts": {
+      "A": {
+        "DEFENSIVE": 25
+      },
+      "B": {
+        "DEFENSIVE": 25
+      },
+      "C": {
+        "DEFENSIVE": 25
+      }
+    },
+    "strategy_stats": {
+      "A": {
+        "DEFENSIVE": {
+          "expected_conceded": 1.5307,
+          "expected_scored": 1.4817100000000003,
+          "expected_net": -0.04898999999999999
+        },
+        "BALANCED": {
+          "expected_conceded": 2.0518899999999998,
+          "expected_scored": 1.9708999999999997,
+          "expected_net": -0.08098999999999996
+        },
+        "AGGRESSIVE": {
+          "expected_conceded": 2.41965,
+          "expected_scored": 2.5656499999999998,
+          "expected_net": 0.14600000000000005
+        },
+        "COLLABORATE_WITH_NEXT": {
+          "expected_conceded": 2.0986,
+          "expected_scored": 2.09815,
+          "expected_net": -0.00044999999999997267
+        },
+        "COLLABORATE_WITH_PREV": {
+          "expected_conceded": 2.10226,
+          "expected_scored": 2.09027,
+          "expected_net": -0.011990000000000008
+        }
+      },
+      "B": {
+        "DEFENSIVE": {
+          "expected_conceded": 1.5269699999999997,
+          "expected_scored": 1.4822,
+          "expected_net": -0.044770000000000004
+        },
+        "BALANCED": {
+          "expected_conceded": 2.0575300000000003,
+          "expected_scored": 1.9736799999999999,
+          "expected_net": -0.08385
+        },
+        "AGGRESSIVE": {
+          "expected_conceded": 2.41357,
+          "expected_scored": 2.57183,
+          "expected_net": 0.15825999999999998
+        },
+        "COLLABORATE_WITH_NEXT": {
+          "expected_conceded": 2.10134,
+          "expected_scored": 2.0962899999999998,
+          "expected_net": -0.0050500000000000345
+        },
+        "COLLABORATE_WITH_PREV": {
+          "expected_conceded": 2.09987,
+          "expected_scored": 2.09594,
+          "expected_net": -0.003929999999999998
+        }
+      },
+      "C": {
+        "DEFENSIVE": {
+          "expected_conceded": 1.5262,
+          "expected_scored": 1.4840099999999998,
+          "expected_net": -0.042189999999999984
+        },
+        "BALANCED": {
+          "expected_conceded": 2.0557600000000003,
+          "expected_scored": 1.97079,
+          "expected_net": -0.08496999999999996
+        },
+        "AGGRESSIVE": {
+          "expected_conceded": 2.42611,
+          "expected_scored": 2.5574500000000002,
+          "expected_net": 0.13134
+        },
+        "COLLABORATE_WITH_NEXT": {
+          "expected_conceded": 2.10494,
+          "expected_scored": 2.09008,
+          "expected_net": -0.014859999999999953
+        },
+        "COLLABORATE_WITH_PREV": {
+          "expected_conceded": 2.1085700000000003,
+          "expected_scored": 2.0950100000000003,
+          "expected_net": -0.013559999999999963
+        }
+      }
+    },
+    "adaptive": {
+      "team_metrics": {
+        "A": {
+          "expected_scored": 2.126,
+          "expected_conceded": 2.1065,
+          "expected_net": 0.0195,
+          "avg_offensive_fatigue": 1.6496360000000003,
+          "avg_defensive_fatigue": 1.2151090000000004,
+          "strategy_usage": {
+            "DEFENSIVE": 0.15568,
+            "BALANCED": 0.01698,
+            "AGGRESSIVE": 0.54036,
+            "COLLABORATE_WITH_PREV": 0.28698
+          }
+        },
+        "B": {
+          "expected_scored": 2.016,
+          "expected_conceded": 2.0515,
+          "expected_net": -0.0355,
+          "avg_offensive_fatigue": 1.379038,
+          "avg_defensive_fatigue": 1.2887647500000006,
+          "strategy_usage": {
+            "DEFENSIVE": 0.17278,
+            "BALANCED": 0.41524,
+            "AGGRESSIVE": 0.22638,
+            "COLLABORATE_WITH_PREV": 0.1856
+          }
+        },
+        "C": {
+          "expected_scored": 2.066,
+          "expected_conceded": 2.05,
+          "expected_net": 0.016,
+          "avg_offensive_fatigue": 1.398212,
+          "avg_defensive_fatigue": 1.2791275000000004,
+          "strategy_usage": {
+            "DEFENSIVE": 0.15496,
+            "BALANCED": 0.41712,
+            "AGGRESSIVE": 0.2334,
+            "COLLABORATE_WITH_NEXT": 0.19452
+          }
+        }
+      },
+      "metadata": {
+        "minutes": 25,
+        "samples": 2000,
+        "collaboration_frequency": 0.05974
+      }
+    }
+  },
+  {
+    "scenario": {
+      "name": "period3_all_tied",
+      "period": 3,
+      "statuses": {
+        "A": "DRAW_ALL",
+        "B": "DRAW_ALL",
+        "C": "DRAW_ALL"
+      },
+      "description": "All teams level on concessions and scores"
+    },
+    "strategy_counts": {
+      "A": {
+        "DEFENSIVE": 23,
+        "COLLABORATE_WITH_PREV": 1,
+        "COLLABORATE_WITH_NEXT": 1
+      },
+      "B": {
+        "DEFENSIVE": 23,
+        "COLLABORATE_WITH_PREV": 1,
+        "COLLABORATE_WITH_NEXT": 1
+      },
+      "C": {
+        "DEFENSIVE": 23,
+        "COLLABORATE_WITH_NEXT": 2
+      }
+    },
+    "strategy_stats": {
+      "A": {
+        "DEFENSIVE": {
+          "expected_conceded": 1.5307,
+          "expected_scored": 1.4817100000000003,
+          "expected_net": -0.04898999999999999
+        },
+        "BALANCED": {
+          "expected_conceded": 2.0518899999999998,
+          "expected_scored": 1.9708999999999997,
+          "expected_net": -0.08098999999999996
+        },
+        "AGGRESSIVE": {
+          "expected_conceded": 2.41965,
+          "expected_scored": 2.5656499999999998,
+          "expected_net": 0.14600000000000005
+        },
+        "COLLABORATE_WITH_NEXT": {
+          "expected_conceded": 2.0986,
+          "expected_scored": 2.09815,
+          "expected_net": -0.00044999999999997267
+        },
+        "COLLABORATE_WITH_PREV": {
+          "expected_conceded": 2.10226,
+          "expected_scored": 2.09027,
+          "expected_net": -0.011990000000000008
+        }
+      },
+      "B": {
+        "DEFENSIVE": {
+          "expected_conceded": 1.5269699999999997,
+          "expected_scored": 1.4822,
+          "expected_net": -0.044770000000000004
+        },
+        "BALANCED": {
+          "expected_conceded": 2.0575300000000003,
+          "expected_scored": 1.9736799999999999,
+          "expected_net": -0.08385
+        },
+        "AGGRESSIVE": {
+          "expected_conceded": 2.41357,
+          "expected_scored": 2.57183,
+          "expected_net": 0.15825999999999998
+        },
+        "COLLABORATE_WITH_NEXT": {
+          "expected_conceded": 2.10134,
+          "expected_scored": 2.0962899999999998,
+          "expected_net": -0.0050500000000000345
+        },
+        "COLLABORATE_WITH_PREV": {
+          "expected_conceded": 2.09987,
+          "expected_scored": 2.09594,
+          "expected_net": -0.003929999999999998
+        }
+      },
+      "C": {
+        "DEFENSIVE": {
+          "expected_conceded": 1.5262,
+          "expected_scored": 1.4840099999999998,
+          "expected_net": -0.042189999999999984
+        },
+        "BALANCED": {
+          "expected_conceded": 2.0557600000000003,
+          "expected_scored": 1.97079,
+          "expected_net": -0.08496999999999996
+        },
+        "AGGRESSIVE": {
+          "expected_conceded": 2.42611,
+          "expected_scored": 2.5574500000000002,
+          "expected_net": 0.13134
+        },
+        "COLLABORATE_WITH_NEXT": {
+          "expected_conceded": 2.10494,
+          "expected_scored": 2.09008,
+          "expected_net": -0.014859999999999953
+        },
+        "COLLABORATE_WITH_PREV": {
+          "expected_conceded": 2.1085700000000003,
+          "expected_scored": 2.0950100000000003,
+          "expected_net": -0.013559999999999963
+        }
+      }
+    },
+    "adaptive": {
+      "team_metrics": {
+        "A": {
+          "expected_scored": 2.203,
+          "expected_conceded": 2.0715,
+          "expected_net": 0.1315,
+          "avg_offensive_fatigue": 1.4458140000000002,
+          "avg_defensive_fatigue": 1.1981777500000002,
+          "strategy_usage": {
+            "DEFENSIVE": 0.15536,
+            "BALANCED": 0.43174,
+            "AGGRESSIVE": 0.4129
+          }
+        },
+        "B": {
+          "expected_scored": 2.1375,
+          "expected_conceded": 2.1635,
+          "expected_net": -0.026,
+          "avg_offensive_fatigue": 1.4458820000000001,
+          "avg_defensive_fatigue": 1.19730625,
+          "strategy_usage": {
+            "DEFENSIVE": 0.15254,
+            "BALANCED": 0.43688,
+            "AGGRESSIVE": 0.41058
+          }
+        },
+        "C": {
+          "expected_scored": 2.0945,
+          "expected_conceded": 2.2,
+          "expected_net": -0.1055,
+          "avg_offensive_fatigue": 1.4547560000000004,
+          "avg_defensive_fatigue": 1.1936785,
+          "strategy_usage": {
+            "DEFENSIVE": 0.15154,
+            "BALANCED": 0.42606,
+            "AGGRESSIVE": 0.4224
+          }
+        }
+      },
+      "metadata": {
+        "minutes": 25,
+        "samples": 2000,
+        "collaboration_frequency": 0.0
+      }
+    }
+  },
+  {
+    "scenario": {
+      "name": "period3_one_leads",
+      "period": 3,
+      "statuses": {
+        "A": "LEADING",
+        "B": "TRAILING",
+        "C": "TRAILING"
+      },
+      "description": "Team A leading, Teams B and C trailing"
+    },
+    "strategy_counts": {
+      "A": {
+        "DEFENSIVE": 25
+      },
+      "B": {
+        "DEFENSIVE": 8,
+        "AGGRESSIVE": 8,
+        "COLLABORATE_WITH_NEXT": 5,
+        "COLLABORATE_WITH_PREV": 4
+      },
+      "C": {
+        "DEFENSIVE": 11,
+        "AGGRESSIVE": 5,
+        "COLLABORATE_WITH_NEXT": 5,
+        "COLLABORATE_WITH_PREV": 4
+      }
+    },
+    "strategy_stats": {
+      "A": {
+        "DEFENSIVE": {
+          "expected_conceded": 1.5307,
+          "expected_scored": 1.4817100000000003,
+          "expected_net": -0.04898999999999999
+        },
+        "BALANCED": {
+          "expected_conceded": 2.0518899999999998,
+          "expected_scored": 1.9708999999999997,
+          "expected_net": -0.08098999999999996
+        },
+        "AGGRESSIVE": {
+          "expected_conceded": 2.41965,
+          "expected_scored": 2.5656499999999998,
+          "expected_net": 0.14600000000000005
+        },
+        "COLLABORATE_WITH_NEXT": {
+          "expected_conceded": 2.0986,
+          "expected_scored": 2.09815,
+          "expected_net": -0.00044999999999997267
+        },
+        "COLLABORATE_WITH_PREV": {
+          "expected_conceded": 2.10226,
+          "expected_scored": 2.09027,
+          "expected_net": -0.011990000000000008
+        }
+      },
+      "B": {
+        "DEFENSIVE": {
+          "expected_conceded": 1.5269699999999997,
+          "expected_scored": 1.4822,
+          "expected_net": -0.044770000000000004
+        },
+        "BALANCED": {
+          "expected_conceded": 2.0575300000000003,
+          "expected_scored": 1.9736799999999999,
+          "expected_net": -0.08385
+        },
+        "AGGRESSIVE": {
+          "expected_conceded": 2.41357,
+          "expected_scored": 2.57183,
+          "expected_net": 0.15825999999999998
+        },
+        "COLLABORATE_WITH_NEXT": {
+          "expected_conceded": 2.10134,
+          "expected_scored": 2.0962899999999998,
+          "expected_net": -0.0050500000000000345
+        },
+        "COLLABORATE_WITH_PREV": {
+          "expected_conceded": 2.09987,
+          "expected_scored": 2.09594,
+          "expected_net": -0.003929999999999998
+        }
+      },
+      "C": {
+        "DEFENSIVE": {
+          "expected_conceded": 1.5262,
+          "expected_scored": 1.4840099999999998,
+          "expected_net": -0.042189999999999984
+        },
+        "BALANCED": {
+          "expected_conceded": 2.0557600000000003,
+          "expected_scored": 1.97079,
+          "expected_net": -0.08496999999999996
+        },
+        "AGGRESSIVE": {
+          "expected_conceded": 2.42611,
+          "expected_scored": 2.5574500000000002,
+          "expected_net": 0.13134
+        },
+        "COLLABORATE_WITH_NEXT": {
+          "expected_conceded": 2.10494,
+          "expected_scored": 2.09008,
+          "expected_net": -0.014859999999999953
+        },
+        "COLLABORATE_WITH_PREV": {
+          "expected_conceded": 2.1085700000000003,
+          "expected_scored": 2.0950100000000003,
+          "expected_net": -0.013559999999999963
+        }
+      }
+    },
+    "adaptive": {
+      "team_metrics": {
+        "A": {
+          "expected_scored": 1.992,
+          "expected_conceded": 1.993,
+          "expected_net": -0.001,
+          "avg_offensive_fatigue": 1.145308,
+          "avg_defensive_fatigue": 1.4481775000000008,
+          "strategy_usage": {
+            "DEFENSIVE": 0.61306,
+            "BALANCED": 0.01102,
+            "AGGRESSIVE": 0.37592
+          }
+        },
+        "B": {
+          "expected_scored": 2.1465,
+          "expected_conceded": 2.1405,
+          "expected_net": 0.006,
+          "avg_offensive_fatigue": 1.6699060000000003,
+          "avg_defensive_fatigue": 1.2021712500000004,
+          "strategy_usage": {
+            "DEFENSIVE": 0.1523,
+            "AGGRESSIVE": 0.57402,
+            "COLLABORATE_WITH_NEXT": 0.27368
+          }
+        },
+        "C": {
+          "expected_scored": 2.1455,
+          "expected_conceded": 2.1505,
+          "expected_net": -0.005,
+          "avg_offensive_fatigue": 1.6737440000000001,
+          "avg_defensive_fatigue": 1.2002760000000003,
+          "strategy_usage": {
+            "DEFENSIVE": 0.14896,
+            "AGGRESSIVE": 0.57568,
+            "COLLABORATE_WITH_PREV": 0.27536
+          }
+        }
+      },
+      "metadata": {
+        "minutes": 25,
+        "samples": 2000,
+        "collaboration_frequency": 0.09444
+      }
+    }
+  },
+  {
+    "scenario": {
+      "name": "period3_two_tied",
+      "period": 3,
+      "statuses": {
+        "A": "DRAW_ONE",
+        "B": "DRAW_ONE",
+        "C": "TRAILING"
+      },
+      "description": "Teams A and B tied, Team C trailing"
+    },
+    "strategy_counts": {
+      "A": {
+        "DEFENSIVE": 25
+      },
+      "B": {
+        "DEFENSIVE": 25
+      },
+      "C": {
+        "DEFENSIVE": 11,
+        "AGGRESSIVE": 5,
+        "COLLABORATE_WITH_NEXT": 5,
+        "COLLABORATE_WITH_PREV": 4
+      }
+    },
+    "strategy_stats": {
+      "A": {
+        "DEFENSIVE": {
+          "expected_conceded": 1.5307,
+          "expected_scored": 1.4817100000000003,
+          "expected_net": -0.04898999999999999
+        },
+        "BALANCED": {
+          "expected_conceded": 2.0518899999999998,
+          "expected_scored": 1.9708999999999997,
+          "expected_net": -0.08098999999999996
+        },
+        "AGGRESSIVE": {
+          "expected_conceded": 2.41965,
+          "expected_scored": 2.5656499999999998,
+          "expected_net": 0.14600000000000005
+        },
+        "COLLABORATE_WITH_NEXT": {
+          "expected_conceded": 2.0986,
+          "expected_scored": 2.09815,
+          "expected_net": -0.00044999999999997267
+        },
+        "COLLABORATE_WITH_PREV": {
+          "expected_conceded": 2.10226,
+          "expected_scored": 2.09027,
+          "expected_net": -0.011990000000000008
+        }
+      },
+      "B": {
+        "DEFENSIVE": {
+          "expected_conceded": 1.5269699999999997,
+          "expected_scored": 1.4822,
+          "expected_net": -0.044770000000000004
+        },
+        "BALANCED": {
+          "expected_conceded": 2.0575300000000003,
+          "expected_scored": 1.9736799999999999,
+          "expected_net": -0.08385
+        },
+        "AGGRESSIVE": {
+          "expected_conceded": 2.41357,
+          "expected_scored": 2.57183,
+          "expected_net": 0.15825999999999998
+        },
+        "COLLABORATE_WITH_NEXT": {
+          "expected_conceded": 2.10134,
+          "expected_scored": 2.0962899999999998,
+          "expected_net": -0.0050500000000000345
+        },
+        "COLLABORATE_WITH_PREV": {
+          "expected_conceded": 2.09987,
+          "expected_scored": 2.09594,
+          "expected_net": -0.003929999999999998
+        }
+      },
+      "C": {
+        "DEFENSIVE": {
+          "expected_conceded": 1.5262,
+          "expected_scored": 1.4840099999999998,
+          "expected_net": -0.042189999999999984
+        },
+        "BALANCED": {
+          "expected_conceded": 2.0557600000000003,
+          "expected_scored": 1.97079,
+          "expected_net": -0.08496999999999996
+        },
+        "AGGRESSIVE": {
+          "expected_conceded": 2.42611,
+          "expected_scored": 2.5574500000000002,
+          "expected_net": 0.13134
+        },
+        "COLLABORATE_WITH_NEXT": {
+          "expected_conceded": 2.10494,
+          "expected_scored": 2.09008,
+          "expected_net": -0.014859999999999953
+        },
+        "COLLABORATE_WITH_PREV": {
+          "expected_conceded": 2.1085700000000003,
+          "expected_scored": 2.0950100000000003,
+          "expected_net": -0.013559999999999963
+        }
+      }
+    },
+    "adaptive": {
+      "team_metrics": {
+        "A": {
+          "expected_scored": 2.055,
+          "expected_conceded": 2.1105,
+          "expected_net": -0.0555,
+          "avg_offensive_fatigue": 1.386874,
+          "avg_defensive_fatigue": 1.2878442500000002,
+          "strategy_usage": {
+            "DEFENSIVE": 0.16694,
+            "BALANCED": 0.40992,
+            "AGGRESSIVE": 0.22594,
+            "COLLABORATE_WITH_PREV": 0.1972
+          }
+        },
+        "B": {
+          "expected_scored": 2.049,
+          "expected_conceded": 2.0575,
+          "expected_net": -0.0085,
+          "avg_offensive_fatigue": 1.3961979999999998,
+          "avg_defensive_fatigue": 1.2780932500000004,
+          "strategy_usage": {
+            "DEFENSIVE": 0.16024,
+            "BALANCED": 0.41464,
+            "AGGRESSIVE": 0.24098,
+            "COLLABORATE_WITH_NEXT": 0.18414
+          }
+        },
+        "C": {
+          "expected_scored": 2.1725,
+          "expected_conceded": 2.1085,
+          "expected_net": 0.064,
+          "avg_offensive_fatigue": 1.6692740000000004,
+          "avg_defensive_fatigue": 1.2008097500000003,
+          "strategy_usage": {
+            "DEFENSIVE": 0.15436,
+            "AGGRESSIVE": 0.57878,
+            "COLLABORATE_WITH_PREV": 0.26686
+          }
+        }
+      },
+      "metadata": {
+        "minutes": 25,
+        "samples": 2000,
+        "collaboration_frequency": 0.0518
+      }
+    }
+  },
+  {
+    "scenario": {
+      "name": "period3_one_trails",
+      "period": 3,
+      "statuses": {
+        "A": "TRAILING",
+        "B": "DRAW_ONE",
+        "C": "DRAW_ONE"
+      },
+      "description": "Team A trailing, Teams B and C level ahead"
+    },
+    "strategy_counts": {
+      "A": {
+        "DEFENSIVE": 10,
+        "AGGRESSIVE": 6,
+        "COLLABORATE_WITH_NEXT": 5,
+        "COLLABORATE_WITH_PREV": 4
+      },
+      "B": {
+        "DEFENSIVE": 25
+      },
+      "C": {
+        "DEFENSIVE": 25
+      }
+    },
+    "strategy_stats": {
+      "A": {
+        "DEFENSIVE": {
+          "expected_conceded": 1.5307,
+          "expected_scored": 1.4817100000000003,
+          "expected_net": -0.04898999999999999
+        },
+        "BALANCED": {
+          "expected_conceded": 2.0518899999999998,
+          "expected_scored": 1.9708999999999997,
+          "expected_net": -0.08098999999999996
+        },
+        "AGGRESSIVE": {
+          "expected_conceded": 2.41965,
+          "expected_scored": 2.5656499999999998,
+          "expected_net": 0.14600000000000005
+        },
+        "COLLABORATE_WITH_NEXT": {
+          "expected_conceded": 2.0986,
+          "expected_scored": 2.09815,
+          "expected_net": -0.00044999999999997267
+        },
+        "COLLABORATE_WITH_PREV": {
+          "expected_conceded": 2.10226,
+          "expected_scored": 2.09027,
+          "expected_net": -0.011990000000000008
+        }
+      },
+      "B": {
+        "DEFENSIVE": {
+          "expected_conceded": 1.5269699999999997,
+          "expected_scored": 1.4822,
+          "expected_net": -0.044770000000000004
+        },
+        "BALANCED": {
+          "expected_conceded": 2.0575300000000003,
+          "expected_scored": 1.9736799999999999,
+          "expected_net": -0.08385
+        },
+        "AGGRESSIVE": {
+          "expected_conceded": 2.41357,
+          "expected_scored": 2.57183,
+          "expected_net": 0.15825999999999998
+        },
+        "COLLABORATE_WITH_NEXT": {
+          "expected_conceded": 2.10134,
+          "expected_scored": 2.0962899999999998,
+          "expected_net": -0.0050500000000000345
+        },
+        "COLLABORATE_WITH_PREV": {
+          "expected_conceded": 2.09987,
+          "expected_scored": 2.09594,
+          "expected_net": -0.003929999999999998
+        }
+      },
+      "C": {
+        "DEFENSIVE": {
+          "expected_conceded": 1.5262,
+          "expected_scored": 1.4840099999999998,
+          "expected_net": -0.042189999999999984
+        },
+        "BALANCED": {
+          "expected_conceded": 2.0557600000000003,
+          "expected_scored": 1.97079,
+          "expected_net": -0.08496999999999996
+        },
+        "AGGRESSIVE": {
+          "expected_conceded": 2.42611,
+          "expected_scored": 2.5574500000000002,
+          "expected_net": 0.13134
+        },
+        "COLLABORATE_WITH_NEXT": {
+          "expected_conceded": 2.10494,
+          "expected_scored": 2.09008,
+          "expected_net": -0.014859999999999953
+        },
+        "COLLABORATE_WITH_PREV": {
+          "expected_conceded": 2.1085700000000003,
+          "expected_scored": 2.0950100000000003,
+          "expected_net": -0.013559999999999963
+        }
+      }
+    },
+    "adaptive": {
+      "team_metrics": {
+        "A": {
+          "expected_scored": 2.199,
+          "expected_conceded": 2.094,
+          "expected_net": 0.105,
+          "avg_offensive_fatigue": 1.6662720000000004,
+          "avg_defensive_fatigue": 1.2025720000000004,
+          "strategy_usage": {
+            "DEFENSIVE": 0.15672,
+            "AGGRESSIVE": 0.57664,
+            "COLLABORATE_WITH_PREV": 0.26664
+          }
+        },
+        "B": {
+          "expected_scored": 2.0405,
+          "expected_conceded": 2.0795,
+          "expected_net": -0.039,
+          "avg_offensive_fatigue": 1.3822260000000002,
+          "avg_defensive_fatigue": 1.2895417500000004,
+          "strategy_usage": {
+            "DEFENSIVE": 0.1737,
+            "BALANCED": 0.40674,
+            "AGGRESSIVE": 0.22874,
+            "COLLABORATE_WITH_PREV": 0.19082
+          }
+        },
+        "C": {
+          "expected_scored": 2.038,
+          "expected_conceded": 2.104,
+          "expected_net": -0.066,
+          "avg_offensive_fatigue": 1.402334,
+          "avg_defensive_fatigue": 1.2788352500000006,
+          "strategy_usage": {
+            "DEFENSIVE": 0.1563,
+            "BALANCED": 0.40762,
+            "AGGRESSIVE": 0.23894,
+            "COLLABORATE_WITH_NEXT": 0.19714
+          }
+        }
+      },
+      "metadata": {
+        "minutes": 25,
+        "samples": 2000,
+        "collaboration_frequency": 0.05762
+      }
+    }
+  }
+]
