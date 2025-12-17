@@ -118,25 +118,37 @@ if subdirs_with_dates:
         print()  # Add blank line between entries
 
 ]]]-->
-## 2 research projects
+## 3 research projects
+
+### [platform-native-ux-scoring-probe](https://github.com/ajfisher/research/tree/main/platform-native-ux-scoring-probe) (2025-11-20)
+
+This research explores a lightweight CLI tool for assessing how "platform-native" a website feels during critical user flows by leveraging automated heuristics. Using Playwright, the tool executes scripted actions, collects DOM and network data, and optionally tests progressive enhancement by replaying flows without JavaScript. The probe provides category-based scores (e.g., routing, forms, data fetching) and combines them into an overall platform-native score, with results displayed in JSON, HTML, or Markdown formats. Developers can set up the tool quickly, describe flows in simple YAML files, and gain insights into their site's reliance on client-side logic versus browser-native features.
+
+Key resources:
+- [Playwright](https://playwright.dev): Headless browser automation used in the probe.
+- Full setup and usage instructions in `flows.example.yaml`.
+
+Key findings:
+- Heuristic-based scoring effectively captures routing, forms, and PE behaviors with minimal configuration.
+- The no-JS mode is a practical test for progressive enhancement resilience.
+- Areas for improvement include richer visualizations and expanded action support.
 
 ### [three-sided-football-strategy](https://github.com/ajfisher/research/tree/main/three-sided-football-strategy) (2025-11-20)
 
-This research applies computational game theory to analyze strategic decision-making in three-sided football, focusing on optimal strategies across game periods, collaboration dynamics, and set-piece scenarios. Using a Monte Carlo simulator and adaptive policies, it evaluates how teams adjust tactics based on scoreboard state, fatigue, and collaborative opportunities. Key findings reveal that conservative defense minimizes early concessions, while late-game collaboration is impactful but high-risk due to fatigue. Set-piece analysis highlights context-dependent tactics, such as direct free kicks for late-game scoring or structured kick-offs to retain possession. Tools like the [Monte Carlo simulator](https://github.com/path-to-simulation) and detailed strategy reports offer deep insights into this unique game.
+This study investigates the strategic complexities of three-sided football using computational game theory, focusing on team adaptations across the three 25-minute periods, collaborative dynamics, and set-piece effectiveness. A Monte Carlo simulator and strategy analysis scripts were developed to model scenarios involving fatigue, scoreboard changes, and decision rules, producing valuable insights into optimal plays and alliances. Key findings highlight the payoff of defensive strategies early on, the high-risk but occasionally high-reward nature of late-game collaboration by trailing teams, and the nuanced advantages of different set-piece tactics depending on match context. Tools like the Monte Carlo simulator and strategy analyzer are available for further exploration ([simulation code](code/simulation.py), [strategy analysis](code/analyze_strategies.py)).
 
 ### Key Findings
-- Defensive strategies dominate early game periods; collaboration and aggression are advantageous primarily for trailing teams late in the game.
-- Adaptive strategies improve scoring for trailers but increase fatigue, favoring dynamic plays like late-game coalitions.
-- Optimal set-pieces depend on match context, with conservative coverage aiding leaders and aggressive tactics benefiting teams in need of goals.
+- Defensive play minimizes concessions in early periods; adaptive collaboration or aggression benefits trailing teams during later stages but at the cost of higher fatigue.
+- Late-game collaboration between trailing teams can double a leader's concessions, but it demands risky fatigue-intensive behavior.
+- Set-piece tactics like structured kick-offs and direct free kicks yield better possession or scoring, depending on context and defensive setups.
 
 ### [tag-prediction-ajfisher-me](https://github.com/ajfisher/research/tree/main/tag-prediction-ajfisher-me) (2025-11-15)
 
-This project explored auto-tagging for markdown posts on ajfisher.me using classical scikit-learn models to predict tags from post content and titles. Linear SVM emerged as the strongest model but struggled with low generalization due to sparse data and imbalanced tag distribution. The analysis identified inconsistent taxonomy, with key umbrella tags like `web`, `development`, and `internet` missing in many older posts. Outputs included candidate high-probability tag suggestions and flagging of low-confidence predictions, though misapplied tags were not detected under current thresholds. Code and results are available in [`tag_prediction_analysis.py`](code/tag_prediction_analysis.py).
+This analysis explored classical machine learning methods for auto-tagging blog posts on `ajfisher.me`, aiming to enhance tag consistency and identify potential additions or removals. Using scikit-learn, models were trained on TF–IDF features extracted from post titles and content, with tags treated as multi-label outputs. The linear SVM was the most effective model, suggesting high-confidence tag additions like `web`, `development`, and `internet` for around 42 posts. While no misapplied tags were flagged, the low cross-validation performance indicates room for improvement, such as integrating richer semantic features.
 
-Key findings:
-- Linear SVM outperformed other models but only achieved a micro F1 of ~0.08.
-- Suggested common tags for addition include `web`, `development`, and `mobile`.
-- No misapplied tags were flagged, though CV metrics highlight overfitting risks.
+- **Best model**: Linear SVM achieved ~0.08 micro-F1 but struggled with infrequent tags.
+- **Suggested tags**: Commonly missing tags included `web`, `development`, and `internet`.
+- **Future enhancements**: Use embeddings or topic models and expand labeled data.
 
 <!--[[[end]]]-->
 
