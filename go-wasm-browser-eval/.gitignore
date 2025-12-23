@@ -1,0 +1,8 @@
+# Build artifacts
+code/**/dist/
+code/**/*.wasm
+*.wasm
+*.log
+node_modules/
+venv/
+.DS_Store

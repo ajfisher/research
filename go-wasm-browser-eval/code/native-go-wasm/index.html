@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Go → WebAssembly (native toolchain)</title>
+  <style>
+    body { font-family: system-ui, sans-serif; margin: 1.5rem; max-width: 800px; }
+    textarea { width: 100%; min-height: 120px; }
+    pre { background: #f7f7f7; padding: 0.75rem; border-radius: 6px; }
+    button { padding: 0.5rem 1rem; }
+  </style>
+</head>
+<body>
+  <h1>Go → WebAssembly (native toolchain)</h1>
+  <p id="status">Loading WebAssembly module…</p>
+
+  <textarea id="csv-input">city,population\nParis,2148000\nBerlin,3769000</textarea>
+  <div style="margin: 0.5rem 0;">
+    <button id="run-btn">Summarize CSV</button>
+  </div>
+  <pre id="output"></pre>
+
+  <script src="./wasm_exec.js"></script>
+  <script>
+    const go = new Go();
+
+    async function loadWasm() {
+      const response = await fetch('native-go.wasm');
+      const bytes = await response.arrayBuffer();
+      const { instance } = await WebAssembly.instantiate(bytes, go.importObject);
+      await go.run(instance);
+      document.getElementById('status').textContent = 'WASM module loaded';
+    }
+
+    function summarizeCsv() {
+      const csv = document.getElementById('csv-input').value;
+      const result = globalThis.wasmCSVSummary(csv);
+      document.getElementById('output').textContent = JSON.stringify(result, null, 2);
+    }
+
+    document.getElementById('run-btn').addEventListener('click', summarizeCsv);
+
+    loadWasm().catch((err) => {
+      console.error(err);
+      document.getElementById('status').textContent = `Load failed: ${err}`;
+    });
+  </script>
+</body>
+</html>
