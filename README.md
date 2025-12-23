@@ -118,37 +118,46 @@ if subdirs_with_dates:
         print()  # Add blank line between entries
 
 ]]]-->
-## 3 research projects
+## 4 research projects
+
+### [go-wasm-browser-eval](https://github.com/ajfisher/research/tree/main/go-wasm-browser-eval) (2025-12-24)
+
+This project explores running Go applications in the browser via WebAssembly to lay the foundation for porting Miller (mlr) CLI functionality to client-side environments. Using Go's native WebAssembly support (`GOOS=js GOARCH=wasm`), researchers created a demo exposing simple CSV-processing functions to JavaScript. Comparisons with TinyGo, an alternate compiler promising smaller binaries, were partially hindered due to a Go version mismatch. Still, the effort highlights the potential of TinyGo for significantly smaller and faster WASM modules while identifying challenges with compatibility and deployment.
+
+- **Native Go WASM**: Successfully built a module (~2.5 MB) demonstrating CSV summarization via `syscall/js`.
+- **TinyGo**: Promising for size and performance optimization (~300–500 KB expected), but blocked due to incompatibility with Go 1.24.
+- **Toolchain Details**: Build scripts automate the usage of `wasm_exec.js` and hosting for browser testing.
+
+Resources: [Native Go WASM Demo](http://localhost:8000/index.html), [TinyGo Compiler](https://tinygo.org/).
 
 ### [platform-native-ux-scoring-probe](https://github.com/ajfisher/research/tree/main/platform-native-ux-scoring-probe) (2025-11-20)
 
-This research explores a lightweight CLI tool for assessing how "platform-native" a website feels during critical user flows by leveraging automated heuristics. Using Playwright, the tool executes scripted actions, collects DOM and network data, and optionally tests progressive enhancement by replaying flows without JavaScript. The probe provides category-based scores (e.g., routing, forms, data fetching) and combines them into an overall platform-native score, with results displayed in JSON, HTML, or Markdown formats. Developers can set up the tool quickly, describe flows in simple YAML files, and gain insights into their site's reliance on client-side logic versus browser-native features.
+This project explores the development of a lightweight CLI probe, similar to Lighthouse, aimed at scoring how "platform-native" a website's critical user flows feel. Using Playwright, the probe executes user flows described in YAML, collects heuristic DOM and network metrics, and generates scores based on factors such as routing, form usage, progressive enhancement, and accessibility. It also features an optional no-JavaScript replay mode to test a site's resilience without client-side JavaScript. The tool produces detailed reports in multiple formats (JSON, HTML, and Markdown) with a visualized platform-native score for each flow.
 
-Key resources:
-- [Playwright](https://playwright.dev): Headless browser automation used in the probe.
-- Full setup and usage instructions in `flows.example.yaml`.
-
-Key findings:
-- Heuristic-based scoring effectively captures routing, forms, and PE behaviors with minimal configuration.
-- The no-JS mode is a practical test for progressive enhancement resilience.
-- Areas for improvement include richer visualizations and expanded action support.
+- Key tools and setup: [Playwright](https://playwright.dev/) for automation; installable via Node 20+.
+- Categories scored: Routing (25%), Forms (25%), Data Fetching (20%), Progressive Enhancement (20%), and Semantics/Accessibility (10%).
+- Outputs: JSON, HTML, Markdown reports with scores and metrics.
+- Future improvements: Add richer timing/paint metrics, expand action vocabulary, support multiple domains, and introduce advanced visualizations.
 
 ### [three-sided-football-strategy](https://github.com/ajfisher/research/tree/main/three-sided-football-strategy) (2025-11-20)
 
-This study investigates the strategic complexities of three-sided football using computational game theory, focusing on team adaptations across the three 25-minute periods, collaborative dynamics, and set-piece effectiveness. A Monte Carlo simulator and strategy analysis scripts were developed to model scenarios involving fatigue, scoreboard changes, and decision rules, producing valuable insights into optimal plays and alliances. Key findings highlight the payoff of defensive strategies early on, the high-risk but occasionally high-reward nature of late-game collaboration by trailing teams, and the nuanced advantages of different set-piece tactics depending on match context. Tools like the Monte Carlo simulator and strategy analyzer are available for further exploration ([simulation code](code/simulation.py), [strategy analysis](code/analyze_strategies.py)).
+This study examined strategic decision-making in three-sided football, focusing on team dynamics across three periods, collaborative versus competitive play, and set-piece strategies. Using Monte Carlo simulations and game-theoretic models, researchers analyzed adaptive and static strategies for teams leading or trailing while factoring in fatigue. Findings emphasize the efficacy of defensive strategies early on, tactical collaboration when chasing, and context-specific set-piece tactics for goals or possession gains. The code and detailed results can be replicated via scripts provided in the [research repository](#F:code/simulation.py†L21-L400).
 
-### Key Findings
-- Defensive play minimizes concessions in early periods; adaptive collaboration or aggression benefits trailing teams during later stages but at the cost of higher fatigue.
-- Late-game collaboration between trailing teams can double a leader's concessions, but it demands risky fatigue-intensive behavior.
-- Set-piece tactics like structured kick-offs and direct free kicks yield better possession or scoring, depending on context and defensive setups.
+**Key Findings:**
+- Defensive play minimizes goals conceded in earlier periods; adaptive aggression helps trailers but incurs fatigue.
+- Late-game collaboration can double a leader's concessions but requires chasers to endure higher fatigue risks.
+- Corners, free kicks, and kick-offs favor structured setups for leaders while offering dynamic opportunities for trailers based on context.
 
 ### [tag-prediction-ajfisher-me](https://github.com/ajfisher/research/tree/main/tag-prediction-ajfisher-me) (2025-11-15)
 
-This analysis explored classical machine learning methods for auto-tagging blog posts on `ajfisher.me`, aiming to enhance tag consistency and identify potential additions or removals. Using scikit-learn, models were trained on TF–IDF features extracted from post titles and content, with tags treated as multi-label outputs. The linear SVM was the most effective model, suggesting high-confidence tag additions like `web`, `development`, and `internet` for around 42 posts. While no misapplied tags were flagged, the low cross-validation performance indicates room for improvement, such as integrating richer semantic features.
+This project explores scikit-learn-based approaches to auto-tagging markdown posts on `ajfisher.me`, aiming to recommend consistent front-matter tags. A linear SVM emerged as the best-performing model, though its micro-F1 score of ~0.08 underscores challenges resulting from sparse tag distributions and limited data. Umbrella tags like `web`, `development`, and `internet` were identified as consistently missing across many posts, highlighting opportunities to improve coverage. Future enhancements include integrating contextual embeddings and refining model calibration for better predictions.
 
-- **Best model**: Linear SVM achieved ~0.08 micro-F1 but struggled with infrequent tags.
-- **Suggested tags**: Commonly missing tags included `web`, `development`, and `internet`.
-- **Future enhancements**: Use embeddings or topic models and expand labeled data.
+- **Key Findings**:
+  - Linear SVM outperforms other models but struggles with limited tag generalisation.
+  - Common missing tags: `web`, `development`, `internet`, and `media`.
+  - No misapplied tags were flagged; however, low cross-validation scores suggest overfitting concerns.
+
+Find the analysis code [here](code/tag_prediction_analysis.py) and sample outputs in [`results/`](results/).
 
 <!--[[[end]]]-->
 
