@@ -2,6 +2,9 @@
   "config": {
     "awake_duration": 1,
     "broker_restart_at": null,
+    "controller_epoch_reset_at": null,
+    "controller_epoch_reset_mode": "increment",
+    "controller_epoch_start": 1,
     "desired_update_period": 10,
     "desired_updates": 4,
     "dup_rate": 0.0,
@@ -12,6 +15,7 @@
     "naive_last_write": false,
     "num_devices": 5,
     "publish_hello": true,
+    "republish_on_hello": false,
     "seed": 1,
     "wake_interval_base": 3,
     "wake_interval_step": 2
@@ -19,35 +23,35 @@
   "converged": true,
   "devices": {
     "d1": {
-      "applied_v": 4,
+      "applied_ver": 1000004,
       "applies": 4,
       "awake_duration": 1,
       "converged": true,
       "wake_interval": 3
     },
     "d2": {
-      "applied_v": 4,
+      "applied_ver": 1000004,
       "applies": 4,
       "awake_duration": 1,
       "converged": true,
       "wake_interval": 5
     },
     "d3": {
-      "applied_v": 4,
+      "applied_ver": 1000004,
       "applies": 4,
       "awake_duration": 1,
       "converged": true,
       "wake_interval": 7
     },
     "d4": {
-      "applied_v": 4,
+      "applied_ver": 1000004,
       "applies": 4,
       "awake_duration": 1,
       "converged": true,
       "wake_interval": 9
     },
     "d5": {
-      "applied_v": 4,
+      "applied_ver": 1000004,
       "applies": 4,
       "awake_duration": 1,
       "converged": true,
@@ -55,8 +59,13 @@
     }
   },
   "event_count": 208,
-  "final_desired_v": 4,
-  "monotonic_applied_v": true,
+  "final_desired": {
+    "epoch": 1,
+    "v": 4,
+    "ver": 1000004
+  },
+  "monotonic_applied_ver": true,
   "plot": "applied_versions.png",
-  "run_at_utc": "2026-03-01T05:35:42.170265+00:00"
+  "run_at_utc": "2026-03-01T05:45:56.452161+00:00",
+  "stale_device_count": 0
 }

@@ -15,6 +15,12 @@ Event = dict[str, Any]
 Subscriber = Callable[[str, dict[str, Any], bool, int], None]
 
 
+def packed_version(epoch: int, v: int, scale: int = 1_000_000) -> int:
+    """Combine (epoch, v) into a single monotonic integer if epoch never decreases."""
+
+    return int(epoch) * scale + int(v)
+
+
 @dataclass
 class NetworkModel:
     """A tiny network model for message loss + delay + duplicates.
@@ -127,10 +133,10 @@ class Device:
     publish_hello: bool = False
     naive_last_write: bool = False
 
-    applied_v: int = 0
+    applied_ver: int = 0
     pending_desired: dict[str, Any] | None = None
-    max_desired_v_seen: int | None = None
-    apply_history: list[tuple[int, int]] = field(default_factory=list)
+    max_desired_ver_seen: int | None = None
+    apply_history: list[tuple[int, int]] = field(default_factory=list)  # (ts, applied_ver)
 
     awake_until: int | None = None
 
@@ -150,15 +156,17 @@ class Device:
             self.pending_desired = payload
             return
 
+        epoch = int(payload.get("epoch", 0))
         v = int(payload.get("v", 0))
-        if self.max_desired_v_seen is None or v > self.max_desired_v_seen:
-            self.max_desired_v_seen = v
+        ver = packed_version(epoch, v)
+        if self.max_desired_ver_seen is None or ver > self.max_desired_ver_seen:
+            self.max_desired_ver_seen = ver
             self.pending_desired = payload
 
     def wake_start(self, ts: int, events: list[Event]) -> None:
         self.awake_until = ts + max(1, self.awake_duration) - 1
         self.pending_desired = None
-        self.max_desired_v_seen = None
+        self.max_desired_ver_seen = None
 
         self.broker.subscribe(self.desired_topic(), self._on_desired, ts)
         events.append({"ts": ts, "kind": "wake", "device_id": self.device_id, "wake_interval": self.wake_interval, "awake_duration": self.awake_duration})
@@ -174,29 +182,37 @@ class Device:
     def wake_end(self, ts: int, events: list[Event]) -> None:
         # Apply desired at the end of the wake window (one-shot apply).
         changed = False
-        desired_v = self.applied_v
+        desired_epoch = 0
+        desired_v = 0
+        desired_ver = self.applied_ver
         if self.pending_desired:
-            desired_v = int(self.pending_desired.get("v", self.applied_v))
-            if desired_v > self.applied_v:
-                self.applied_v = desired_v
+            desired_epoch = int(self.pending_desired.get("epoch", 0))
+            desired_v = int(self.pending_desired.get("v", 0))
+            desired_ver = packed_version(desired_epoch, desired_v)
+            if desired_ver > self.applied_ver:
+                self.applied_ver = desired_ver
                 changed = True
-                self.apply_history.append((ts, self.applied_v))
+                self.apply_history.append((ts, self.applied_ver))
                 events.append(
                     {
                         "ts": ts,
                         "kind": "apply",
                         "device_id": self.device_id,
-                        "applied_v": self.applied_v,
-                        "desired_v": desired_v,
+                        "applied_ver": self.applied_ver,
+                        "desired_ver": desired_ver,
+                        "epoch": desired_epoch,
+                        "v": desired_v,
                     }
                 )
 
         telemetry = {
             "device_id": self.device_id,
             "ts": ts,
-            "applied_v": self.applied_v,
-            "desired_v": desired_v,
-            "converged": self.applied_v == desired_v,
+            "applied_ver": self.applied_ver,
+            "desired_ver": desired_ver,
+            "epoch": desired_epoch,
+            "v": desired_v,
+            "converged": self.applied_ver == desired_ver,
             "changed": changed,
         }
         self.broker.publish(self.telemetry_topic(), telemetry, retain=False, now=ts)
@@ -227,8 +243,58 @@ class SimulationConfig:
     # protocol behavior toggles
     naive_last_write: bool = False
 
+    # control-plane / epoch behavior
+    controller_epoch_start: int = 1
+    controller_epoch_reset_at: int | None = None
+    controller_epoch_reset_mode: str = "increment"  # increment|reset0 (bug)
+    republish_on_hello: bool = False
+
     # optional breakage lever
     broker_restart_at: int | None = None
+
+
+class ControlPlane:
+    """Publishes desired state updates and optionally republish-on-hello (state pull)."""
+
+    def __init__(self, broker: Broker, device_ids: list[str], epoch_start: int, republish_on_hello: bool, events: list[Event]):
+        self.broker = broker
+        self.device_ids = device_ids
+        self.epoch = int(epoch_start)
+        self.v = 0
+        self.events = events
+        self.republish_on_hello = republish_on_hello
+        if self.republish_on_hello:
+            for device_id in self.device_ids:
+                self.broker.subscribe(f"dev/{device_id}/hello", self._on_hello, now=0)
+
+    def reset_epoch(self, mode: str, ts: int) -> None:
+        if mode == "increment":
+            self.epoch += 1
+        elif mode == "reset0":
+            self.epoch = 0
+        else:
+            raise ValueError(f"unknown controller_epoch_reset_mode: {mode}")
+        self.v = 0
+        self.events.append({"ts": ts, "kind": "controller_epoch_reset", "epoch": self.epoch, "mode": mode})
+
+    def publish_update(self, ts: int) -> None:
+        self.v += 1
+        for device_id in self.device_ids:
+            self._publish_desired(device_id, ts)
+
+    def _publish_desired(self, device_id: str, ts: int) -> None:
+        payload = {"device_id": device_id, "epoch": self.epoch, "v": self.v, "ts": ts, "ver": packed_version(self.epoch, self.v)}
+        topic = f"dev/{device_id}/desired"
+        self.broker.publish(topic, payload, retain=True, now=ts)
+        self.events.append({"ts": ts, "kind": "desired", "topic": topic, "payload": payload, "retained": True})
+
+    def _on_hello(self, topic: str, payload: dict[str, Any], _retained: bool, ts: int) -> None:
+        # device_id from topic: dev/<id>/hello
+        parts = topic.split("/")
+        device_id = parts[1] if len(parts) > 1 else payload.get("device_id", "")
+        self.events.append({"ts": ts, "kind": "controller_seen_hello", "device_id": device_id})
+        if device_id:
+            self._publish_desired(device_id, ts)
 
 
 class Simulation:
@@ -257,30 +323,38 @@ class Simulation:
             )
             for i in range(config.num_devices)
         ]
-        self.final_desired_v = 0
-
-    def _publish_desired(self, device_id: str, v: int, ts: int) -> None:
-        payload = {"device_id": device_id, "v": v, "ts": ts}
-        topic = f"dev/{device_id}/desired"
-        self.broker.publish(topic, payload, retain=True, now=ts)
-        self.events.append({"ts": ts, "kind": "desired", "topic": topic, "payload": payload, "retained": True})
+        self.control = ControlPlane(
+            broker=self.broker,
+            device_ids=[d.device_id for d in self.devices],
+            epoch_start=config.controller_epoch_start,
+            republish_on_hello=config.republish_on_hello,
+            events=self.events,
+        )
+        self.final_desired_ver = 0
 
     def run(self) -> dict[str, Any]:
-        update_schedule: dict[int, int] = {}
-        for idx in range(self.config.desired_updates):
-            ts = idx * self.config.desired_update_period
-            update_schedule[ts] = idx + 1
+        update_schedule = {idx * self.config.desired_update_period: True for idx in range(self.config.desired_updates)}
 
         for ts in range(self.config.duration + 1):
             if self.config.broker_restart_at is not None and ts == self.config.broker_restart_at:
                 self.events.append({"ts": ts, "kind": "broker_restart"})
                 self.broker.reset_sessions()
+                # If republish-on-hello is enabled, the controller needs to resubscribe to hello topics.
+                if self.config.republish_on_hello:
+                    self.control = ControlPlane(
+                        broker=self.broker,
+                        device_ids=[d.device_id for d in self.devices],
+                        epoch_start=self.control.epoch,
+                        republish_on_hello=True,
+                        events=self.events,
+                    )
+
+            if self.config.controller_epoch_reset_at is not None and ts == self.config.controller_epoch_reset_at:
+                self.control.reset_epoch(self.config.controller_epoch_reset_mode, ts)
 
             if ts in update_schedule:
-                version = update_schedule[ts]
-                self.final_desired_v = version
-                for dev in self.devices:
-                    self._publish_desired(dev.device_id, version, ts)
+                self.control.publish_update(ts)
+                self.final_desired_ver = packed_version(self.control.epoch, self.control.v)
 
             # Start wake windows
             for dev in self.devices:
@@ -307,22 +381,25 @@ class Simulation:
             if any(history_versions[i] > history_versions[i + 1] for i in range(len(history_versions) - 1)):
                 monotonic = False
 
-            converged = dev.applied_v == self.final_desired_v
+            converged = dev.applied_ver == self.final_desired_ver
             convergence = convergence and converged
             per_device[dev.device_id] = {
                 "wake_interval": dev.wake_interval,
                 "awake_duration": dev.awake_duration,
-                "applied_v": dev.applied_v,
+                "applied_ver": dev.applied_ver,
                 "converged": converged,
                 "applies": len(dev.apply_history),
             }
 
+        stale_count = sum(1 for d in per_device.values() if not d["converged"])
+
         summary = {
             "run_at_utc": datetime.now(timezone.utc).isoformat(),
             "config": self.config.__dict__,
-            "final_desired_v": self.final_desired_v,
-            "monotonic_applied_v": monotonic,
+            "final_desired": {"epoch": self.control.epoch, "v": self.control.v, "ver": self.final_desired_ver},
+            "monotonic_applied_ver": monotonic,
             "converged": convergence,
+            "stale_device_count": stale_count,
             "devices": per_device,
             "event_count": len(self.events),
         }
@@ -338,13 +415,13 @@ def maybe_plot(events: list[Event], out_dir: Path) -> str | None:
     for event in events:
         if event["kind"] == "desired":
             desired_ts.append(int(event["ts"]))
-            desired_v.append(int(event["payload"]["v"]))
+            desired_v.append(int(event["payload"].get("ver", packed_version(int(event["payload"].get("epoch", 0)), int(event["payload"].get("v", 0))))) )
         elif event["kind"] == "telemetry":
             payload = event["payload"]
             device_id = str(payload["device_id"])
             ts_vals, v_vals = device_series.setdefault(device_id, ([], []))
             ts_vals.append(int(payload["ts"]))
-            v_vals.append(int(payload["applied_v"]))
+            v_vals.append(int(payload.get("applied_ver", 0)))
 
     try:
         import matplotlib.pyplot as plt  # type: ignore

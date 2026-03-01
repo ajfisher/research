@@ -26,6 +26,10 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--dup", type=float, default=0.0, help="Duplicate delivery rate in [0,1]")
     parser.add_argument("--naive-last-write", action="store_true", help="BUG MODE: during a wake window use last-received desired (can miss newest under reordering)")
     parser.add_argument("--broker-restart-at", type=int, default=-1, help="Tick to reset live sessions/in-flight messages (-1 disables)")
+    parser.add_argument("--republish-on-hello", action="store_true", help="Control plane republishes desired immediately upon dev/<id>/hello")
+    parser.add_argument("--controller-epoch-start", type=int, default=1)
+    parser.add_argument("--controller-epoch-reset-at", type=int, default=-1, help="Tick when controller resets epoch/version (-1 disables)")
+    parser.add_argument("--controller-epoch-reset-mode", type=str, default="increment", help="increment|reset0 (bug)")
 
     parser.add_argument(
         "--out-root",
@@ -55,6 +59,10 @@ def main() -> int:
         max_delay=args.max_delay,
         dup_rate=args.dup,
         naive_last_write=args.naive_last_write,
+        controller_epoch_start=args.controller_epoch_start,
+        controller_epoch_reset_at=None if args.controller_epoch_reset_at < 0 else args.controller_epoch_reset_at,
+        controller_epoch_reset_mode=args.controller_epoch_reset_mode,
+        republish_on_hello=args.republish_on_hello,
         broker_restart_at=None if args.broker_restart_at < 0 else args.broker_restart_at,
     )
 
@@ -74,7 +82,7 @@ def main() -> int:
         print("plot=not-generated")
 
     print(f"converged={summary['converged']}")
-    print(f"monotonic_applied_v={summary['monotonic_applied_v']}")
+    print(f"monotonic_applied_ver={summary['monotonic_applied_ver']}")
     return 0
 
 

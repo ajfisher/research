@@ -25,13 +25,13 @@ class InvariantTests(unittest.TestCase):
         sim = Simulation(config)
         summary = sim.run()
 
-        self.assertTrue(summary["monotonic_applied_v"])
+        self.assertTrue(summary["monotonic_applied_ver"])
 
         # Extra guard: validate from raw apply events as well.
         by_device: dict[str, list[int]] = {}
         for event in sim.events:
             if event["kind"] == "apply":
-                by_device.setdefault(event["device_id"], []).append(int(event["applied_v"]))
+                by_device.setdefault(event["device_id"], []).append(int(event["applied_ver"]))
 
         for versions in by_device.values():
             self.assertEqual(versions, sorted(versions))
@@ -49,11 +49,11 @@ class InvariantTests(unittest.TestCase):
         summary = sim.run()
 
         self.assertTrue(summary["converged"])
-        self.assertEqual(summary["final_desired_v"], 4)
+        self.assertEqual(summary["final_desired"]["v"], 4)
 
         for _, metrics in summary["devices"].items():
             self.assertTrue(metrics["converged"])
-            self.assertEqual(metrics["applied_v"], summary["final_desired_v"])
+            self.assertEqual(metrics["applied_ver"], summary["final_desired"]["ver"])
 
 
 if __name__ == "__main__":

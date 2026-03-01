@@ -125,6 +125,18 @@ Run tests:
 python -m unittest discover -s spikes/mqtt-desired-state-sim/tests -p 'test_*.py'
 ```
 
+## Scenario sweeps (retries + spread)
+
+Run a bundle of gremlin scenarios multiple times and write aggregates:
+
+```bash
+python spikes/mqtt-desired-state-sim/code/run_scenarios.py --retries 20
+```
+
+Outputs:
+- `spikes/mqtt-desired-state-sim/results/scenarios/<scenario>/rep-0000/...` (per-run artifacts)
+- `spikes/mqtt-desired-state-sim/results/scenarios/<scenario>/aggregate.json` (spread metrics)
+
 ## Results
 Each run writes to:
 
