@@ -118,46 +118,50 @@ if subdirs_with_dates:
         print()  # Add blank line between entries
 
 ]]]-->
-## 4 research projects
+## 5 research projects
+
+### [scripts](https://github.com/ajfisher/research/tree/main/scripts) (2026-03-01)
+
+*No description available.*
 
 ### [go-wasm-browser-eval](https://github.com/ajfisher/research/tree/main/go-wasm-browser-eval) (2025-12-24)
 
-This project explores running Go applications in the browser via WebAssembly to lay the foundation for porting Miller (mlr) CLI functionality to client-side environments. Using Go's native WebAssembly support (`GOOS=js GOARCH=wasm`), researchers created a demo exposing simple CSV-processing functions to JavaScript. Comparisons with TinyGo, an alternate compiler promising smaller binaries, were partially hindered due to a Go version mismatch. Still, the effort highlights the potential of TinyGo for significantly smaller and faster WASM modules while identifying challenges with compatibility and deployment.
+This research explores options for running Go applications in the browser using WebAssembly, with a long-term goal of enabling Miller (mlr) CLI behaviors in a client-side environment. It evaluates Go's native WebAssembly toolchain and contrasts it with TinyGo, which offers significantly smaller binaries. While the native Go solution successfully ran via both Node.js and in-browser tests, its output binaries are large (~2.5 MB unoptimized). TinyGo, although promising for smaller outputs (~300–500 KB), faced compatibility issues due to the Go version (1.24) used in the testing environment.
 
-- **Native Go WASM**: Successfully built a module (~2.5 MB) demonstrating CSV summarization via `syscall/js`.
-- **TinyGo**: Promising for size and performance optimization (~300–500 KB expected), but blocked due to incompatibility with Go 1.24.
-- **Toolchain Details**: Build scripts automate the usage of `wasm_exec.js` and hosting for browser testing.
+- Native Go WASM builds are straightforward but produce large binaries (~2.5 MB).
+- TinyGo builds fail in this environment due to a Go 1.24 compatibility issue; expected binaries are smaller with faster startup time.
+- The `syscall/js` interface effectively bridges browser JavaScript and WASM-compiled Go modules.  
 
-Resources: [Native Go WASM Demo](http://localhost:8000/index.html), [TinyGo Compiler](https://tinygo.org/).
+More details on Go WASM: [Native Go WebAssembly](https://pkg.go.dev/syscall/js). Learn about [TinyGo](https://tinygo.org/).
 
 ### [platform-native-ux-scoring-probe](https://github.com/ajfisher/research/tree/main/platform-native-ux-scoring-probe) (2025-11-20)
 
-This project explores the development of a lightweight CLI probe, similar to Lighthouse, aimed at scoring how "platform-native" a website's critical user flows feel. Using Playwright, the probe executes user flows described in YAML, collects heuristic DOM and network metrics, and generates scores based on factors such as routing, form usage, progressive enhancement, and accessibility. It also features an optional no-JavaScript replay mode to test a site's resilience without client-side JavaScript. The tool produces detailed reports in multiple formats (JSON, HTML, and Markdown) with a visualized platform-native score for each flow.
+This study investigates a CLI tool for evaluating how "platform-native" a site’s critical user flows feel by analyzing heuristic DOM and network metrics, simulating both typical and no-JavaScript browsing scenarios. Using Playwright, the tool runs scripted flows written in YAML, collecting data on aspects like real document navigations, semantic HTML, progressive enhancement, and caching. Outputs include JSON, HTML, and Markdown reports with per-flow scores across categories such as routing, forms, data fetching, progressive enhancement, and accessibility. The approach is designed to be lightweight, deterministic, and extendable for refinement. Learn more in the [Playwright project](https://playwright.dev).
 
-- Key tools and setup: [Playwright](https://playwright.dev/) for automation; installable via Node 20+.
-- Categories scored: Routing (25%), Forms (25%), Data Fetching (20%), Progressive Enhancement (20%), and Semantics/Accessibility (10%).
-- Outputs: JSON, HTML, Markdown reports with scores and metrics.
-- Future improvements: Add richer timing/paint metrics, expand action vocabulary, support multiple domains, and introduce advanced visualizations.
+Key findings:
+- Automated platform-native scoring is feasible using minimal configuration.
+- Scores can reveal insights about client-side routing, form semantics, and caching strategies.
+- No-JavaScript replay adds valuable indicators of progressive enhancement.
 
 ### [three-sided-football-strategy](https://github.com/ajfisher/research/tree/main/three-sided-football-strategy) (2025-11-20)
 
-This study examined strategic decision-making in three-sided football, focusing on team dynamics across three periods, collaborative versus competitive play, and set-piece strategies. Using Monte Carlo simulations and game-theoretic models, researchers analyzed adaptive and static strategies for teams leading or trailing while factoring in fatigue. Findings emphasize the efficacy of defensive strategies early on, tactical collaboration when chasing, and context-specific set-piece tactics for goals or possession gains. The code and detailed results can be replicated via scripts provided in the [research repository](#F:code/simulation.py†L21-L400).
+This study explores the complexities of strategy in three-sided football using computational game theory and adaptive modeling. Researchers utilized Monte Carlo simulations and scenario analysis to identify optimal strategies across match periods, focusing on defensive tactics, collaborative decision-making, and specific set-piece scenarios like corners, free kicks, and kick-offs. Key scripts and detailed analysis reports are available for replication [here](https://github.com) and provide insights into dynamic strategy adaption based on scorelines and player fatigue.
 
-**Key Findings:**
-- Defensive play minimizes goals conceded in earlier periods; adaptive aggression helps trailers but incurs fatigue.
-- Late-game collaboration can double a leader's concessions but requires chasers to endure higher fatigue risks.
-- Corners, free kicks, and kick-offs favor structured setups for leaders while offering dynamic opportunities for trailers based on context.
+- Defensive play consistently minimizes concessions in early periods, with collaboration strategies emerging in late-game dynamics for trailing teams.
+- Adaptive policies lead to increased scoring for teams that take risks but also accelerate fatigue.
+- Optimal set-piece tactics vary by context: conservative approaches benefit leading teams, while aggressive plays can maximize scoring opportunities for trailers.
 
 ### [tag-prediction-ajfisher-me](https://github.com/ajfisher/research/tree/main/tag-prediction-ajfisher-me) (2025-11-15)
 
-This project explores scikit-learn-based approaches to auto-tagging markdown posts on `ajfisher.me`, aiming to recommend consistent front-matter tags. A linear SVM emerged as the best-performing model, though its micro-F1 score of ~0.08 underscores challenges resulting from sparse tag distributions and limited data. Umbrella tags like `web`, `development`, and `internet` were identified as consistently missing across many posts, highlighting opportunities to improve coverage. Future enhancements include integrating contextual embeddings and refining model calibration for better predictions.
+This project investigated the use of classical scikit-learn models to predict front-matter tags for markdown posts on `ajfisher.me`. By analyzing 92 posts, features were engineered via title and content TF-IDF matrices, and models like linear SVM and logistic regression were trained to suggest new tags, aiming to standardize and fill in tag gaps across the archive. Results indicated that the linear SVM achieved the best performance, but even it showed limited effectiveness, with low micro-F1 scores suggesting potential improvements with contextual embeddings or semi-supervised data augmentation. Key findings outline candidate tag additions and areas needing manual review due to sparse tag categorization.
 
-- **Key Findings**:
-  - Linear SVM outperforms other models but struggles with limited tag generalisation.
-  - Common missing tags: `web`, `development`, `internet`, and `media`.
-  - No misapplied tags were flagged; however, low cross-validation scores suggest overfitting concerns.
-
-Find the analysis code [here](code/tag_prediction_analysis.py) and sample outputs in [`results/`](results/).
+- Best model: Linear SVM achieved ~0.08 micro-F1, outperforming other methods.
+- Common missing tags include umbrella terms like `web`, `development`, and `internet`, affecting local taxonomy consistency.
+- No misapplied or low-confidence tags were flagged, but cross-validation results suggest possible overfitting.
+  
+Tools:
+- Explore the analysis script: [`code/tag_prediction_analysis.py`](code/tag_prediction_analysis.py). 
+- Outputs available in: [`results/`](results/).
 
 <!--[[[end]]]-->
 
