@@ -62,6 +62,8 @@ class Broker:
 
     Adds a simple network model: each publish schedules per-subscriber deliveries
     that can be delayed or dropped.
+
+    Also tracks lightweight delivery metrics.
     """
 
     network: NetworkModel = field(default_factory=NetworkModel)
@@ -71,6 +73,12 @@ class Broker:
     _queue: list[tuple[int, int, str, dict[str, Any], bool, Subscriber]] = field(default_factory=list, init=False)
     _seq: int = field(default=0, init=False)
 
+    # metrics
+    attempted_deliveries: int = 0
+    dropped_deliveries: int = 0
+    delivered_deliveries: int = 0
+    published_messages: int = 0
+
     def reset_sessions(self) -> None:
         """Simulate a broker/controller restart: clears live sessions/in-flight messages.
 
@@ -79,6 +87,14 @@ class Broker:
 
         self.subscribers.clear()
         self._queue.clear()
+
+    def metrics(self) -> dict[str, Any]:
+        return {
+            "published_messages": self.published_messages,
+            "attempted_deliveries": self.attempted_deliveries,
+            "dropped_deliveries": self.dropped_deliveries,
+            "delivered_deliveries": self.delivered_deliveries,
+        }
 
     def subscribe(self, topic: str, callback: Subscriber, now: int) -> None:
         callbacks = self.subscribers.setdefault(topic, [])
@@ -94,13 +110,16 @@ class Broker:
             callbacks.remove(callback)
 
     def publish(self, topic: str, payload: dict[str, Any], retain: bool, now: int) -> None:
+        self.published_messages += 1
         if retain:
             self.retained[topic] = payload
         for callback in list(self.subscribers.get(topic, [])):
             self._schedule_delivery(topic, payload, retain, now, callback)
 
     def _schedule_delivery(self, topic: str, payload: dict[str, Any], retain: bool, now: int, callback: Subscriber) -> None:
+        self.attempted_deliveries += 1
         if self.network.drop():
+            self.dropped_deliveries += 1
             return
 
         def push(deliver_at: int) -> None:
@@ -119,6 +138,7 @@ class Broker:
 
         while self._queue and self._queue[0][0] <= now:
             _deliver_at, _seq, topic, payload, retain, callback = heapq.heappop(self._queue)
+            self.delivered_deliveries += 1
             callback(topic, payload, retain, now)
 
 
@@ -263,6 +283,7 @@ class ControlPlane:
         self.v = 0
         self.events = events
         self.republish_on_hello = republish_on_hello
+        self.last_update_ts: int | None = None
         if self.republish_on_hello:
             for device_id in self.device_ids:
                 self.broker.subscribe(f"dev/{device_id}/hello", self._on_hello, now=0)
@@ -279,6 +300,7 @@ class ControlPlane:
 
     def publish_update(self, ts: int) -> None:
         self.v += 1
+        self.last_update_ts = ts
         for device_id in self.device_ids:
             self._publish_desired(device_id, ts)
 
@@ -334,6 +356,7 @@ class Simulation:
 
     def run(self) -> dict[str, Any]:
         update_schedule = {idx * self.config.desired_update_period: True for idx in range(self.config.desired_updates)}
+        telemetry_counts: dict[str, dict[str, int]] = {d.device_id: {"total": 0, "stale": 0} for d in self.devices}
 
         for ts in range(self.config.duration + 1):
             if self.config.broker_restart_at is not None and ts == self.config.broker_restart_at:
@@ -369,12 +392,23 @@ class Simulation:
                 if dev.awake_until is not None and ts == dev.awake_until:
                     dev.wake_end(ts, self.events)
 
+            # Count telemetry-derived staleness per wake
+            for event in self.events[-len(self.devices) * 3 :]:
+                if event.get("kind") == "telemetry" and event.get("ts") == ts:
+                    payload = event["payload"]
+                    device_id = str(payload["device_id"])
+                    telemetry_counts[device_id]["total"] += 1
+                    if not bool(payload.get("converged", False)):
+                        telemetry_counts[device_id]["stale"] += 1
+
         # Drain any remaining messages (mainly for completeness)
         self.broker.tick(self.config.duration + self.config.max_delay + 1)
 
         monotonic = True
         convergence = True
         per_device: dict[str, Any] = {}
+
+        final_publish_ts = self.control.last_update_ts
 
         for dev in self.devices:
             history_versions = [v for _, v in dev.apply_history]
@@ -383,12 +417,33 @@ class Simulation:
 
             converged = dev.applied_ver == self.final_desired_ver
             convergence = convergence and converged
+
+            first_applied_final_ts: int | None = None
+            for ts, ver in dev.apply_history:
+                if ver == self.final_desired_ver:
+                    first_applied_final_ts = ts
+                    break
+
+            time_to_converge: int | None = None
+            if first_applied_final_ts is not None and final_publish_ts is not None:
+                time_to_converge = first_applied_final_ts - final_publish_ts
+
+            tcounts = telemetry_counts.get(dev.device_id, {"total": 0, "stale": 0})
+            stale_wake_ratio: float | None = None
+            if tcounts["total"] > 0:
+                stale_wake_ratio = tcounts["stale"] / tcounts["total"]
+
             per_device[dev.device_id] = {
                 "wake_interval": dev.wake_interval,
                 "awake_duration": dev.awake_duration,
                 "applied_ver": dev.applied_ver,
                 "converged": converged,
                 "applies": len(dev.apply_history),
+                "first_applied_final_ts": first_applied_final_ts,
+                "time_to_converge_ticks": time_to_converge,
+                "telemetry_wakes": tcounts["total"],
+                "telemetry_stale_wakes": tcounts["stale"],
+                "stale_wake_ratio": stale_wake_ratio,
             }
 
         stale_count = sum(1 for d in per_device.values() if not d["converged"])
@@ -396,12 +451,18 @@ class Simulation:
         summary = {
             "run_at_utc": datetime.now(timezone.utc).isoformat(),
             "config": self.config.__dict__,
-            "final_desired": {"epoch": self.control.epoch, "v": self.control.v, "ver": self.final_desired_ver},
+            "final_desired": {
+                "epoch": self.control.epoch,
+                "v": self.control.v,
+                "ver": self.final_desired_ver,
+                "published_at_ts": final_publish_ts,
+            },
             "monotonic_applied_ver": monotonic,
             "converged": convergence,
             "stale_device_count": stale_count,
             "devices": per_device,
             "event_count": len(self.events),
+            "broker_metrics": self.broker.metrics(),
         }
         return summary
 

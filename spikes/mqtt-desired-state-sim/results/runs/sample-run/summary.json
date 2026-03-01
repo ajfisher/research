@@ -1,4 +1,10 @@
 {
+  "broker_metrics": {
+    "attempted_deliveries": 56,
+    "delivered_deliveries": 56,
+    "dropped_deliveries": 0,
+    "published_messages": 132
+  },
   "config": {
     "awake_duration": 1,
     "broker_restart_at": null,
@@ -27,6 +33,11 @@
       "applies": 4,
       "awake_duration": 1,
       "converged": true,
+      "first_applied_final_ts": 30,
+      "stale_wake_ratio": 0.0,
+      "telemetry_stale_wakes": 0,
+      "telemetry_wakes": 21,
+      "time_to_converge_ticks": 0,
       "wake_interval": 3
     },
     "d2": {
@@ -34,6 +45,11 @@
       "applies": 4,
       "awake_duration": 1,
       "converged": true,
+      "first_applied_final_ts": 30,
+      "stale_wake_ratio": 0.0,
+      "telemetry_stale_wakes": 0,
+      "telemetry_wakes": 13,
+      "time_to_converge_ticks": 0,
       "wake_interval": 5
     },
     "d3": {
@@ -41,6 +57,11 @@
       "applies": 4,
       "awake_duration": 1,
       "converged": true,
+      "first_applied_final_ts": 35,
+      "stale_wake_ratio": 0.0,
+      "telemetry_stale_wakes": 0,
+      "telemetry_wakes": 9,
+      "time_to_converge_ticks": 5,
       "wake_interval": 7
     },
     "d4": {
@@ -48,6 +69,11 @@
       "applies": 4,
       "awake_duration": 1,
       "converged": true,
+      "first_applied_final_ts": 36,
+      "stale_wake_ratio": 0.0,
+      "telemetry_stale_wakes": 0,
+      "telemetry_wakes": 7,
+      "time_to_converge_ticks": 6,
       "wake_interval": 9
     },
     "d5": {
@@ -55,17 +81,23 @@
       "applies": 4,
       "awake_duration": 1,
       "converged": true,
+      "first_applied_final_ts": 33,
+      "stale_wake_ratio": 0.0,
+      "telemetry_stale_wakes": 0,
+      "telemetry_wakes": 6,
+      "time_to_converge_ticks": 3,
       "wake_interval": 11
     }
   },
   "event_count": 208,
   "final_desired": {
     "epoch": 1,
+    "published_at_ts": 30,
     "v": 4,
     "ver": 1000004
   },
   "monotonic_applied_ver": true,
   "plot": "applied_versions.png",
-  "run_at_utc": "2026-03-01T05:45:56.452161+00:00",
+  "run_at_utc": "2026-03-01T06:06:54.959958+00:00",
   "stale_device_count": 0
 }

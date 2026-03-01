@@ -26,6 +26,8 @@ class InvariantTests(unittest.TestCase):
         summary = sim.run()
 
         self.assertTrue(summary["monotonic_applied_ver"])
+        self.assertIn("broker_metrics", summary)
+        self.assertIn("published_messages", summary["broker_metrics"])
 
         # Extra guard: validate from raw apply events as well.
         by_device: dict[str, list[int]] = {}
@@ -54,6 +56,9 @@ class InvariantTests(unittest.TestCase):
         for _, metrics in summary["devices"].items():
             self.assertTrue(metrics["converged"])
             self.assertEqual(metrics["applied_ver"], summary["final_desired"]["ver"])
+            # Metrics should be present
+            self.assertIn("stale_wake_ratio", metrics)
+            self.assertIn("time_to_converge_ticks", metrics)
 
 
 if __name__ == "__main__":
