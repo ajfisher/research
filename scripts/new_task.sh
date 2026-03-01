@@ -34,33 +34,35 @@ mkdir -p "$TASK_NAME"/{code,data/raw,data/processed,results/figures,results/repo
 
 ts=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
 
-cat > "$TASK_NAME/notes.md" <<EOF
-# Notes — $TASK_NAME
+# notes.md
+printf '%s\n' \
+  "# Notes — ${TASK_NAME}" \
+  "" \
+  "## ${ts} — start" \
+  "" \
+  "- Objective:" \
+  "- Constraints:" \
+  "- Plan:" \
+  "" \
+  > "$TASK_NAME/notes.md"
 
-## $ts — start
-
-- Objective:
-- Constraints:
-- Plan:
-
-EOF
-
-cat > "$TASK_NAME/README.md" <<EOF
-# $TASK_NAME
-
-## Objective
-
-## Background
-
-## Method
-
-## Setup
-
-## Results
-
-## Conclusions
-
-## Next steps
-EOF
+# README.md
+printf '%s\n' \
+  "# ${TASK_NAME}" \
+  "" \
+  "## Objective" \
+  "" \
+  "## Background" \
+  "" \
+  "## Method" \
+  "" \
+  "## Setup" \
+  "" \
+  "## Results" \
+  "" \
+  "## Conclusions" \
+  "" \
+  "## Next steps" \
+  > "$TASK_NAME/README.md"
 
 echo "Created task scaffold at: $TASK_NAME"
