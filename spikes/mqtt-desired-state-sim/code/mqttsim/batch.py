@@ -7,6 +7,7 @@ from datetime import datetime
 from pathlib import Path
 from typing import Any
 
+from .io_utils import write_summary
 from .simulator import Simulation, SimulationConfig, write_outputs
 
 
@@ -16,8 +17,13 @@ def run_retries(
     base_config: SimulationConfig,
     retries: int,
     out_root: Path,
+    write_full_artifacts: bool = False,
 ) -> dict[str, Any]:
-    """Run a scenario multiple times with different seeds and write aggregate metrics."""
+    """Run a scenario multiple times with different seeds and write aggregate metrics.
+
+    By default this writes only per-retry `summary.json` (fast + small). When
+    `write_full_artifacts=True`, writes full artifacts (`events.ndjson`, plot PNG, etc.).
+    """
 
     scenario_dir = out_root / scenario_name
     scenario_dir.mkdir(parents=True, exist_ok=True)
@@ -31,7 +37,10 @@ def run_retries(
         sim = Simulation(cfg)
         summary = sim.run()
         run_dir = scenario_dir / f"rep-{i:04d}"
-        write_outputs(run_dir, sim.events, summary)
+        if write_full_artifacts:
+            write_outputs(run_dir, sim.events, summary)
+        else:
+            write_summary(run_dir, summary)
         summaries.append(summary)
 
     stale_counts = [int(s.get("stale_device_count", 0)) for s in summaries]

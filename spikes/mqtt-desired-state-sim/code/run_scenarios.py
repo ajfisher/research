@@ -28,7 +28,7 @@ def main() -> int:
     }
 
     for name, cfg in scenarios.items():
-        agg = run_retries(scenario_name=name, base_config=cfg, retries=args.retries, out_root=args.out_root)
+        agg = run_retries(scenario_name=name, base_config=cfg, retries=args.retries, out_root=args.out_root, write_full_artifacts=False)
         print(f"{name}: convergence_rate={agg['convergence_rate']:.2f} stale_mean={agg['stale_device_count']['mean']}")
 
     print(f"wrote to {args.out_root}")
