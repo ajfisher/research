@@ -45,6 +45,37 @@ Disable optional hello topic:
 python spikes/mqtt-desired-state-sim/code/run_sim.py --disable-hello
 ```
 
+## Gremlin scenarios (try to break it)
+
+Lossy deliveries (should still converge eventually in most runs):
+
+```bash
+python spikes/mqtt-desired-state-sim/code/run_sim.py \
+  --run-name gremlin-loss \
+  --seed 7 \
+  --loss 0.3
+```
+
+Delayed deliveries with too-short awake window (often fails to converge):
+
+```bash
+python spikes/mqtt-desired-state-sim/code/run_sim.py \
+  --run-name gremlin-delay-miss \
+  --seed 3 \
+  --min-delay 2 --max-delay 5 \
+  --awake-duration 1
+```
+
+Fix: extend awake window to exceed max delay (converges again):
+
+```bash
+python spikes/mqtt-desired-state-sim/code/run_sim.py \
+  --run-name gremlin-delay-fixed \
+  --seed 3 \
+  --min-delay 2 --max-delay 5 \
+  --awake-duration 6
+```
+
 Run tests:
 
 ```bash

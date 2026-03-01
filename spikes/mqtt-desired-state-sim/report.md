@@ -11,9 +11,19 @@ Validate a minimal retained desired-state protocol for sleepy devices and verify
 - Added plotting output (`applied_versions.png`), using `matplotlib` when available and a pure-Python fallback otherwise.
 
 ## Key Findings
-- Retained desired topics reliably bridge offline periods: devices waking later still receive latest desired version.
+- Retained desired topics bridge offline periods: devices waking later can still receive the latest desired version.
 - Telemetry must remain non-retained to avoid stale liveness/status interpretation.
-- Monotonic `applied_v` and eventual convergence can be validated with deterministic tests.
+- Monotonic `applied_v` is easy to guarantee with a single device rule: apply only when `desired.v > applied_v`.
+
+### Gremlin breakage (simulated delay + short wake windows)
+When we introduce delivery delay (e.g. 2–5 ticks) and devices only stay awake for 1 tick, many devices fail to converge within the simulation horizon.
+
+This isn’t a “protocol is wrong” result so much as a reminder that **the physical awake window bounds what you can receive**. In practice you’d address this by:
+- keeping the radio on long enough to receive retained replay, or
+- requesting state explicitly after wake, or
+- using QoS/session semantics (outside the scope of this spike).
+
+The simulator now demonstrates this failure mode and the fix (increasing `awake_duration`).
 
 ## Artifacts
 - Protocol spec: `PROTOCOL.md`

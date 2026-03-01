@@ -1,6 +1,8 @@
 from __future__ import annotations
 
+import heapq
 import json
+import random
 import struct
 import zlib
 from dataclasses import dataclass, field
@@ -14,18 +16,68 @@ Subscriber = Callable[[str, dict[str, Any], bool, int], None]
 
 
 @dataclass
-class Broker:
-    """Minimal in-process MQTT-like broker with retained-message support."""
+class NetworkModel:
+    """A tiny network model for message loss + delay.
 
+    - loss_rate is applied per-delivery (subscriber callback invocation).
+    - delay is an integer number of simulation ticks.
+
+    This is intentionally simple; the goal is to stress the protocol logic, not
+    reproduce every MQTT detail.
+    """
+
+    seed: int = 1
+    loss_rate: float = 0.0
+    min_delay: int = 0
+    max_delay: int = 0
+
+    def __post_init__(self) -> None:
+        if not (0.0 <= self.loss_rate <= 1.0):
+            raise ValueError("loss_rate must be in [0,1]")
+        if self.min_delay < 0 or self.max_delay < 0 or self.max_delay < self.min_delay:
+            raise ValueError("invalid delay bounds")
+        self._rng = random.Random(self.seed)
+
+    def drop(self) -> bool:
+        return self._rng.random() < self.loss_rate
+
+    def delay(self) -> int:
+        if self.max_delay == self.min_delay:
+            return self.min_delay
+        return self._rng.randint(self.min_delay, self.max_delay)
+
+
+@dataclass
+class Broker:
+    """Minimal in-process MQTT-like broker with retained-message support.
+
+    Adds a simple network model: each publish schedules per-subscriber deliveries
+    that can be delayed or dropped.
+    """
+
+    network: NetworkModel = field(default_factory=NetworkModel)
     retained: dict[str, dict[str, Any]] = field(default_factory=dict)
     subscribers: dict[str, list[Subscriber]] = field(default_factory=dict)
+
+    _queue: list[tuple[int, int, str, dict[str, Any], bool, Subscriber]] = field(default_factory=list, init=False)
+    _seq: int = field(default=0, init=False)
+
+    def reset_sessions(self) -> None:
+        """Simulate a broker/controller restart: clears live sessions/in-flight messages.
+
+        Retained messages remain.
+        """
+
+        self.subscribers.clear()
+        self._queue.clear()
 
     def subscribe(self, topic: str, callback: Subscriber, now: int) -> None:
         callbacks = self.subscribers.setdefault(topic, [])
         callbacks.append(callback)
         retained_payload = self.retained.get(topic)
         if retained_payload is not None:
-            callback(topic, retained_payload, True, now)
+            # Retained replay is still subject to network delay/loss.
+            self._schedule_delivery(topic, retained_payload, True, now, callback)
 
     def unsubscribe(self, topic: str, callback: Subscriber) -> None:
         callbacks = self.subscribers.get(topic, [])
@@ -35,7 +87,21 @@ class Broker:
     def publish(self, topic: str, payload: dict[str, Any], retain: bool, now: int) -> None:
         if retain:
             self.retained[topic] = payload
-        for callback in self.subscribers.get(topic, []):
+        for callback in list(self.subscribers.get(topic, [])):
+            self._schedule_delivery(topic, payload, retain, now, callback)
+
+    def _schedule_delivery(self, topic: str, payload: dict[str, Any], retain: bool, now: int, callback: Subscriber) -> None:
+        if self.network.drop():
+            return
+        deliver_at = now + self.network.delay()
+        self._seq += 1
+        heapq.heappush(self._queue, (deliver_at, self._seq, topic, payload, retain, callback))
+
+    def tick(self, now: int) -> None:
+        """Deliver all queued messages due at or before `now`."""
+
+        while self._queue and self._queue[0][0] <= now:
+            _deliver_at, _seq, topic, payload, retain, callback = heapq.heappop(self._queue)
             callback(topic, payload, retain, now)
 
 
@@ -45,11 +111,15 @@ class Device:
 
     device_id: str
     wake_interval: int
+    awake_duration: int
     broker: Broker
     publish_hello: bool = False
+
     applied_v: int = 0
     pending_desired: dict[str, Any] | None = None
     apply_history: list[tuple[int, int]] = field(default_factory=list)
+
+    awake_until: int | None = None
 
     def desired_topic(self) -> str:
         return f"dev/{self.device_id}/desired"
@@ -63,14 +133,23 @@ class Device:
     def _on_desired(self, _topic: str, payload: dict[str, Any], _retained: bool, _ts: int) -> None:
         self.pending_desired = payload
 
-    def wake(self, ts: int, events: list[Event]) -> None:
+    def wake_start(self, ts: int, events: list[Event]) -> None:
+        self.awake_until = ts + max(1, self.awake_duration) - 1
+        self.pending_desired = None
+
         self.broker.subscribe(self.desired_topic(), self._on_desired, ts)
+        events.append({"ts": ts, "kind": "wake", "device_id": self.device_id, "wake_interval": self.wake_interval, "awake_duration": self.awake_duration})
 
         if self.publish_hello:
             hello = {"device_id": self.device_id, "ts": ts}
             self.broker.publish(self.hello_topic(), hello, retain=False, now=ts)
             events.append({"ts": ts, "kind": "hello", "topic": self.hello_topic(), "payload": hello})
 
+    def is_awake(self, ts: int) -> bool:
+        return self.awake_until is not None and ts <= self.awake_until
+
+    def wake_end(self, ts: int, events: list[Event]) -> None:
+        # Apply desired at the end of the wake window (one-shot apply).
         changed = False
         desired_v = self.applied_v
         if self.pending_desired:
@@ -101,6 +180,7 @@ class Device:
         events.append({"ts": ts, "kind": "telemetry", "topic": self.telemetry_topic(), "payload": telemetry})
 
         self.broker.unsubscribe(self.desired_topic(), self._on_desired)
+        self.awake_until = None
 
 
 @dataclass
@@ -108,10 +188,20 @@ class SimulationConfig:
     num_devices: int = 5
     wake_interval_base: int = 3
     wake_interval_step: int = 2
+    awake_duration: int = 1
     duration: int = 60
     desired_updates: int = 4
     desired_update_period: int = 10
     publish_hello: bool = True
+
+    # network stressors
+    seed: int = 1
+    loss_rate: float = 0.0
+    min_delay: int = 0
+    max_delay: int = 0
+
+    # optional breakage lever
+    broker_restart_at: int | None = None
 
 
 class Simulation:
@@ -119,12 +209,13 @@ class Simulation:
 
     def __init__(self, config: SimulationConfig):
         self.config = config
-        self.broker = Broker()
+        self.broker = Broker(network=NetworkModel(seed=config.seed, loss_rate=config.loss_rate, min_delay=config.min_delay, max_delay=config.max_delay))
         self.events: list[Event] = []
         self.devices = [
             Device(
                 device_id=f"d{i+1}",
                 wake_interval=config.wake_interval_base + i * config.wake_interval_step,
+                awake_duration=config.awake_duration,
                 broker=self.broker,
                 publish_hello=config.publish_hello,
             )
@@ -145,20 +236,35 @@ class Simulation:
             update_schedule[ts] = idx + 1
 
         for ts in range(self.config.duration + 1):
+            if self.config.broker_restart_at is not None and ts == self.config.broker_restart_at:
+                self.events.append({"ts": ts, "kind": "broker_restart"})
+                self.broker.reset_sessions()
+
             if ts in update_schedule:
                 version = update_schedule[ts]
                 self.final_desired_v = version
                 for dev in self.devices:
                     self._publish_desired(dev.device_id, version, ts)
 
+            # Start wake windows
             for dev in self.devices:
-                if ts % dev.wake_interval == 0:
-                    self.events.append({"ts": ts, "kind": "wake", "device_id": dev.device_id, "wake_interval": dev.wake_interval})
-                    dev.wake(ts, self.events)
+                if dev.awake_until is None and ts % dev.wake_interval == 0:
+                    dev.wake_start(ts, self.events)
+
+            # Deliver due network messages
+            self.broker.tick(ts)
+
+            # End wake windows
+            for dev in self.devices:
+                if dev.awake_until is not None and ts == dev.awake_until:
+                    dev.wake_end(ts, self.events)
+
+        # Drain any remaining messages (mainly for completeness)
+        self.broker.tick(self.config.duration + self.config.max_delay + 1)
 
         monotonic = True
         convergence = True
-        per_device = {}
+        per_device: dict[str, Any] = {}
 
         for dev in self.devices:
             history_versions = [v for _, v in dev.apply_history]
@@ -169,6 +275,7 @@ class Simulation:
             convergence = convergence and converged
             per_device[dev.device_id] = {
                 "wake_interval": dev.wake_interval,
+                "awake_duration": dev.awake_duration,
                 "applied_v": dev.applied_v,
                 "converged": converged,
                 "applies": len(dev.apply_history),
@@ -328,12 +435,8 @@ def _fallback_plot_png(
 
 def _write_png_rgb(path: Path, width: int, height: int, rgb: bytes) -> None:
     def chunk(tag: bytes, data: bytes) -> bytes:
-        return (
-            struct.pack(">I", len(data))
-            + tag
-            + data
-            + struct.pack(">I", zlib.crc32(tag + data) & 0xFFFFFFFF)
-        )
+        return struct.pack(">I", len(data)
+        ) + tag + data + struct.pack(">I", zlib.crc32(tag + data) & 0xFFFFFFFF)
 
     raw = bytearray()
     row_bytes = width * 3
@@ -362,11 +465,7 @@ def write_outputs(out_dir: Path, events: list[Event], summary: dict[str, Any]) -
         f.write("\n")
 
     plot_name = maybe_plot(events, out_dir)
-    if plot_name:
-        summary["plot"] = plot_name
-    else:
-        summary["plot"] = None
-        summary["plot_note"] = "matplotlib unavailable; skipped PNG plot"
+    summary["plot"] = plot_name
 
     with summary_path.open("w", encoding="utf-8") as f:
         json.dump(summary, f, indent=2, sort_keys=True)
