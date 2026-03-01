@@ -4,10 +4,12 @@
     "broker_restart_at": null,
     "desired_update_period": 10,
     "desired_updates": 4,
+    "dup_rate": 0.0,
     "duration": 60,
     "loss_rate": 0.0,
     "max_delay": 0,
     "min_delay": 0,
+    "naive_last_write": false,
     "num_devices": 5,
     "publish_hello": true,
     "seed": 1,
@@ -56,5 +58,5 @@
   "final_desired_v": 4,
   "monotonic_applied_v": true,
   "plot": "applied_versions.png",
-  "run_at_utc": "2026-03-01T05:21:09.172045+00:00"
+  "run_at_utc": "2026-03-01T05:35:42.170265+00:00"
 }

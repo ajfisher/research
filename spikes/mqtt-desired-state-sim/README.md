@@ -47,7 +47,7 @@ python spikes/mqtt-desired-state-sim/code/run_sim.py --disable-hello
 
 ## Gremlin scenarios (try to break it)
 
-Lossy deliveries (should still converge eventually in most runs):
+Lossy deliveries (retained intent + repeated wakes usually survives):
 
 ```bash
 python spikes/mqtt-desired-state-sim/code/run_sim.py \
@@ -56,7 +56,7 @@ python spikes/mqtt-desired-state-sim/code/run_sim.py \
   --loss 0.3
 ```
 
-Delayed deliveries with too-short awake window (often fails to converge):
+Delayed deliveries with too-short awake window (fails to converge):
 
 ```bash
 python spikes/mqtt-desired-state-sim/code/run_sim.py \
@@ -74,6 +74,49 @@ python spikes/mqtt-desired-state-sim/code/run_sim.py \
   --seed 3 \
   --min-delay 2 --max-delay 5 \
   --awake-duration 6
+```
+
+### Out-of-order delivery within a wake window
+
+If you (incorrectly) treat desired messages as "last write wins" during a wake window, out-of-order delivery can cause a device to **miss** the newest version.
+
+Reproduce the bug:
+
+```bash
+python spikes/mqtt-desired-state-sim/code/run_sim.py \
+  --run-name evil-reorder-naive \
+  --seed 1 \
+  --num-devices 20 \
+  --duration 200 \
+  --min-delay 0 --max-delay 40 \
+  --awake-duration 60 \
+  --naive-last-write
+```
+
+Correct behavior (default): device keeps the max `v` seen during the wake window.
+
+```bash
+python spikes/mqtt-desired-state-sim/code/run_sim.py \
+  --run-name evil-reorder-fixed \
+  --seed 1 \
+  --num-devices 20 \
+  --duration 200 \
+  --min-delay 0 --max-delay 40 \
+  --awake-duration 60
+```
+
+### Duplicates + loss
+
+```bash
+python spikes/mqtt-desired-state-sim/code/run_sim.py \
+  --run-name evil-dup-loss \
+  --seed 9 \
+  --num-devices 20 \
+  --duration 200 \
+  --min-delay 0 --max-delay 40 \
+  --awake-duration 60 \
+  --loss 0.2 \
+  --dup 0.5
 ```
 
 Run tests:

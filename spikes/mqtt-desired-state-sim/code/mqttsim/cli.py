@@ -23,6 +23,8 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--loss", type=float, default=0.0, help="Per-delivery loss rate in [0,1]")
     parser.add_argument("--min-delay", type=int, default=0, help="Min delivery delay (ticks)")
     parser.add_argument("--max-delay", type=int, default=0, help="Max delivery delay (ticks)")
+    parser.add_argument("--dup", type=float, default=0.0, help="Duplicate delivery rate in [0,1]")
+    parser.add_argument("--naive-last-write", action="store_true", help="BUG MODE: during a wake window use last-received desired (can miss newest under reordering)")
     parser.add_argument("--broker-restart-at", type=int, default=-1, help="Tick to reset live sessions/in-flight messages (-1 disables)")
 
     parser.add_argument(
@@ -51,6 +53,8 @@ def main() -> int:
         loss_rate=args.loss,
         min_delay=args.min_delay,
         max_delay=args.max_delay,
+        dup_rate=args.dup,
+        naive_last_write=args.naive_last_write,
         broker_restart_at=None if args.broker_restart_at < 0 else args.broker_restart_at,
     )
 

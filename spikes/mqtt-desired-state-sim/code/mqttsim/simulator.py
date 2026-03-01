@@ -17,23 +17,26 @@ Subscriber = Callable[[str, dict[str, Any], bool, int], None]
 
 @dataclass
 class NetworkModel:
-    """A tiny network model for message loss + delay.
+    """A tiny network model for message loss + delay + duplicates.
 
     - loss_rate is applied per-delivery (subscriber callback invocation).
     - delay is an integer number of simulation ticks.
+    - dup_rate may schedule an additional duplicate delivery.
 
-    This is intentionally simple; the goal is to stress the protocol logic, not
-    reproduce every MQTT detail.
+    This is intentionally simple; the goal is to stress protocol logic.
     """
 
     seed: int = 1
     loss_rate: float = 0.0
     min_delay: int = 0
     max_delay: int = 0
+    dup_rate: float = 0.0
 
     def __post_init__(self) -> None:
         if not (0.0 <= self.loss_rate <= 1.0):
             raise ValueError("loss_rate must be in [0,1]")
+        if not (0.0 <= self.dup_rate <= 1.0):
+            raise ValueError("dup_rate must be in [0,1]")
         if self.min_delay < 0 or self.max_delay < 0 or self.max_delay < self.min_delay:
             raise ValueError("invalid delay bounds")
         self._rng = random.Random(self.seed)
@@ -93,9 +96,17 @@ class Broker:
     def _schedule_delivery(self, topic: str, payload: dict[str, Any], retain: bool, now: int, callback: Subscriber) -> None:
         if self.network.drop():
             return
+
+        def push(deliver_at: int) -> None:
+            self._seq += 1
+            heapq.heappush(self._queue, (deliver_at, self._seq, topic, payload, retain, callback))
+
         deliver_at = now + self.network.delay()
-        self._seq += 1
-        heapq.heappush(self._queue, (deliver_at, self._seq, topic, payload, retain, callback))
+        push(deliver_at)
+
+        # Optional duplicates (idempotence stress)
+        if self.network._rng.random() < self.network.dup_rate:
+            push(deliver_at + self.network.delay())
 
     def tick(self, now: int) -> None:
         """Deliver all queued messages due at or before `now`."""
@@ -114,9 +125,11 @@ class Device:
     awake_duration: int
     broker: Broker
     publish_hello: bool = False
+    naive_last_write: bool = False
 
     applied_v: int = 0
     pending_desired: dict[str, Any] | None = None
+    max_desired_v_seen: int | None = None
     apply_history: list[tuple[int, int]] = field(default_factory=list)
 
     awake_until: int | None = None
@@ -131,11 +144,21 @@ class Device:
         return f"dev/{self.device_id}/hello"
 
     def _on_desired(self, _topic: str, payload: dict[str, Any], _retained: bool, _ts: int) -> None:
-        self.pending_desired = payload
+        # Gremlin scenario: out-of-order delivery can mean an older desired arrives after a newer
+        # one. If we naively take "last write", we can miss the newest version.
+        if self.naive_last_write:
+            self.pending_desired = payload
+            return
+
+        v = int(payload.get("v", 0))
+        if self.max_desired_v_seen is None or v > self.max_desired_v_seen:
+            self.max_desired_v_seen = v
+            self.pending_desired = payload
 
     def wake_start(self, ts: int, events: list[Event]) -> None:
         self.awake_until = ts + max(1, self.awake_duration) - 1
         self.pending_desired = None
+        self.max_desired_v_seen = None
 
         self.broker.subscribe(self.desired_topic(), self._on_desired, ts)
         events.append({"ts": ts, "kind": "wake", "device_id": self.device_id, "wake_interval": self.wake_interval, "awake_duration": self.awake_duration})
@@ -199,6 +222,10 @@ class SimulationConfig:
     loss_rate: float = 0.0
     min_delay: int = 0
     max_delay: int = 0
+    dup_rate: float = 0.0
+
+    # protocol behavior toggles
+    naive_last_write: bool = False
 
     # optional breakage lever
     broker_restart_at: int | None = None
@@ -209,7 +236,15 @@ class Simulation:
 
     def __init__(self, config: SimulationConfig):
         self.config = config
-        self.broker = Broker(network=NetworkModel(seed=config.seed, loss_rate=config.loss_rate, min_delay=config.min_delay, max_delay=config.max_delay))
+        self.broker = Broker(
+            network=NetworkModel(
+                seed=config.seed,
+                loss_rate=config.loss_rate,
+                min_delay=config.min_delay,
+                max_delay=config.max_delay,
+                dup_rate=config.dup_rate,
+            )
+        )
         self.events: list[Event] = []
         self.devices = [
             Device(
@@ -218,6 +253,7 @@ class Simulation:
                 awake_duration=config.awake_duration,
                 broker=self.broker,
                 publish_hello=config.publish_hello,
+                naive_last_write=config.naive_last_write,
             )
             for i in range(config.num_devices)
         ]
