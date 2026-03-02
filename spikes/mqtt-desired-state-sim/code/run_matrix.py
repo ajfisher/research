@@ -26,12 +26,25 @@ def parse_args() -> argparse.Namespace:
 
 
 def scenarios() -> dict[str, SimulationConfig]:
+    # Use a wake-profile mix so scaling device_count doesn't implicitly create devices that never
+    # wake within the simulation horizon.
+    wake_mix = dict(
+        wake_profile="mix",
+        sleepy_interval=60,
+        medium_interval=20,
+        chatty_interval=2,
+        w_sleepy=0.2,
+        w_medium=0.5,
+        w_chatty=0.3,
+        wake_jitter=1,
+    )
+
     return {
         # Keep these moderately hard; we want to see breakpoints.
-        "lossy": SimulationConfig(seed=10, duration=250, awake_duration=40, min_delay=0, max_delay=10, loss_rate=0.2, dup_rate=0.0),
-        "dup_and_loss": SimulationConfig(seed=200, duration=250, awake_duration=40, min_delay=0, max_delay=20, loss_rate=0.2, dup_rate=0.5),
-        "broker_restart_mid": SimulationConfig(seed=300, duration=250, awake_duration=40, min_delay=0, max_delay=20, loss_rate=0.1, dup_rate=0.2, broker_restart_at=77, republish_on_hello=True),
-        "delay_short_awake": SimulationConfig(seed=100, duration=250, awake_duration=1, min_delay=5, max_delay=20, loss_rate=0.0, dup_rate=0.0),
+        "lossy": SimulationConfig(seed=10, duration=360, awake_duration=20, min_delay=0, max_delay=10, loss_rate=0.2, dup_rate=0.0, **wake_mix),
+        "dup_and_loss": SimulationConfig(seed=200, duration=360, awake_duration=20, min_delay=0, max_delay=20, loss_rate=0.2, dup_rate=0.5, **wake_mix),
+        "broker_restart_mid": SimulationConfig(seed=300, duration=360, awake_duration=20, min_delay=0, max_delay=20, loss_rate=0.1, dup_rate=0.2, broker_restart_at=77, republish_on_hello=True, **wake_mix),
+        "delay_short_awake": SimulationConfig(seed=100, duration=360, awake_duration=1, min_delay=5, max_delay=20, loss_rate=0.0, dup_rate=0.0, **wake_mix),
     }
 
 

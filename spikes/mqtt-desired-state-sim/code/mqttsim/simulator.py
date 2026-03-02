@@ -245,8 +245,20 @@ class Device:
 @dataclass
 class SimulationConfig:
     num_devices: int = 5
+    # Wake scheduling
+    wake_profile: str = "linear"  # linear|mix
     wake_interval_base: int = 3
     wake_interval_step: int = 2
+
+    # mix profile (ticks). Default assumes 1 tick ~= 1 minute.
+    sleepy_interval: int = 60
+    medium_interval: int = 20
+    chatty_interval: int = 2
+    w_sleepy: float = 0.2
+    w_medium: float = 0.5
+    w_chatty: float = 0.3
+    wake_jitter: int = 0  # +/- jitter applied to chosen interval
+
     awake_duration: int = 1
     duration: int = 60
     desired_updates: int = 4
@@ -334,10 +346,39 @@ class Simulation:
             )
         )
         self.events: list[Event] = []
+
+        # Wake intervals: either deterministic linear ramp (old behavior) or a
+        # fixed distribution mix independent of fleet size.
+        rng = random.Random(config.seed)
+        wake_intervals: list[int] = []
+        if config.wake_profile == "linear":
+            for i in range(config.num_devices):
+                wake_intervals.append(config.wake_interval_base + i * config.wake_interval_step)
+        elif config.wake_profile == "mix":
+            # Normalize weights
+            tot = float(config.w_sleepy + config.w_medium + config.w_chatty)
+            ws = float(config.w_sleepy) / tot if tot else 0.0
+            wm = float(config.w_medium) / tot if tot else 0.0
+            # wc is remainder
+            for _i in range(config.num_devices):
+                x = rng.random()
+                if x < ws:
+                    interval = config.sleepy_interval
+                elif x < ws + wm:
+                    interval = config.medium_interval
+                else:
+                    interval = config.chatty_interval
+                if config.wake_jitter:
+                    interval += rng.randint(-config.wake_jitter, config.wake_jitter)
+                interval = max(1, int(interval))
+                wake_intervals.append(interval)
+        else:
+            raise ValueError(f"unknown wake_profile: {config.wake_profile}")
+
         self.devices = [
             Device(
                 device_id=f"d{i+1}",
-                wake_interval=config.wake_interval_base + i * config.wake_interval_step,
+                wake_interval=wake_intervals[i],
                 awake_duration=config.awake_duration,
                 broker=self.broker,
                 publish_hello=config.publish_hello,

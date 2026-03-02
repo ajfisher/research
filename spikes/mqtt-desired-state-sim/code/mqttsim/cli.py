@@ -10,8 +10,20 @@ from .simulator import Simulation, SimulationConfig, write_outputs
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="MQTT desired-state protocol simulator (sleepy devices)")
     parser.add_argument("--num-devices", type=int, default=5)
-    parser.add_argument("--wake-interval-base", type=int, default=3)
-    parser.add_argument("--wake-interval-step", type=int, default=2)
+
+    # Wake schedule
+    parser.add_argument("--wake-profile", type=str, default="linear", help="linear|mix")
+    parser.add_argument("--wake-interval-base", type=int, default=3, help="linear profile base")
+    parser.add_argument("--wake-interval-step", type=int, default=2, help="linear profile step")
+
+    parser.add_argument("--sleepy-interval", type=int, default=60, help="mix profile sleepy interval (ticks)")
+    parser.add_argument("--medium-interval", type=int, default=20, help="mix profile medium interval (ticks)")
+    parser.add_argument("--chatty-interval", type=int, default=2, help="mix profile chatty interval (ticks)")
+    parser.add_argument("--w-sleepy", type=float, default=0.2)
+    parser.add_argument("--w-medium", type=float, default=0.5)
+    parser.add_argument("--w-chatty", type=float, default=0.3)
+    parser.add_argument("--wake-jitter", type=int, default=0, help="mix profile +/- jitter applied to chosen interval")
+
     parser.add_argument("--awake-duration", type=int, default=1, help="How many ticks a device stays awake")
     parser.add_argument("--duration", type=int, default=60)
     parser.add_argument("--desired-updates", type=int, default=4)
@@ -46,8 +58,16 @@ def main() -> int:
 
     config = SimulationConfig(
         num_devices=args.num_devices,
+        wake_profile=args.wake_profile,
         wake_interval_base=args.wake_interval_base,
         wake_interval_step=args.wake_interval_step,
+        sleepy_interval=args.sleepy_interval,
+        medium_interval=args.medium_interval,
+        chatty_interval=args.chatty_interval,
+        w_sleepy=args.w_sleepy,
+        w_medium=args.w_medium,
+        w_chatty=args.w_chatty,
+        wake_jitter=args.wake_jitter,
         awake_duration=args.awake_duration,
         duration=args.duration,
         desired_updates=args.desired_updates,
