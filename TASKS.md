@@ -4,7 +4,7 @@ Lightweight index of active research tasks in this repo.
 
 ## Active
 
-- (none yet)
+- `spikes/mqtt-desired-state-sim` - MQTT Desired-State Protocol Simulator (Sleepy Devices)
 
 ## Completed
 

@@ -1,0 +1,208 @@
+{"kind": "desired", "payload": {"device_id": "d1", "epoch": 1, "ts": 0, "v": 1, "ver": 1000001}, "retained": true, "topic": "dev/d1/desired", "ts": 0}
+{"kind": "desired", "payload": {"device_id": "d2", "epoch": 1, "ts": 0, "v": 1, "ver": 1000001}, "retained": true, "topic": "dev/d2/desired", "ts": 0}
+{"kind": "desired", "payload": {"device_id": "d3", "epoch": 1, "ts": 0, "v": 1, "ver": 1000001}, "retained": true, "topic": "dev/d3/desired", "ts": 0}
+{"kind": "desired", "payload": {"device_id": "d4", "epoch": 1, "ts": 0, "v": 1, "ver": 1000001}, "retained": true, "topic": "dev/d4/desired", "ts": 0}
+{"kind": "desired", "payload": {"device_id": "d5", "epoch": 1, "ts": 0, "v": 1, "ver": 1000001}, "retained": true, "topic": "dev/d5/desired", "ts": 0}
+{"awake_duration": 1, "device_id": "d1", "kind": "wake", "ts": 0, "wake_interval": 3}
+{"kind": "hello", "payload": {"device_id": "d1", "ts": 0}, "topic": "dev/d1/hello", "ts": 0}
+{"awake_duration": 1, "device_id": "d2", "kind": "wake", "ts": 0, "wake_interval": 5}
+{"kind": "hello", "payload": {"device_id": "d2", "ts": 0}, "topic": "dev/d2/hello", "ts": 0}
+{"awake_duration": 1, "device_id": "d3", "kind": "wake", "ts": 0, "wake_interval": 7}
+{"kind": "hello", "payload": {"device_id": "d3", "ts": 0}, "topic": "dev/d3/hello", "ts": 0}
+{"awake_duration": 1, "device_id": "d4", "kind": "wake", "ts": 0, "wake_interval": 9}
+{"kind": "hello", "payload": {"device_id": "d4", "ts": 0}, "topic": "dev/d4/hello", "ts": 0}
+{"awake_duration": 1, "device_id": "d5", "kind": "wake", "ts": 0, "wake_interval": 11}
+{"kind": "hello", "payload": {"device_id": "d5", "ts": 0}, "topic": "dev/d5/hello", "ts": 0}
+{"applied_ver": 1000001, "desired_ver": 1000001, "device_id": "d1", "epoch": 1, "kind": "apply", "ts": 0, "v": 1}
+{"kind": "telemetry", "payload": {"applied_ver": 1000001, "changed": true, "converged": true, "desired_ver": 1000001, "device_id": "d1", "epoch": 1, "ts": 0, "v": 1}, "topic": "dev/d1/telemetry", "ts": 0}
+{"applied_ver": 1000001, "desired_ver": 1000001, "device_id": "d2", "epoch": 1, "kind": "apply", "ts": 0, "v": 1}
+{"kind": "telemetry", "payload": {"applied_ver": 1000001, "changed": true, "converged": true, "desired_ver": 1000001, "device_id": "d2", "epoch": 1, "ts": 0, "v": 1}, "topic": "dev/d2/telemetry", "ts": 0}
+{"applied_ver": 1000001, "desired_ver": 1000001, "device_id": "d3", "epoch": 1, "kind": "apply", "ts": 0, "v": 1}
+{"kind": "telemetry", "payload": {"applied_ver": 1000001, "changed": true, "converged": true, "desired_ver": 1000001, "device_id": "d3", "epoch": 1, "ts": 0, "v": 1}, "topic": "dev/d3/telemetry", "ts": 0}
+{"applied_ver": 1000001, "desired_ver": 1000001, "device_id": "d4", "epoch": 1, "kind": "apply", "ts": 0, "v": 1}
+{"kind": "telemetry", "payload": {"applied_ver": 1000001, "changed": true, "converged": true, "desired_ver": 1000001, "device_id": "d4", "epoch": 1, "ts": 0, "v": 1}, "topic": "dev/d4/telemetry", "ts": 0}
+{"applied_ver": 1000001, "desired_ver": 1000001, "device_id": "d5", "epoch": 1, "kind": "apply", "ts": 0, "v": 1}
+{"kind": "telemetry", "payload": {"applied_ver": 1000001, "changed": true, "converged": true, "desired_ver": 1000001, "device_id": "d5", "epoch": 1, "ts": 0, "v": 1}, "topic": "dev/d5/telemetry", "ts": 0}
+{"awake_duration": 1, "device_id": "d1", "kind": "wake", "ts": 3, "wake_interval": 3}
+{"kind": "hello", "payload": {"device_id": "d1", "ts": 3}, "topic": "dev/d1/hello", "ts": 3}
+{"kind": "telemetry", "payload": {"applied_ver": 1000001, "changed": false, "converged": true, "desired_ver": 1000001, "device_id": "d1", "epoch": 1, "ts": 3, "v": 1}, "topic": "dev/d1/telemetry", "ts": 3}
+{"awake_duration": 1, "device_id": "d2", "kind": "wake", "ts": 5, "wake_interval": 5}
+{"kind": "hello", "payload": {"device_id": "d2", "ts": 5}, "topic": "dev/d2/hello", "ts": 5}
+{"kind": "telemetry", "payload": {"applied_ver": 1000001, "changed": false, "converged": true, "desired_ver": 1000001, "device_id": "d2", "epoch": 1, "ts": 5, "v": 1}, "topic": "dev/d2/telemetry", "ts": 5}
+{"awake_duration": 1, "device_id": "d1", "kind": "wake", "ts": 6, "wake_interval": 3}
+{"kind": "hello", "payload": {"device_id": "d1", "ts": 6}, "topic": "dev/d1/hello", "ts": 6}
+{"kind": "telemetry", "payload": {"applied_ver": 1000001, "changed": false, "converged": true, "desired_ver": 1000001, "device_id": "d1", "epoch": 1, "ts": 6, "v": 1}, "topic": "dev/d1/telemetry", "ts": 6}
+{"awake_duration": 1, "device_id": "d3", "kind": "wake", "ts": 7, "wake_interval": 7}
+{"kind": "hello", "payload": {"device_id": "d3", "ts": 7}, "topic": "dev/d3/hello", "ts": 7}
+{"kind": "telemetry", "payload": {"applied_ver": 1000001, "changed": false, "converged": true, "desired_ver": 1000001, "device_id": "d3", "epoch": 1, "ts": 7, "v": 1}, "topic": "dev/d3/telemetry", "ts": 7}
+{"awake_duration": 1, "device_id": "d1", "kind": "wake", "ts": 9, "wake_interval": 3}
+{"kind": "hello", "payload": {"device_id": "d1", "ts": 9}, "topic": "dev/d1/hello", "ts": 9}
+{"awake_duration": 1, "device_id": "d4", "kind": "wake", "ts": 9, "wake_interval": 9}
+{"kind": "hello", "payload": {"device_id": "d4", "ts": 9}, "topic": "dev/d4/hello", "ts": 9}
+{"kind": "telemetry", "payload": {"applied_ver": 1000001, "changed": false, "converged": true, "desired_ver": 1000001, "device_id": "d1", "epoch": 1, "ts": 9, "v": 1}, "topic": "dev/d1/telemetry", "ts": 9}
+{"kind": "telemetry", "payload": {"applied_ver": 1000001, "changed": false, "converged": true, "desired_ver": 1000001, "device_id": "d4", "epoch": 1, "ts": 9, "v": 1}, "topic": "dev/d4/telemetry", "ts": 9}
+{"kind": "desired", "payload": {"device_id": "d1", "epoch": 1, "ts": 10, "v": 2, "ver": 1000002}, "retained": true, "topic": "dev/d1/desired", "ts": 10}
+{"kind": "desired", "payload": {"device_id": "d2", "epoch": 1, "ts": 10, "v": 2, "ver": 1000002}, "retained": true, "topic": "dev/d2/desired", "ts": 10}
+{"kind": "desired", "payload": {"device_id": "d3", "epoch": 1, "ts": 10, "v": 2, "ver": 1000002}, "retained": true, "topic": "dev/d3/desired", "ts": 10}
+{"kind": "desired", "payload": {"device_id": "d4", "epoch": 1, "ts": 10, "v": 2, "ver": 1000002}, "retained": true, "topic": "dev/d4/desired", "ts": 10}
+{"kind": "desired", "payload": {"device_id": "d5", "epoch": 1, "ts": 10, "v": 2, "ver": 1000002}, "retained": true, "topic": "dev/d5/desired", "ts": 10}
+{"awake_duration": 1, "device_id": "d2", "kind": "wake", "ts": 10, "wake_interval": 5}
+{"kind": "hello", "payload": {"device_id": "d2", "ts": 10}, "topic": "dev/d2/hello", "ts": 10}
+{"applied_ver": 1000002, "desired_ver": 1000002, "device_id": "d2", "epoch": 1, "kind": "apply", "ts": 10, "v": 2}
+{"kind": "telemetry", "payload": {"applied_ver": 1000002, "changed": true, "converged": true, "desired_ver": 1000002, "device_id": "d2", "epoch": 1, "ts": 10, "v": 2}, "topic": "dev/d2/telemetry", "ts": 10}
+{"awake_duration": 1, "device_id": "d5", "kind": "wake", "ts": 11, "wake_interval": 11}
+{"kind": "hello", "payload": {"device_id": "d5", "ts": 11}, "topic": "dev/d5/hello", "ts": 11}
+{"applied_ver": 1000002, "desired_ver": 1000002, "device_id": "d5", "epoch": 1, "kind": "apply", "ts": 11, "v": 2}
+{"kind": "telemetry", "payload": {"applied_ver": 1000002, "changed": true, "converged": true, "desired_ver": 1000002, "device_id": "d5", "epoch": 1, "ts": 11, "v": 2}, "topic": "dev/d5/telemetry", "ts": 11}
+{"awake_duration": 1, "device_id": "d1", "kind": "wake", "ts": 12, "wake_interval": 3}
+{"kind": "hello", "payload": {"device_id": "d1", "ts": 12}, "topic": "dev/d1/hello", "ts": 12}
+{"applied_ver": 1000002, "desired_ver": 1000002, "device_id": "d1", "epoch": 1, "kind": "apply", "ts": 12, "v": 2}
+{"kind": "telemetry", "payload": {"applied_ver": 1000002, "changed": true, "converged": true, "desired_ver": 1000002, "device_id": "d1", "epoch": 1, "ts": 12, "v": 2}, "topic": "dev/d1/telemetry", "ts": 12}
+{"awake_duration": 1, "device_id": "d3", "kind": "wake", "ts": 14, "wake_interval": 7}
+{"kind": "hello", "payload": {"device_id": "d3", "ts": 14}, "topic": "dev/d3/hello", "ts": 14}
+{"applied_ver": 1000002, "desired_ver": 1000002, "device_id": "d3", "epoch": 1, "kind": "apply", "ts": 14, "v": 2}
+{"kind": "telemetry", "payload": {"applied_ver": 1000002, "changed": true, "converged": true, "desired_ver": 1000002, "device_id": "d3", "epoch": 1, "ts": 14, "v": 2}, "topic": "dev/d3/telemetry", "ts": 14}
+{"awake_duration": 1, "device_id": "d1", "kind": "wake", "ts": 15, "wake_interval": 3}
+{"kind": "hello", "payload": {"device_id": "d1", "ts": 15}, "topic": "dev/d1/hello", "ts": 15}
+{"awake_duration": 1, "device_id": "d2", "kind": "wake", "ts": 15, "wake_interval": 5}
+{"kind": "hello", "payload": {"device_id": "d2", "ts": 15}, "topic": "dev/d2/hello", "ts": 15}
+{"kind": "telemetry", "payload": {"applied_ver": 1000002, "changed": false, "converged": true, "desired_ver": 1000002, "device_id": "d1", "epoch": 1, "ts": 15, "v": 2}, "topic": "dev/d1/telemetry", "ts": 15}
+{"kind": "telemetry", "payload": {"applied_ver": 1000002, "changed": false, "converged": true, "desired_ver": 1000002, "device_id": "d2", "epoch": 1, "ts": 15, "v": 2}, "topic": "dev/d2/telemetry", "ts": 15}
+{"awake_duration": 1, "device_id": "d1", "kind": "wake", "ts": 18, "wake_interval": 3}
+{"kind": "hello", "payload": {"device_id": "d1", "ts": 18}, "topic": "dev/d1/hello", "ts": 18}
+{"awake_duration": 1, "device_id": "d4", "kind": "wake", "ts": 18, "wake_interval": 9}
+{"kind": "hello", "payload": {"device_id": "d4", "ts": 18}, "topic": "dev/d4/hello", "ts": 18}
+{"kind": "telemetry", "payload": {"applied_ver": 1000002, "changed": false, "converged": true, "desired_ver": 1000002, "device_id": "d1", "epoch": 1, "ts": 18, "v": 2}, "topic": "dev/d1/telemetry", "ts": 18}
+{"applied_ver": 1000002, "desired_ver": 1000002, "device_id": "d4", "epoch": 1, "kind": "apply", "ts": 18, "v": 2}
+{"kind": "telemetry", "payload": {"applied_ver": 1000002, "changed": true, "converged": true, "desired_ver": 1000002, "device_id": "d4", "epoch": 1, "ts": 18, "v": 2}, "topic": "dev/d4/telemetry", "ts": 18}
+{"kind": "desired", "payload": {"device_id": "d1", "epoch": 1, "ts": 20, "v": 3, "ver": 1000003}, "retained": true, "topic": "dev/d1/desired", "ts": 20}
+{"kind": "desired", "payload": {"device_id": "d2", "epoch": 1, "ts": 20, "v": 3, "ver": 1000003}, "retained": true, "topic": "dev/d2/desired", "ts": 20}
+{"kind": "desired", "payload": {"device_id": "d3", "epoch": 1, "ts": 20, "v": 3, "ver": 1000003}, "retained": true, "topic": "dev/d3/desired", "ts": 20}
+{"kind": "desired", "payload": {"device_id": "d4", "epoch": 1, "ts": 20, "v": 3, "ver": 1000003}, "retained": true, "topic": "dev/d4/desired", "ts": 20}
+{"kind": "desired", "payload": {"device_id": "d5", "epoch": 1, "ts": 20, "v": 3, "ver": 1000003}, "retained": true, "topic": "dev/d5/desired", "ts": 20}
+{"awake_duration": 1, "device_id": "d2", "kind": "wake", "ts": 20, "wake_interval": 5}
+{"kind": "hello", "payload": {"device_id": "d2", "ts": 20}, "topic": "dev/d2/hello", "ts": 20}
+{"applied_ver": 1000003, "desired_ver": 1000003, "device_id": "d2", "epoch": 1, "kind": "apply", "ts": 20, "v": 3}
+{"kind": "telemetry", "payload": {"applied_ver": 1000003, "changed": true, "converged": true, "desired_ver": 1000003, "device_id": "d2", "epoch": 1, "ts": 20, "v": 3}, "topic": "dev/d2/telemetry", "ts": 20}
+{"awake_duration": 1, "device_id": "d1", "kind": "wake", "ts": 21, "wake_interval": 3}
+{"kind": "hello", "payload": {"device_id": "d1", "ts": 21}, "topic": "dev/d1/hello", "ts": 21}
+{"awake_duration": 1, "device_id": "d3", "kind": "wake", "ts": 21, "wake_interval": 7}
+{"kind": "hello", "payload": {"device_id": "d3", "ts": 21}, "topic": "dev/d3/hello", "ts": 21}
+{"applied_ver": 1000003, "desired_ver": 1000003, "device_id": "d1", "epoch": 1, "kind": "apply", "ts": 21, "v": 3}
+{"kind": "telemetry", "payload": {"applied_ver": 1000003, "changed": true, "converged": true, "desired_ver": 1000003, "device_id": "d1", "epoch": 1, "ts": 21, "v": 3}, "topic": "dev/d1/telemetry", "ts": 21}
+{"applied_ver": 1000003, "desired_ver": 1000003, "device_id": "d3", "epoch": 1, "kind": "apply", "ts": 21, "v": 3}
+{"kind": "telemetry", "payload": {"applied_ver": 1000003, "changed": true, "converged": true, "desired_ver": 1000003, "device_id": "d3", "epoch": 1, "ts": 21, "v": 3}, "topic": "dev/d3/telemetry", "ts": 21}
+{"awake_duration": 1, "device_id": "d5", "kind": "wake", "ts": 22, "wake_interval": 11}
+{"kind": "hello", "payload": {"device_id": "d5", "ts": 22}, "topic": "dev/d5/hello", "ts": 22}
+{"applied_ver": 1000003, "desired_ver": 1000003, "device_id": "d5", "epoch": 1, "kind": "apply", "ts": 22, "v": 3}
+{"kind": "telemetry", "payload": {"applied_ver": 1000003, "changed": true, "converged": true, "desired_ver": 1000003, "device_id": "d5", "epoch": 1, "ts": 22, "v": 3}, "topic": "dev/d5/telemetry", "ts": 22}
+{"awake_duration": 1, "device_id": "d1", "kind": "wake", "ts": 24, "wake_interval": 3}
+{"kind": "hello", "payload": {"device_id": "d1", "ts": 24}, "topic": "dev/d1/hello", "ts": 24}
+{"kind": "telemetry", "payload": {"applied_ver": 1000003, "changed": false, "converged": true, "desired_ver": 1000003, "device_id": "d1", "epoch": 1, "ts": 24, "v": 3}, "topic": "dev/d1/telemetry", "ts": 24}
+{"awake_duration": 1, "device_id": "d2", "kind": "wake", "ts": 25, "wake_interval": 5}
+{"kind": "hello", "payload": {"device_id": "d2", "ts": 25}, "topic": "dev/d2/hello", "ts": 25}
+{"kind": "telemetry", "payload": {"applied_ver": 1000003, "changed": false, "converged": true, "desired_ver": 1000003, "device_id": "d2", "epoch": 1, "ts": 25, "v": 3}, "topic": "dev/d2/telemetry", "ts": 25}
+{"awake_duration": 1, "device_id": "d1", "kind": "wake", "ts": 27, "wake_interval": 3}
+{"kind": "hello", "payload": {"device_id": "d1", "ts": 27}, "topic": "dev/d1/hello", "ts": 27}
+{"awake_duration": 1, "device_id": "d4", "kind": "wake", "ts": 27, "wake_interval": 9}
+{"kind": "hello", "payload": {"device_id": "d4", "ts": 27}, "topic": "dev/d4/hello", "ts": 27}
+{"kind": "telemetry", "payload": {"applied_ver": 1000003, "changed": false, "converged": true, "desired_ver": 1000003, "device_id": "d1", "epoch": 1, "ts": 27, "v": 3}, "topic": "dev/d1/telemetry", "ts": 27}
+{"applied_ver": 1000003, "desired_ver": 1000003, "device_id": "d4", "epoch": 1, "kind": "apply", "ts": 27, "v": 3}
+{"kind": "telemetry", "payload": {"applied_ver": 1000003, "changed": true, "converged": true, "desired_ver": 1000003, "device_id": "d4", "epoch": 1, "ts": 27, "v": 3}, "topic": "dev/d4/telemetry", "ts": 27}
+{"awake_duration": 1, "device_id": "d3", "kind": "wake", "ts": 28, "wake_interval": 7}
+{"kind": "hello", "payload": {"device_id": "d3", "ts": 28}, "topic": "dev/d3/hello", "ts": 28}
+{"kind": "telemetry", "payload": {"applied_ver": 1000003, "changed": false, "converged": true, "desired_ver": 1000003, "device_id": "d3", "epoch": 1, "ts": 28, "v": 3}, "topic": "dev/d3/telemetry", "ts": 28}
+{"kind": "desired", "payload": {"device_id": "d1", "epoch": 1, "ts": 30, "v": 4, "ver": 1000004}, "retained": true, "topic": "dev/d1/desired", "ts": 30}
+{"kind": "desired", "payload": {"device_id": "d2", "epoch": 1, "ts": 30, "v": 4, "ver": 1000004}, "retained": true, "topic": "dev/d2/desired", "ts": 30}
+{"kind": "desired", "payload": {"device_id": "d3", "epoch": 1, "ts": 30, "v": 4, "ver": 1000004}, "retained": true, "topic": "dev/d3/desired", "ts": 30}
+{"kind": "desired", "payload": {"device_id": "d4", "epoch": 1, "ts": 30, "v": 4, "ver": 1000004}, "retained": true, "topic": "dev/d4/desired", "ts": 30}
+{"kind": "desired", "payload": {"device_id": "d5", "epoch": 1, "ts": 30, "v": 4, "ver": 1000004}, "retained": true, "topic": "dev/d5/desired", "ts": 30}
+{"awake_duration": 1, "device_id": "d1", "kind": "wake", "ts": 30, "wake_interval": 3}
+{"kind": "hello", "payload": {"device_id": "d1", "ts": 30}, "topic": "dev/d1/hello", "ts": 30}
+{"awake_duration": 1, "device_id": "d2", "kind": "wake", "ts": 30, "wake_interval": 5}
+{"kind": "hello", "payload": {"device_id": "d2", "ts": 30}, "topic": "dev/d2/hello", "ts": 30}
+{"applied_ver": 1000004, "desired_ver": 1000004, "device_id": "d1", "epoch": 1, "kind": "apply", "ts": 30, "v": 4}
+{"kind": "telemetry", "payload": {"applied_ver": 1000004, "changed": true, "converged": true, "desired_ver": 1000004, "device_id": "d1", "epoch": 1, "ts": 30, "v": 4}, "topic": "dev/d1/telemetry", "ts": 30}
+{"applied_ver": 1000004, "desired_ver": 1000004, "device_id": "d2", "epoch": 1, "kind": "apply", "ts": 30, "v": 4}
+{"kind": "telemetry", "payload": {"applied_ver": 1000004, "changed": true, "converged": true, "desired_ver": 1000004, "device_id": "d2", "epoch": 1, "ts": 30, "v": 4}, "topic": "dev/d2/telemetry", "ts": 30}
+{"awake_duration": 1, "device_id": "d1", "kind": "wake", "ts": 33, "wake_interval": 3}
+{"kind": "hello", "payload": {"device_id": "d1", "ts": 33}, "topic": "dev/d1/hello", "ts": 33}
+{"awake_duration": 1, "device_id": "d5", "kind": "wake", "ts": 33, "wake_interval": 11}
+{"kind": "hello", "payload": {"device_id": "d5", "ts": 33}, "topic": "dev/d5/hello", "ts": 33}
+{"kind": "telemetry", "payload": {"applied_ver": 1000004, "changed": false, "converged": true, "desired_ver": 1000004, "device_id": "d1", "epoch": 1, "ts": 33, "v": 4}, "topic": "dev/d1/telemetry", "ts": 33}
+{"applied_ver": 1000004, "desired_ver": 1000004, "device_id": "d5", "epoch": 1, "kind": "apply", "ts": 33, "v": 4}
+{"kind": "telemetry", "payload": {"applied_ver": 1000004, "changed": true, "converged": true, "desired_ver": 1000004, "device_id": "d5", "epoch": 1, "ts": 33, "v": 4}, "topic": "dev/d5/telemetry", "ts": 33}
+{"awake_duration": 1, "device_id": "d2", "kind": "wake", "ts": 35, "wake_interval": 5}
+{"kind": "hello", "payload": {"device_id": "d2", "ts": 35}, "topic": "dev/d2/hello", "ts": 35}
+{"awake_duration": 1, "device_id": "d3", "kind": "wake", "ts": 35, "wake_interval": 7}
+{"kind": "hello", "payload": {"device_id": "d3", "ts": 35}, "topic": "dev/d3/hello", "ts": 35}
+{"kind": "telemetry", "payload": {"applied_ver": 1000004, "changed": false, "converged": true, "desired_ver": 1000004, "device_id": "d2", "epoch": 1, "ts": 35, "v": 4}, "topic": "dev/d2/telemetry", "ts": 35}
+{"applied_ver": 1000004, "desired_ver": 1000004, "device_id": "d3", "epoch": 1, "kind": "apply", "ts": 35, "v": 4}
+{"kind": "telemetry", "payload": {"applied_ver": 1000004, "changed": true, "converged": true, "desired_ver": 1000004, "device_id": "d3", "epoch": 1, "ts": 35, "v": 4}, "topic": "dev/d3/telemetry", "ts": 35}
+{"awake_duration": 1, "device_id": "d1", "kind": "wake", "ts": 36, "wake_interval": 3}
+{"kind": "hello", "payload": {"device_id": "d1", "ts": 36}, "topic": "dev/d1/hello", "ts": 36}
+{"awake_duration": 1, "device_id": "d4", "kind": "wake", "ts": 36, "wake_interval": 9}
+{"kind": "hello", "payload": {"device_id": "d4", "ts": 36}, "topic": "dev/d4/hello", "ts": 36}
+{"kind": "telemetry", "payload": {"applied_ver": 1000004, "changed": false, "converged": true, "desired_ver": 1000004, "device_id": "d1", "epoch": 1, "ts": 36, "v": 4}, "topic": "dev/d1/telemetry", "ts": 36}
+{"applied_ver": 1000004, "desired_ver": 1000004, "device_id": "d4", "epoch": 1, "kind": "apply", "ts": 36, "v": 4}
+{"kind": "telemetry", "payload": {"applied_ver": 1000004, "changed": true, "converged": true, "desired_ver": 1000004, "device_id": "d4", "epoch": 1, "ts": 36, "v": 4}, "topic": "dev/d4/telemetry", "ts": 36}
+{"awake_duration": 1, "device_id": "d1", "kind": "wake", "ts": 39, "wake_interval": 3}
+{"kind": "hello", "payload": {"device_id": "d1", "ts": 39}, "topic": "dev/d1/hello", "ts": 39}
+{"kind": "telemetry", "payload": {"applied_ver": 1000004, "changed": false, "converged": true, "desired_ver": 1000004, "device_id": "d1", "epoch": 1, "ts": 39, "v": 4}, "topic": "dev/d1/telemetry", "ts": 39}
+{"awake_duration": 1, "device_id": "d2", "kind": "wake", "ts": 40, "wake_interval": 5}
+{"kind": "hello", "payload": {"device_id": "d2", "ts": 40}, "topic": "dev/d2/hello", "ts": 40}
+{"kind": "telemetry", "payload": {"applied_ver": 1000004, "changed": false, "converged": true, "desired_ver": 1000004, "device_id": "d2", "epoch": 1, "ts": 40, "v": 4}, "topic": "dev/d2/telemetry", "ts": 40}
+{"awake_duration": 1, "device_id": "d1", "kind": "wake", "ts": 42, "wake_interval": 3}
+{"kind": "hello", "payload": {"device_id": "d1", "ts": 42}, "topic": "dev/d1/hello", "ts": 42}
+{"awake_duration": 1, "device_id": "d3", "kind": "wake", "ts": 42, "wake_interval": 7}
+{"kind": "hello", "payload": {"device_id": "d3", "ts": 42}, "topic": "dev/d3/hello", "ts": 42}
+{"kind": "telemetry", "payload": {"applied_ver": 1000004, "changed": false, "converged": true, "desired_ver": 1000004, "device_id": "d1", "epoch": 1, "ts": 42, "v": 4}, "topic": "dev/d1/telemetry", "ts": 42}
+{"kind": "telemetry", "payload": {"applied_ver": 1000004, "changed": false, "converged": true, "desired_ver": 1000004, "device_id": "d3", "epoch": 1, "ts": 42, "v": 4}, "topic": "dev/d3/telemetry", "ts": 42}
+{"awake_duration": 1, "device_id": "d5", "kind": "wake", "ts": 44, "wake_interval": 11}
+{"kind": "hello", "payload": {"device_id": "d5", "ts": 44}, "topic": "dev/d5/hello", "ts": 44}
+{"kind": "telemetry", "payload": {"applied_ver": 1000004, "changed": false, "converged": true, "desired_ver": 1000004, "device_id": "d5", "epoch": 1, "ts": 44, "v": 4}, "topic": "dev/d5/telemetry", "ts": 44}
+{"awake_duration": 1, "device_id": "d1", "kind": "wake", "ts": 45, "wake_interval": 3}
+{"kind": "hello", "payload": {"device_id": "d1", "ts": 45}, "topic": "dev/d1/hello", "ts": 45}
+{"awake_duration": 1, "device_id": "d2", "kind": "wake", "ts": 45, "wake_interval": 5}
+{"kind": "hello", "payload": {"device_id": "d2", "ts": 45}, "topic": "dev/d2/hello", "ts": 45}
+{"awake_duration": 1, "device_id": "d4", "kind": "wake", "ts": 45, "wake_interval": 9}
+{"kind": "hello", "payload": {"device_id": "d4", "ts": 45}, "topic": "dev/d4/hello", "ts": 45}
+{"kind": "telemetry", "payload": {"applied_ver": 1000004, "changed": false, "converged": true, "desired_ver": 1000004, "device_id": "d1", "epoch": 1, "ts": 45, "v": 4}, "topic": "dev/d1/telemetry", "ts": 45}
+{"kind": "telemetry", "payload": {"applied_ver": 1000004, "changed": false, "converged": true, "desired_ver": 1000004, "device_id": "d2", "epoch": 1, "ts": 45, "v": 4}, "topic": "dev/d2/telemetry", "ts": 45}
+{"kind": "telemetry", "payload": {"applied_ver": 1000004, "changed": false, "converged": true, "desired_ver": 1000004, "device_id": "d4", "epoch": 1, "ts": 45, "v": 4}, "topic": "dev/d4/telemetry", "ts": 45}
+{"awake_duration": 1, "device_id": "d1", "kind": "wake", "ts": 48, "wake_interval": 3}
+{"kind": "hello", "payload": {"device_id": "d1", "ts": 48}, "topic": "dev/d1/hello", "ts": 48}
+{"kind": "telemetry", "payload": {"applied_ver": 1000004, "changed": false, "converged": true, "desired_ver": 1000004, "device_id": "d1", "epoch": 1, "ts": 48, "v": 4}, "topic": "dev/d1/telemetry", "ts": 48}
+{"awake_duration": 1, "device_id": "d3", "kind": "wake", "ts": 49, "wake_interval": 7}
+{"kind": "hello", "payload": {"device_id": "d3", "ts": 49}, "topic": "dev/d3/hello", "ts": 49}
+{"kind": "telemetry", "payload": {"applied_ver": 1000004, "changed": false, "converged": true, "desired_ver": 1000004, "device_id": "d3", "epoch": 1, "ts": 49, "v": 4}, "topic": "dev/d3/telemetry", "ts": 49}
+{"awake_duration": 1, "device_id": "d2", "kind": "wake", "ts": 50, "wake_interval": 5}
+{"kind": "hello", "payload": {"device_id": "d2", "ts": 50}, "topic": "dev/d2/hello", "ts": 50}
+{"kind": "telemetry", "payload": {"applied_ver": 1000004, "changed": false, "converged": true, "desired_ver": 1000004, "device_id": "d2", "epoch": 1, "ts": 50, "v": 4}, "topic": "dev/d2/telemetry", "ts": 50}
+{"awake_duration": 1, "device_id": "d1", "kind": "wake", "ts": 51, "wake_interval": 3}
+{"kind": "hello", "payload": {"device_id": "d1", "ts": 51}, "topic": "dev/d1/hello", "ts": 51}
+{"kind": "telemetry", "payload": {"applied_ver": 1000004, "changed": false, "converged": true, "desired_ver": 1000004, "device_id": "d1", "epoch": 1, "ts": 51, "v": 4}, "topic": "dev/d1/telemetry", "ts": 51}
+{"awake_duration": 1, "device_id": "d1", "kind": "wake", "ts": 54, "wake_interval": 3}
+{"kind": "hello", "payload": {"device_id": "d1", "ts": 54}, "topic": "dev/d1/hello", "ts": 54}
+{"awake_duration": 1, "device_id": "d4", "kind": "wake", "ts": 54, "wake_interval": 9}
+{"kind": "hello", "payload": {"device_id": "d4", "ts": 54}, "topic": "dev/d4/hello", "ts": 54}
+{"kind": "telemetry", "payload": {"applied_ver": 1000004, "changed": false, "converged": true, "desired_ver": 1000004, "device_id": "d1", "epoch": 1, "ts": 54, "v": 4}, "topic": "dev/d1/telemetry", "ts": 54}
+{"kind": "telemetry", "payload": {"applied_ver": 1000004, "changed": false, "converged": true, "desired_ver": 1000004, "device_id": "d4", "epoch": 1, "ts": 54, "v": 4}, "topic": "dev/d4/telemetry", "ts": 54}
+{"awake_duration": 1, "device_id": "d2", "kind": "wake", "ts": 55, "wake_interval": 5}
+{"kind": "hello", "payload": {"device_id": "d2", "ts": 55}, "topic": "dev/d2/hello", "ts": 55}
+{"awake_duration": 1, "device_id": "d5", "kind": "wake", "ts": 55, "wake_interval": 11}
+{"kind": "hello", "payload": {"device_id": "d5", "ts": 55}, "topic": "dev/d5/hello", "ts": 55}
+{"kind": "telemetry", "payload": {"applied_ver": 1000004, "changed": false, "converged": true, "desired_ver": 1000004, "device_id": "d2", "epoch": 1, "ts": 55, "v": 4}, "topic": "dev/d2/telemetry", "ts": 55}
+{"kind": "telemetry", "payload": {"applied_ver": 1000004, "changed": false, "converged": true, "desired_ver": 1000004, "device_id": "d5", "epoch": 1, "ts": 55, "v": 4}, "topic": "dev/d5/telemetry", "ts": 55}
+{"awake_duration": 1, "device_id": "d3", "kind": "wake", "ts": 56, "wake_interval": 7}
+{"kind": "hello", "payload": {"device_id": "d3", "ts": 56}, "topic": "dev/d3/hello", "ts": 56}
+{"kind": "telemetry", "payload": {"applied_ver": 1000004, "changed": false, "converged": true, "desired_ver": 1000004, "device_id": "d3", "epoch": 1, "ts": 56, "v": 4}, "topic": "dev/d3/telemetry", "ts": 56}
+{"awake_duration": 1, "device_id": "d1", "kind": "wake", "ts": 57, "wake_interval": 3}
+{"kind": "hello", "payload": {"device_id": "d1", "ts": 57}, "topic": "dev/d1/hello", "ts": 57}
+{"kind": "telemetry", "payload": {"applied_ver": 1000004, "changed": false, "converged": true, "desired_ver": 1000004, "device_id": "d1", "epoch": 1, "ts": 57, "v": 4}, "topic": "dev/d1/telemetry", "ts": 57}
+{"awake_duration": 1, "device_id": "d1", "kind": "wake", "ts": 60, "wake_interval": 3}
+{"kind": "hello", "payload": {"device_id": "d1", "ts": 60}, "topic": "dev/d1/hello", "ts": 60}
+{"awake_duration": 1, "device_id": "d2", "kind": "wake", "ts": 60, "wake_interval": 5}
+{"kind": "hello", "payload": {"device_id": "d2", "ts": 60}, "topic": "dev/d2/hello", "ts": 60}
+{"kind": "telemetry", "payload": {"applied_ver": 1000004, "changed": false, "converged": true, "desired_ver": 1000004, "device_id": "d1", "epoch": 1, "ts": 60, "v": 4}, "topic": "dev/d1/telemetry", "ts": 60}
+{"kind": "telemetry", "payload": {"applied_ver": 1000004, "changed": false, "converged": true, "desired_ver": 1000004, "device_id": "d2", "epoch": 1, "ts": 60, "v": 4}, "topic": "dev/d2/telemetry", "ts": 60}
