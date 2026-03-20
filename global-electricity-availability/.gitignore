@@ -1,0 +1,6 @@
+# Ignore generated images
+results/figures/*.png
+results/figures/*.svg
+
+# Ignore raw downloads if added later
+data/raw/
